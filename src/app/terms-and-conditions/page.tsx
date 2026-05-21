@@ -81,7 +81,7 @@ export default function TermsAndConditionsPage() {
           <div className="absolute top-0 -left-1/4 w-1/2 h-full bg-gradient-to-r from-blue-600 to-transparent blur-3xl transform -skew-x-12"></div>
           <div className="absolute top-0 -right-1/4 w-1/2 h-full bg-gradient-to-l from-indigo-600 to-transparent blur-3xl transform skew-x-12"></div>
         </div>
-        
+
         <div className="w-full px-6 lg:px-12 relative z-10 text-center">
           <h1 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6 tracking-tight">
             Terms & <span className="text-gradient">Conditions</span>
@@ -93,11 +93,11 @@ export default function TermsAndConditionsPage() {
       </div>
 
       {/* Content Section */}
-      <div className="w-full px-6 lg:px-12 py-16 -mt-12 relative z-20">
+      <div className="w-full px-6 lg:px-12 py-16 relative z-20">
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
           {termsSections.map((section, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="bg-white rounded-3xl p-8 md:p-12 shadow-premium hover:shadow-premium-hover transition-all duration-300 border border-slate-100"
             >
               <div className="flex flex-col md:flex-row md:items-center gap-6 mb-8 border-b border-slate-100 pb-8">
@@ -106,7 +106,7 @@ export default function TermsAndConditionsPage() {
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-slate-900 font-heading tracking-tight">{section.title}</h3>
               </div>
-              
+
               <ul className="space-y-6">
                 {section.points.map((point, ptIndex) => (
                   <li key={ptIndex} className="flex items-start gap-5">

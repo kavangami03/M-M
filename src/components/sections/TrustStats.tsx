@@ -14,7 +14,7 @@ const STATS = [
 export default function TrustStats() {
   return (
     <section className="py-12 bg-white relative z-20 border-y border-border">
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="container mx-auto px-6 max-w-[1520px]">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {STATS.map((stat, i) => {
             const Icon = stat.icon;

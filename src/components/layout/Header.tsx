@@ -10,11 +10,12 @@ import { FaApple, FaGooglePlay } from "react-icons/fa";
 
 const NAV_LINKS = [
   { name: "Home", href: "/#home" },
+  { name: "About", href: "/#about" },
   { name: "Features", href: "/#features" },
   { name: "Dashboard", href: "/#dashboard" },
   { name: "Mobile App", href: "/#mobile-app" },
   { name: "Pricing", href: "/#pricing" },
-  { name: "About", href: "/#about" },
+
 ];
 
 export default function Header() {
@@ -44,15 +45,14 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-slate-200 ${
-        isScrolled ? "py-3 shadow-sm" : "py-5"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-slate-200 ${isScrolled ? "py-3 shadow-sm" : "py-5"
+        }`}
     >
-      <div className="container mx-auto px-6 max-w-7xl flex items-center justify-between">
+      <div className="container mx-auto px-6 max-w-[1520px] flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center group">
           <div className="relative w-32 h-14 md:w-40 md:h-16 group-hover:scale-105 transition-transform">
-             <Image src="/logo.svg" alt="Monitor & Manage Logo" fill className="object-contain object-left" />
+            <Image src="/logo.svg" alt="Monitor & Manage Logo" fill className="object-contain object-left" />
           </div>
         </Link>
 
@@ -86,7 +86,7 @@ export default function Header() {
               <FaApple className="w-5 h-5" />
             </a>
           </div>
-          <a 
+          <a
             href="https://portal.monitormanage.com.my/"
             target="_blank"
             rel="noopener noreferrer"
@@ -133,7 +133,7 @@ export default function Header() {
           >
             Contact
           </Link>
-          
+
           <div className="flex gap-4 mt-4">
             <a href="https://play.google.com/store/apps/details?id=com.mandm.client&pli=1" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg bg-secondary text-foreground font-medium">
               <FaGooglePlay className="w-4 h-4 text-primary" /> Play Store
@@ -142,7 +142,7 @@ export default function Header() {
               <FaApple className="w-5 h-5" /> App Store
             </a>
           </div>
-          <a 
+          <a
             href="https://portal.monitormanage.com.my/"
             target="_blank"
             rel="noopener noreferrer"

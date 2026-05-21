@@ -7,7 +7,7 @@ import { FaGooglePlay, FaApple } from "react-icons/fa";
 export default function MobileAppShowcase() {
   return (
     <section id="mobile-app" className="py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="container mx-auto px-6 max-w-[1520px]">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           
           <motion.div 

@@ -21,7 +21,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-slate-950 text-slate-300 pt-20 pb-10 border-t border-slate-900">
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="container mx-auto px-6 max-w-[1520px]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
            {/* Brand & App Download */}
            <div className="col-span-1 lg:col-span-2">

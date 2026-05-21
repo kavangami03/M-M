@@ -13,7 +13,7 @@ const CERTIFICATES = [
 export default function Certificates() {
   return (
     <section className="py-20 bg-secondary/30 border-y border-border">
-      <div className="container mx-auto px-6 max-w-7xl">
+      <div className="container mx-auto px-6 max-w-[1520px]">
         <div className="text-center mb-12">
           <h3 className="text-sm font-bold tracking-widest text-muted-foreground uppercase mb-2">
             Recognized & Certified
