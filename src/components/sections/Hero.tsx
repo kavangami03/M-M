@@ -5,7 +5,7 @@ import { ArrowRight, Play } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen pt-32 pb-20 overflow-hidden flex flex-col justify-center bg-background">
+    <section id="home" className="relative min-h-screen pt-40 lg:pt-48 pb-20 overflow-hidden flex flex-col justify-center bg-background">
       {/* Background glow effects */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/20 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-accent/20 blur-[100px] rounded-full pointer-events-none" />
@@ -28,7 +28,10 @@ export default function Hero() {
             Guard Monitor & Manage (M&M App) is a real-time mobile-based guard patrolling and workforce management platform built for modern security operations.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="w-full sm:w-auto bg-primary hover:bg-accent text-white px-8 py-4 rounded-full font-medium shadow-premium transition-all hover:-translate-y-1 flex items-center justify-center gap-2 text-lg">
+            <button 
+              onClick={() => document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' })}
+              className="w-full sm:w-auto bg-primary hover:bg-accent text-white px-8 py-4 rounded-full font-medium shadow-premium transition-all hover:-translate-y-1 flex items-center justify-center gap-2 text-lg"
+            >
               Start Free Trial <ArrowRight className="w-5 h-5" />
             </button>
             <button className="w-full sm:w-auto bg-white hover:bg-secondary text-foreground border border-border px-8 py-4 rounded-full font-medium transition-all hover:-translate-y-1 flex items-center justify-center gap-2 text-lg shadow-sm">

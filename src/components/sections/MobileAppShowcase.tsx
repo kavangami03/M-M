@@ -104,12 +104,12 @@ export default function MobileAppShowcase() {
             </ul>
 
              <div className="flex flex-wrap gap-4">
-                <button className="flex items-center gap-3 bg-foreground hover:bg-slate-800 text-white px-6 py-3 rounded-xl font-medium transition-all shadow-lg hover:-translate-y-0.5">
+                <a href="https://play.google.com/store/apps/details?id=com.mandm.client&pli=1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 bg-foreground hover:bg-slate-800 text-white px-6 py-3 rounded-xl font-medium transition-all shadow-lg hover:-translate-y-0.5">
                   <FaGooglePlay className="w-5 h-5 text-green-500" /> Download for Android
-                </button>
-                <button className="flex items-center gap-3 bg-secondary hover:bg-slate-200 text-foreground px-6 py-3 rounded-xl font-medium transition-all border border-border hover:-translate-y-0.5">
+                </a>
+                <a href="https://apps.apple.com/us/app/m-m-property-app/id1659629088" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 bg-secondary hover:bg-slate-200 text-foreground px-6 py-3 rounded-xl font-medium transition-all border border-border hover:-translate-y-0.5">
                   <FaApple className="w-6 h-6" /> iOS App Store
-                </button>
+                </a>
              </div>
           </motion.div>
 

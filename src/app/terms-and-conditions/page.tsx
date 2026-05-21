@@ -76,7 +76,7 @@ export default function TermsAndConditionsPage() {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <div className="relative bg-slate-950 py-24 lg:py-32 overflow-hidden pt-36">
+      <div className="relative bg-slate-950 pb-24 overflow-hidden pt-40 lg:pt-48">
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 -left-1/4 w-1/2 h-full bg-gradient-to-r from-blue-600 to-transparent blur-3xl transform -skew-x-12"></div>
           <div className="absolute top-0 -right-1/4 w-1/2 h-full bg-gradient-to-l from-indigo-600 to-transparent blur-3xl transform skew-x-12"></div>
