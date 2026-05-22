@@ -32,7 +32,7 @@ export default function Header() {
         // @ts-ignore
         if (window.lenis) {
           // @ts-ignore
-          window.lenis.scrollTo(element, { duration: 1.2 });
+          window.lenis.scrollTo(element, { offset: -100, duration: 1.2 });
         } else {
           element.scrollIntoView({ behavior: "smooth" });
         }
