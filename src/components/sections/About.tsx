@@ -19,7 +19,13 @@ export default function About() {
   const scrollToFeatures = () => {
     const element = document.querySelector("#dashboard");
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      // @ts-ignore
+      if (window.lenis) {
+        // @ts-ignore
+        window.lenis.scrollTo(element, { duration: 1.2 });
+      } else {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 

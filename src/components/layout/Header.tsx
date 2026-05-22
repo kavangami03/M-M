@@ -29,7 +29,13 @@ export default function Header() {
       const targetId = href.replace("/", "");
       const element = document.querySelector(targetId);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+        // @ts-ignore
+        if (window.lenis) {
+          // @ts-ignore
+          window.lenis.scrollTo(element, { duration: 1.2 });
+        } else {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
       }
       setMobileMenuOpen(false);
     }

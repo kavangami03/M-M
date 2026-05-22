@@ -29,8 +29,19 @@ export default function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <button
-              onClick={() => document.querySelector('#pricing')?.scrollIntoView({ behavior: 'smooth' })}
-              className="w-full sm:w-auto bg-primary hover:bg-accent text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-medium shadow-premium transition-all hover:-translate-y-1 flex items-center justify-center gap-2 text-base sm:text-lg"
+              onClick={() => {
+                const element = document.querySelector("#pricing");
+                if (element) {
+                  // @ts-ignore
+                  if (window.lenis) {
+                    // @ts-ignore
+                    window.lenis.scrollTo(element, { duration: 1.2 });
+                  } else {
+                    element.scrollIntoView({ behavior: "smooth" });
+                  }
+                }
+              }}
+              className="w-full sm:w-auto bg-primary hover:bg-accent text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-medium shadow-premium transition-all hover:-translate-y-1 flex items-center justify-center gap-2 text-base sm:text-lg cursor-pointer"
             >
               Start Free Trial <ArrowRight className="w-5 h-5" />
             </button>
