@@ -45,7 +45,21 @@ export default function Hero() {
             >
               Start Free Trial <ArrowRight className="w-5 h-5" />
             </button>
-            <button className="w-full sm:w-auto bg-white hover:bg-secondary text-foreground border border-border px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-medium transition-all hover:-translate-y-1 flex items-center justify-center gap-2 text-base sm:text-lg shadow-sm">
+            <button 
+              onClick={() => {
+                const element = document.querySelector("#contact");
+                if (element) {
+                  // @ts-ignore
+                  if (window.lenis) {
+                    // @ts-ignore
+                    window.lenis.scrollTo(element, { offset: -100, duration: 1.2 });
+                  } else {
+                    element.scrollIntoView({ behavior: "smooth" });
+                  }
+                }
+              }}
+              className="w-full sm:w-auto bg-white hover:bg-secondary text-foreground border border-border px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-medium transition-all hover:-translate-y-1 flex items-center justify-center gap-2 text-base sm:text-lg shadow-sm cursor-pointer"
+            >
               <Play className="w-5 h-5" /> Watch Demo
             </button>
           </div>
