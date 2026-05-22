@@ -90,14 +90,14 @@ export default function Footer() {
         <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
            <p>&copy; {new Date().getFullYear()} Monitor & Manage. All rights reserved.</p>
            <p>
-             Design by{" "}
+             Website design & developed by{" "}
              <a
                href="https://www.softqubes.com/"
                target="_blank"
                rel="noopener noreferrer"
                className="text-slate-400 hover:text-primary transition-colors cursor-pointer"
              >
-               Softqube Technologies
+               SOFTQUBE TECHNOLOGIES LLC.
              </a>
            </p>
         </div>
