@@ -17,14 +17,14 @@ const FEATURES = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-24 bg-white relative">
-      <div className="container mx-auto px-6 max-w-[1520px]">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+    <section id="features" className="py-16 md:py-24 bg-white relative">
+      <div className="container mx-auto px-4 sm:px-6 max-w-[1520px]">
+        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold font-heading text-foreground mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-foreground mb-4 md:mb-6"
           >
             Powerful Features. <br />
             <span className="text-muted-foreground font-medium">Simple Execution.</span>
@@ -34,13 +34,13 @@ export default function Features() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-muted-foreground"
+            className="text-base sm:text-lg text-muted-foreground"
           >
             Everything you need to run a modern, efficient, and accountable security operation without the enterprise price tag.
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           {FEATURES.map((feature, i) => {
             const Icon = feature.icon;
             return (
@@ -49,21 +49,21 @@ export default function Features() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                transition={{ duration: 0.5, delay: i * 0.05 }}
                 whileHover={{ y: -5 }}
-                className="group relative p-8 rounded-3xl bg-secondary hover:bg-white border border-transparent hover:border-border hover:shadow-premium transition-all duration-300"
+                className="group relative p-5 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl bg-secondary hover:bg-white border border-transparent hover:border-border hover:shadow-premium transition-all duration-300"
               >
                 {/* Glow effect on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-300 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 rounded-2xl md:rounded-3xl transition-opacity duration-300 pointer-events-none" />
                 
                 <div className="relative z-10">
-                  <div className="w-14 h-14 rounded-2xl bg-white shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <Icon className="w-6 h-6 text-primary" />
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-white shadow-sm flex items-center justify-center mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <Icon className="w-5 h-5 md:w-6 md:h-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold font-heading text-foreground mb-3">
+                  <h3 className="text-lg sm:text-xl font-bold font-heading text-foreground mb-2 md:mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
                     {feature.desc}
                   </p>
                 </div>

@@ -1,75 +1,127 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
-
-const TESTIMONIALS = [
-  {
-    quote: "M&M App completely transformed how we manage our 50+ properties. Real-time tracking means we never have to guess if a patrol happened.",
-    author: "Dato' Ahmad",
-    role: "Director of Operations",
-    company: "Premier Property Management"
-  },
-  {
-    quote: "The zero hardware cost is incredible. Our guards use their own phones, and the QR checkpoint system is flawless. Highly recommended.",
-    author: "Sarah Lee",
-    role: "Chief Security Officer",
-    company: "Apex Security Solutions"
-  },
-  {
-    quote: "Incident reporting used to take days. Now we get live photos and locations instantly. It has increased our client satisfaction by 200%.",
-    author: "Michael Chen",
-    role: "Facility Manager",
-    company: "Global Tech Park"
-  }
-];
+import Image from "next/image";
 
 export default function Testimonials() {
   return (
-    <section className="py-24 bg-foreground text-white overflow-hidden">
-      <div className="container mx-auto px-6 max-w-[1520px]">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <motion.h2 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+    <section className="py-16 md:py-24 bg-foreground text-white overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 max-w-[1520px]">
+        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold font-heading mb-6"
+            transition={{ duration: 0.8 }}
+            className="flex-1 w-full"
           >
-            Trusted by Top <br className="hidden md:block" />
-            <span className="text-gradient">Security Professionals</span>
-          </motion.h2>
-        </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading mb-5 md:mb-6">
+              If you are not monitoring, <br className="hidden sm:block" />
+              <span className="text-gradient">you are not managing.</span>
+            </h2>
+            <p className="text-base sm:text-lg text-slate-300 mb-5 md:mb-6 leading-relaxed">
+              Guard Monitor & Manage (M&M App) sdn bhd is a mobile-based guard patrolling & monitoring system designed to replace physical patrol devices and manual processes. A modern guard monitoring and workforce management platform built for security companies and property management.
+            </p>
+            <p className="text-base sm:text-lg text-slate-300 mb-5 md:mb-6 leading-relaxed">
+              All guard activities are recorded in real time, generated into instant, document-ready reports and free from device maintenance cost. The system operates fully through a mobile application, making security operations smarter, faster, and more cost-effective.
+            </p>
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+              The system also enhances your company&apos;s professional image with modern technology that impresses both clients and management. Whether you manage a small team of 10 guards or a large force of over 1,000, M&M App scales effortlessly to meet your needs, making security operations faster, smarter, and far more transparent.
+            </p>
+          </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-           {TESTIMONIALS.map((testimonial, i) => (
-             <motion.div
-               key={i}
-               initial={{ opacity: 0, y: 30 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 0.5, delay: i * 0.1 }}
-               className="bg-slate-900 border border-slate-800 p-8 rounded-3xl hover:bg-slate-800/50 transition-colors"
-             >
-                <div className="flex gap-1 mb-6">
-                   {[...Array(5)].map((_, j) => (
-                      <Star key={j} className="w-5 h-5 fill-amber-500 text-amber-500" />
-                   ))}
+          {/* Code-built Dashboard Mockup */}
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="flex-1 relative w-full"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 blur-3xl rounded-full" />
+            <div className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-slate-700/50 bg-slate-900">
+              {/* Browser Chrome */}
+              <div className="h-9 md:h-11 bg-slate-950 border-b border-slate-800 flex items-center px-3 md:px-4 gap-1.5 md:gap-2">
+                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500/70" />
+                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-amber-500/70" />
+                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500/70" />
+                <div className="mx-auto flex items-center gap-1.5 bg-slate-800 rounded-md px-3 py-1">
+                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
+                  <span className="text-[10px] md:text-xs text-slate-400 font-mono">dashboard.monitormanage.com.my</span>
                 </div>
-                <p className="text-lg leading-relaxed text-slate-300 mb-8 font-medium">
-                  "{testimonial.quote}"
-                </p>
-                <div className="flex items-center gap-4">
-                   <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center font-bold text-xl">
-                      {testimonial.author.charAt(0)}
-                   </div>
-                   <div>
-                      <h4 className="font-bold text-white">{testimonial.author}</h4>
-                      <p className="text-sm text-slate-400">{testimonial.role}</p>
-                      <p className="text-xs text-primary font-medium">{testimonial.company}</p>
-                   </div>
+              </div>
+
+              {/* Dashboard Header */}
+              <div className="h-12 md:h-14 bg-slate-900 border-b border-slate-800 flex items-center px-3 md:px-5 justify-between">
+                <div className="flex items-center gap-2 md:gap-3">
+                  <div className="relative w-6 h-6 md:w-8 md:h-8">
+                    <Image src="/logo.svg" alt="M&M" fill className="object-contain" />
+                  </div>
+                  <span className="text-xs md:text-sm font-bold text-white">M&M Dashboard</span>
                 </div>
-             </motion.div>
-           ))}
+                <div className="flex items-center gap-2 md:gap-3">
+                  <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-green-500/20 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                  </div>
+                  <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary/30 flex items-center justify-center">
+                    <span className="text-[10px] md:text-xs font-bold text-primary">A</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Dashboard Content */}
+              <div className="flex">
+                {/* Sidebar */}
+                <div className="hidden sm:flex w-14 md:w-40 bg-slate-950 border-r border-slate-800 flex-col py-3 md:py-4 gap-1">
+                  {["Dashboard", "Guards", "Patrols", "Reports", "Attendance", "Settings"].map((item, i) => (
+                    <div key={i} className={`flex items-center gap-2 px-3 md:px-4 py-2 rounded-r-lg mx-1 ${i === 0 ? 'bg-primary/20 text-primary' : 'text-slate-500 hover:text-slate-300'}`}>
+                      <div className={`w-2 h-2 rounded-sm ${i === 0 ? 'bg-primary' : 'bg-slate-700'}`} />
+                      <span className="hidden md:block text-xs font-medium">{item}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Main Area */}
+                <div className="flex-1 p-3 md:p-5 bg-slate-900/50 space-y-3 md:space-y-4">
+                  {/* Stats Row */}
+                  <div className="grid grid-cols-3 gap-2 md:gap-3">
+                    {[
+                      { label: "Active Guards", value: "24", color: "text-green-400", bg: "bg-green-500/10" },
+                      { label: "Patrols Today", value: "156", color: "text-blue-400", bg: "bg-blue-500/10" },
+                      { label: "Incidents", value: "3", color: "text-amber-400", bg: "bg-amber-500/10" },
+                    ].map((stat, i) => (
+                      <div key={i} className={`${stat.bg} border border-slate-800 rounded-lg p-2 md:p-3`}>
+                        <p className="text-[9px] md:text-xs text-slate-400">{stat.label}</p>
+                        <p className={`text-lg md:text-2xl font-bold ${stat.color}`}>{stat.value}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Table */}
+                  <div className="bg-slate-950 rounded-lg border border-slate-800 overflow-hidden">
+                    <div className="grid grid-cols-4 gap-1 px-2 md:px-3 py-2 border-b border-slate-800 text-[8px] md:text-[10px] uppercase tracking-wider text-slate-500 font-semibold">
+                      <span>Guard</span><span>Location</span><span>Status</span><span>Last Scan</span>
+                    </div>
+                    {[
+                      { name: "Ahmad R.", loc: "Zone A", status: "On Patrol", statusColor: "bg-green-500", time: "08:32" },
+                      { name: "Raju K.", loc: "Zone B", status: "Stationed", statusColor: "bg-blue-500", time: "08:28" },
+                      { name: "Siti N.", loc: "Zone C", status: "On Patrol", statusColor: "bg-green-500", time: "08:35" },
+                    ].map((row, i) => (
+                      <div key={i} className="grid grid-cols-4 gap-1 px-2 md:px-3 py-1.5 md:py-2 border-b border-slate-800/50 text-[9px] md:text-xs text-slate-300">
+                        <span className="font-medium">{row.name}</span>
+                        <span className="text-slate-400">{row.loc}</span>
+                        <span className="flex items-center gap-1">
+                          <span className={`w-1.5 h-1.5 rounded-full ${row.statusColor}`} />
+                          <span className="hidden md:inline">{row.status}</span>
+                        </span>
+                        <span className="text-slate-500">{row.time}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

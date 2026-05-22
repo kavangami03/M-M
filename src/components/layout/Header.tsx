@@ -73,7 +73,8 @@ export default function Header() {
         {/* Desktop Actions */}
         <div className="hidden lg:flex items-center gap-4">
           <Link
-            href="/contact"
+            href="/#contact"
+            onClick={(e) => handleNavClick(e, "/#contact")}
             className="text-sm font-medium hover:text-primary transition-colors mr-2"
           >
             Contact
@@ -127,8 +128,11 @@ export default function Header() {
             </Link>
           ))}
           <Link
-            href="/contact"
-            onClick={() => setMobileMenuOpen(false)}
+            href="/#contact"
+            onClick={(e) => {
+              setMobileMenuOpen(false);
+              handleNavClick(e, "/#contact");
+            }}
             className="text-base font-medium text-foreground py-2 border-b border-secondary"
           >
             Contact
