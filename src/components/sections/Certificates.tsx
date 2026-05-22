@@ -22,8 +22,8 @@ export default function Certificates() {
             Built to Government Standards
           </h2>
         </div>
-        
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {CERTIFICATES.map((cert, i) => {
             const Icon = cert.icon;
             return (

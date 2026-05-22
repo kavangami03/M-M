@@ -39,7 +39,7 @@ export default function Footer() {
             <p className="text-slate-400 max-w-sm mb-8 leading-relaxed">
               The next-generation security operations platform. Guard monitoring, attendance, and reporting all in one place.
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 flex-wrap">
               <a href="https://play.google.com/store/apps/details?id=com.mandm.client&pli=1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-4 py-2.5 rounded-lg border border-slate-800 transition-colors">
                 <FaGooglePlay className="w-5 h-5 text-green-500" />
                 <div className="text-left">
