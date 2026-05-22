@@ -224,7 +224,14 @@ export default function Contact() {
                         </div>
                         <div>
                            <h4 className="font-bold text-foreground text-base sm:text-lg mb-1">Headquarters</h4>
-                           <p className="text-muted-foreground text-sm sm:text-base">07-01,Plaza Kiara , Jalan Semenyih,<br />43500 Selangor</p>
+                           <a 
+                              href="https://maps.google.com/?q=07-01,Plaza Kiara, Jalan Semenyih, 43500 Selangor" 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-muted-foreground text-sm sm:text-base hover:text-primary transition-colors block"
+                           >
+                              07-01,Plaza Kiara , Jalan Semenyih,<br />43500 Selangor
+                           </a>
                         </div>
                      </div>
 
@@ -234,7 +241,12 @@ export default function Contact() {
                         </div>
                         <div>
                            <h4 className="font-bold text-foreground text-base sm:text-lg mb-1">Phone</h4>
-                           <p className="text-muted-foreground text-sm sm:text-base">0109872885</p>
+                           <a 
+                              href="tel:0109872885" 
+                              className="text-muted-foreground text-sm sm:text-base hover:text-primary transition-colors block"
+                           >
+                              0109872885
+                           </a>
                         </div>
                      </div>
 
@@ -244,7 +256,12 @@ export default function Contact() {
                         </div>
                         <div>
                            <h4 className="font-bold text-foreground text-base sm:text-lg mb-1">Email</h4>
-                           <p className="text-muted-foreground text-sm sm:text-base">admin@monitormanage.com.my</p>
+                           <a 
+                              href="mailto:admin@monitormanage.com.my" 
+                              className="text-muted-foreground text-sm sm:text-base hover:text-primary transition-colors block"
+                           >
+                              admin@monitormanage.com.my
+                           </a>
                         </div>
                      </div>
                   </div>
