@@ -2,7 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Copyright, Cpu, X } from "lucide-react";
+import { Copyright, Cpu, X, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
+
+const MIN_ZOOM = 1;
+const MAX_ZOOM = 4;
+const ZOOM_STEP = 0.5;
 
 const CERTIFICATES = [
   {
@@ -23,12 +27,25 @@ const CERTIFICATES = [
 
 export default function Certificates() {
   const [active, setActive] = useState<(typeof CERTIFICATES)[number] | null>(null);
+  const [zoom, setZoom] = useState(1);
 
-  // Lock body scroll + close on Escape while the lightbox is open
+  const close = () => setActive(null);
+  const clampZoom = (z: number) => Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, z));
+  const resetZoom = () => setZoom(1);
+
+  // Reset zoom each time a new certificate is opened
+  useEffect(() => {
+    setZoom(1);
+  }, [active]);
+
+  // Lock body scroll + keyboard shortcuts while the lightbox is open
   useEffect(() => {
     if (!active) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setActive(null);
+      if (e.key === "Escape") close();
+      if (e.key === "+" || e.key === "=") setZoom((z) => clampZoom(z + ZOOM_STEP));
+      if (e.key === "-") setZoom((z) => clampZoom(z - ZOOM_STEP));
+      if (e.key === "0") resetZoom();
     };
     document.body.style.overflow = "hidden";
     window.addEventListener("keydown", onKey);
@@ -97,7 +114,7 @@ export default function Certificates() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            onClick={() => setActive(null)}
+            onClick={close}
             className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-black/80 backdrop-blur-sm"
             role="dialog"
             aria-modal="true"
@@ -105,12 +122,49 @@ export default function Certificates() {
           >
             <button
               type="button"
-              onClick={() => setActive(null)}
+              onClick={close}
               aria-label="Close"
-              className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
+
+            {/* Zoom controls */}
+            <div
+              onClick={(e) => e.stopPropagation()}
+              className="absolute top-4 left-4 sm:top-6 sm:left-6 z-20 flex items-center gap-1 rounded-full bg-white/10 backdrop-blur-sm p-1"
+            >
+              <button
+                type="button"
+                onClick={() => setZoom((z) => clampZoom(z - ZOOM_STEP))}
+                disabled={zoom <= MIN_ZOOM}
+                aria-label="Zoom out"
+                className="w-9 h-9 rounded-full text-white flex items-center justify-center hover:bg-white/20 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+              >
+                <ZoomOut className="w-4 h-4" />
+              </button>
+              <span className="min-w-[3rem] text-center text-xs font-semibold text-white tabular-nums select-none">
+                {Math.round(zoom * 100)}%
+              </span>
+              <button
+                type="button"
+                onClick={() => setZoom((z) => clampZoom(z + ZOOM_STEP))}
+                disabled={zoom >= MAX_ZOOM}
+                aria-label="Zoom in"
+                className="w-9 h-9 rounded-full text-white flex items-center justify-center hover:bg-white/20 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+              >
+                <ZoomIn className="w-4 h-4" />
+              </button>
+              <button
+                type="button"
+                onClick={resetZoom}
+                disabled={zoom === MIN_ZOOM}
+                aria-label="Reset zoom"
+                className="w-9 h-9 rounded-full text-white flex items-center justify-center hover:bg-white/20 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+              >
+                <RotateCcw className="w-4 h-4" />
+              </button>
+            </div>
 
             <motion.figure
               initial={{ opacity: 0, scale: 0.92 }}
@@ -118,17 +172,39 @@ export default function Certificates() {
               exit={{ opacity: 0, scale: 0.92 }}
               transition={{ duration: 0.25, ease: "easeOut" }}
               onClick={(e) => e.stopPropagation()}
+              onWheel={(e) => {
+                setZoom((z) => clampZoom(z + (e.deltaY < 0 ? ZOOM_STEP : -ZOOM_STEP)));
+              }}
               className="relative max-w-4xl w-full flex flex-col items-center"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={active.file}
-                alt={active.title}
-                className="max-h-[80vh] w-auto max-w-full rounded-lg shadow-2xl object-contain bg-white"
-              />
+              <div className="overflow-hidden rounded-lg max-h-[80vh] w-full flex items-center justify-center">
+                <motion.img
+                  src={active.file}
+                  alt={active.title}
+                  draggable={false}
+                  drag={zoom > 1}
+                  dragConstraints={{
+                    left: -((zoom - 1) * 400),
+                    right: (zoom - 1) * 400,
+                    top: -((zoom - 1) * 300),
+                    bottom: (zoom - 1) * 300,
+                  }}
+                  dragElastic={0.05}
+                  onDoubleClick={() =>
+                    setZoom((z) => (z > 1 ? 1 : 2))
+                  }
+                  animate={{ scale: zoom }}
+                  transition={{ type: "spring", stiffness: 260, damping: 26 }}
+                  style={{ cursor: zoom > 1 ? "grab" : "zoom-in" }}
+                  className="max-h-[80vh] w-auto max-w-full select-none rounded-lg shadow-2xl object-contain bg-white"
+                />
+              </div>
               <figcaption className="mt-4 text-center text-white">
                 <p className="font-bold text-base">{active.title}</p>
                 <p className="text-xs text-white/70">{active.desc}</p>
+                <p className="mt-1 text-[11px] text-white/40">
+                  Scroll or use + / − to zoom · double-click to toggle · drag to pan
+                </p>
               </figcaption>
             </motion.figure>
           </motion.div>
