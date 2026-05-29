@@ -8,7 +8,7 @@ export default function Testimonials() {
     <section className="py-16 md:py-24 bg-foreground text-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 max-w-[1520px]">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -16,8 +16,10 @@ export default function Testimonials() {
             className="flex-1 w-full"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading mb-5 md:mb-6">
-              If you are not monitoring, <br className="hidden sm:block" />
-              <span className="text-gradient">you are not managing.</span>
+              Monitor Every Guard.
+              <br className="hidden sm:block" />
+              <span className="text-gradient">Manage Every Site.
+              </span>
             </h2>
             <p className="text-base sm:text-lg text-slate-300 mb-5 md:mb-6 leading-relaxed">
               Guard Monitor & Manage (M&M App) sdn bhd is a mobile-based guard patrolling & monitoring system designed to replace physical patrol devices and manual processes. A modern guard monitoring and workforce management platform built for security companies and property management.
@@ -31,7 +33,7 @@ export default function Testimonials() {
           </motion.div>
 
           {/* Code-built Dashboard Mockup */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}

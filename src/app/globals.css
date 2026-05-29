@@ -77,6 +77,14 @@
     background-image: linear-gradient(to right, #2563eb, #4f46e5);
   }
 
+  /* Hero headline gradient — bright cyan→blue→indigo for the dark hero */
+  .hero-text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(110deg, #22d3ee, #3b82f6, #6366f1);
+  }
+
   /* Continuously flowing gradient text for the hero headline */
   .text-gradient-animated {
     background-clip: text;
@@ -140,6 +148,25 @@
       content: none;
     }
   }
+}
+
+/* Continuous infinite marquee (stats slider) — top-level so it always ships */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-scroll 40s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track:hover .animate-marquee {
+  animation-play-state: paused;
 }
 
 /* Lenis Recommended CSS */

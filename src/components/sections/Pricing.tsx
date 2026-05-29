@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import { Check, Sparkles, Zap, Shield } from "lucide-react";
 
 const FEATURES = [
-  "Full Access to All Features",
-  "Unlimited Report",
-  "Real time tracking – Alerts",
-  "Multi Location Management",
-  "One Stop Solution",
+  "Without Device",
+  "20 Checkpoints",
+  "Unlimited Reports",
+  "SOS",
+  "Live GPS",
 ];
 
 const HIGHLIGHTS = [
@@ -95,7 +95,7 @@ export default function Pricing() {
                 <span className="text-4xl sm:text-5xl font-bold font-heading text-foreground">RM 80</span>
                 <span className="text-lg sm:text-xl text-muted-foreground">/ Month</span>
               </div>
-              <p className="text-sm text-muted-foreground mt-2">Per guard, billed monthly. Volume discounts available.</p>
+              <p className="text-sm text-muted-foreground mt-2">Patrolling Guard, billed monthly. Volume discounts available.</p>
             </div>
 
             {/* Divider */}

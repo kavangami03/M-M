@@ -16,11 +16,11 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Hero />
       <TrustStats />
-      <About />
       <Testimonials />
+      <About />
       <Features />
-      <DashboardShowcase />
       <MobileAppShowcase />
+      <DashboardShowcase />
       <HowItWorks />
       <Pricing />
       <Certificates />

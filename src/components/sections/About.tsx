@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function About() {
   const scrollToFeatures = () => {
-    const element = document.querySelector("#dashboard");
+    const element = document.querySelector("#features");
     if (element) {
       // @ts-ignore
       if (window.lenis) {
@@ -97,15 +97,15 @@ export default function About() {
               </div>
 
               {/* Footer stats */}
-              <div className="mt-5 md:mt-6 pt-4 border-t border-border flex justify-between text-center">
+              <div className="mt-5 md:mt-6 pt-4 border-t border-border flex justify-between text-center gap-2">
                 {[
-                  { val: "99.9%", label: "Uptime" },
-                  { val: "<1s", label: "Sync Speed" },
-                  { val: "256-bit", label: "Encryption" },
+                  { val: "Always On", label: "99.9% Reliable" },
+                  { val: "Instant", label: "Live Updates" },
+                  { val: "Ultra-Safe", label: "Bank-Grade Security" },
                 ].map((s, i) => (
-                  <div key={i}>
+                  <div key={i} className="flex-1 px-1">
                     <p className="text-sm md:text-base font-bold text-foreground">{s.val}</p>
-                    <p className="text-[10px] md:text-xs text-muted-foreground">{s.label}</p>
+                    <p className="text-[10px] md:text-xs text-muted-foreground mt-0.5">{s.label}</p>
                   </div>
                 ))}
               </div>

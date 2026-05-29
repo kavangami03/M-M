@@ -51,14 +51,17 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md border-b border-slate-200 ${isScrolled ? "py-3 shadow-sm" : "py-5"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? "py-3 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm"
+          : "py-5 bg-transparent border-b border-transparent"
+      }`}
     >
       <div className="container mx-auto px-6 max-w-[1520px] flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center group">
           <div className="relative w-32 h-14 md:w-40 md:h-16 group-hover:scale-105 transition-transform">
-            <Image src="/logo.svg" alt="Monitor & Manage Logo" fill className="object-contain object-left" />
+            <Image src="/logo.svg" alt="Monitor & Manage Logo" fill className={`object-contain object-left transition-all duration-500 ${isScrolled ? "" : "brightness-0 invert"}`} />
           </div>
         </Link>
 
@@ -69,7 +72,7 @@ export default function Header() {
               key={link.name}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              className={`text-sm font-medium transition-colors ${isScrolled ? "text-muted-foreground hover:text-primary" : "text-white/70 hover:text-white"}`}
             >
               {link.name}
             </Link>
@@ -81,16 +84,16 @@ export default function Header() {
           <Link
             href="/#contact"
             onClick={(e) => handleNavClick(e, "/#contact")}
-            className="text-sm font-medium hover:text-primary transition-colors mr-2"
+            className={`text-sm font-medium transition-colors mr-2 ${isScrolled ? "hover:text-primary" : "text-white/70 hover:text-white"}`}
           >
             Contact
           </Link>
           <div className="flex items-center gap-2">
-            <a href="https://play.google.com/store/apps/details?id=com.mandm.client&pli=1" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary hover:bg-slate-200 transition-colors text-foreground">
-              <FaGooglePlay className="w-4 h-4 text-primary" />
+            <a href="https://play.google.com/store/apps/details?id=com.mandm.client&pli=1" target="_blank" rel="noopener noreferrer" className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors ${isScrolled ? "bg-secondary hover:bg-slate-200 text-foreground" : "bg-white/10 hover:bg-white/20 text-white"}`}>
+              <FaGooglePlay className={`w-4 h-4 ${isScrolled ? "text-primary" : "text-white"}`} />
             </a>
-            <a href="https://apps.apple.com/us/app/m-m-property-app/id1659629088" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full bg-secondary hover:bg-slate-200 transition-colors text-foreground">
-              <FaApple className="w-5 h-5" />
+            <a href="https://apps.apple.com/us/app/m-m-property-app/id1659629088" target="_blank" rel="noopener noreferrer" className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors ${isScrolled ? "bg-secondary hover:bg-slate-200 text-foreground" : "bg-white/10 hover:bg-white/20 text-white"}`}>
+              <FaApple className={`w-5 h-5 ${isScrolled ? "" : "text-white"}`} />
             </a>
           </div>
           <a
@@ -99,13 +102,13 @@ export default function Header() {
             rel="noopener noreferrer"
             className="bg-primary hover:bg-accent text-white px-5 py-2.5 rounded-full text-sm font-medium shadow-premium transition-all hover:-translate-y-0.5 inline-block"
           >
-            Sign Up
+            Log In
           </a>
         </div>
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden text-foreground p-2"
+          className={`lg:hidden p-2 transition-colors ${isScrolled ? "text-foreground" : "text-white"}`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X /> : <Menu />}
@@ -159,7 +162,7 @@ export default function Header() {
             onClick={() => setMobileMenuOpen(false)}
             className="w-full bg-primary text-white py-3 rounded-lg font-medium mt-2 text-center block"
           >
-            Sign Up
+            Log In
           </a>
         </motion.div>
       )}
