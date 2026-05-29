@@ -3,6 +3,23 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 
+const lineVariants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.08, delayChildren: 0.15 },
+  },
+};
+
+const wordVariants = {
+  hidden: { opacity: 0, y: "0.5em", filter: "blur(8px)" },
+  visible: {
+    opacity: 1,
+    y: "0em",
+    filter: "blur(0px)",
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
+  },
+};
+
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen pt-28 sm:pt-36 lg:pt-48 pb-16 md:pb-20 overflow-hidden flex flex-col justify-center bg-background">
@@ -17,13 +34,66 @@ export default function Hero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="max-w-4xl mx-auto"
         >
-          <span className="inline-block py-1.5 px-4 rounded-full bg-secondary text-primary font-semibold text-xs sm:text-sm mb-4 sm:mb-6 border border-primary/10">
+          <motion.span
+            initial={{ opacity: 0, y: -10, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-secondary text-primary font-semibold text-xs sm:text-sm mb-4 sm:mb-6 border border-primary/10 overflow-hidden"
+          >
+            <motion.span
+              animate={{ scale: [1, 1.4, 1], opacity: [1, 0.4, 1] }}
+              transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+              className="inline-block w-2 h-2 rounded-full bg-primary"
+            />
             Next-Gen Security Operations
-          </span>
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-foreground leading-[1.1] mb-5 md:mb-6 tracking-tight">
-            Monitor Every Guard. <br className="hidden md:block" />
-            <span className="text-gradient">Manage Every Site.</span>
+          </motion.span>
+
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold font-heading leading-[1.1] mb-5 md:mb-6 tracking-tight">
+            <motion.span
+              aria-hidden
+              variants={lineVariants}
+              initial="hidden"
+              animate="visible"
+              className="block text-foreground"
+            >
+              {"Monitor Every Guard.".split(" ").map((word, i) => (
+                <motion.span
+                  key={`l1-${i}`}
+                  variants={wordVariants}
+                  className="inline-block mr-[0.25em] last:mr-0"
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </motion.span>
+            <motion.span
+              aria-hidden
+              variants={lineVariants}
+              initial="hidden"
+              animate="visible"
+              className="text-shine block text-gradient-animated"
+            >
+              {"Manage Every Site.".split(" ").map((word, i) => (
+                <motion.span
+                  key={`l2-${i}`}
+                  variants={wordVariants}
+                  className="inline-block mr-[0.25em] last:mr-0"
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </motion.span>
+            {/* Accessible, non-animated version for screen readers */}
+            <span className="sr-only">Monitor Every Guard. Manage Every Site.</span>
           </h1>
+
+          {/* Animated accent underline */}
+          <motion.div
+            initial={{ scaleX: 0, opacity: 0 }}
+            animate={{ scaleX: 1, opacity: 1 }}
+            transition={{ duration: 0.9, delay: 1, ease: "easeOut" }}
+            className="mx-auto mb-6 md:mb-8 h-1 w-24 sm:w-32 origin-center rounded-full bg-gradient-to-r from-primary via-accent to-primary"
+          />
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
             M&M App is a mobile-based guard patrolling & monitoring system that replaces physical patrol devices and manual processes. Every guard activity is recorded in real time and turned into instant, document-ready reports &mdash; making security operations smarter, faster, and more cost-effective.
           </p>

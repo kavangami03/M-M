@@ -76,6 +76,70 @@
     -webkit-text-fill-color: transparent;
     background-image: linear-gradient(to right, #2563eb, #4f46e5);
   }
+
+  /* Continuously flowing gradient text for the hero headline */
+  .text-gradient-animated {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(
+      110deg,
+      #2563eb 0%,
+      #4f46e5 25%,
+      #3b82f6 50%,
+      #4f46e5 75%,
+      #2563eb 100%
+    );
+    background-size: 250% auto;
+    animation: gradient-flow 6s linear infinite;
+  }
+
+  @keyframes gradient-flow {
+    to {
+      background-position: -250% center;
+    }
+  }
+
+  /* Light sweep / shine that travels across the headline once on load */
+  .text-shine {
+    position: relative;
+  }
+  .text-shine::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      110deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.85) 50%,
+      transparent 70%
+    );
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    animation: text-shine-sweep 2.6s ease-in-out 0.9s infinite;
+  }
+
+  @keyframes text-shine-sweep {
+    0% {
+      background-position: 150% 0;
+    }
+    40%,
+    100% {
+      background-position: -150% 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .text-gradient-animated {
+      animation: none;
+    }
+    .text-shine::after {
+      animation: none;
+      content: none;
+    }
+  }
 }
 
 /* Lenis Recommended CSS */
