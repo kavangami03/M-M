@@ -95,7 +95,7 @@ export default function Hero() {
                 <motion.span
                   key={`l2-${i}`}
                   variants={wordVariants}
-                  className="hero-text-gradient inline-block mr-[0.25em] last:mr-0"
+                  className="hero-text-gradient inline-block mr-[0.25em] last:mr-0 leading-[120%]"
                 >
                   {word}
                 </motion.span>

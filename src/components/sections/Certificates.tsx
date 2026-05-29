@@ -1,19 +1,20 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Copyright, Cpu } from "lucide-react";
+import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Copyright, Cpu, X } from "lucide-react";
 
 const CERTIFICATES = [
-  { 
-    icon: Cpu, 
-    title: "MySTI Certified", 
+  {
+    icon: Cpu,
+    title: "MySTI Certified",
     desc: "Malaysia Scientific & Technology Innovation",
     file: "/mysti-certificate.png",
     badge: "Official Certificate"
   },
-  { 
-    icon: Copyright, 
-    title: "Copyright Registered", 
+  {
+    icon: Copyright,
+    title: "Copyright Registered",
     desc: "Voluntary Copyright Notification (CRLY2023W00694)",
     file: "/copyright-certificate-full.jpg",
     badge: "Voluntary Notification"
@@ -21,6 +22,22 @@ const CERTIFICATES = [
 ];
 
 export default function Certificates() {
+  const [active, setActive] = useState<(typeof CERTIFICATES)[number] | null>(null);
+
+  // Lock body scroll + close on Escape while the lightbox is open
+  useEffect(() => {
+    if (!active) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActive(null);
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [active]);
+
   return (
     <section className="py-20 bg-secondary/30 border-y border-border">
       <div className="container mx-auto px-6 max-w-[1520px]">
@@ -45,11 +62,10 @@ export default function Certificates() {
                 transition={{ duration: 0.5, delay: i * 0.08 }}
                 className="relative h-full"
               >
-                <a
-                  href={cert.file}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="h-full bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-border flex flex-col items-center justify-between text-center group hover:shadow-premium hover:-translate-y-1 hover:border-primary/20 transition-all duration-300 cursor-pointer relative min-h-[220px]"
+                <button
+                  type="button"
+                  onClick={() => setActive(cert)}
+                  className="w-full h-full bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-border flex flex-col items-center justify-between text-center group hover:shadow-premium hover:-translate-y-1 hover:border-primary/20 transition-all duration-300 cursor-pointer relative min-h-[220px]"
                 >
                   {cert.badge && (
                     <div className="absolute top-3 right-3 text-[9px] font-bold bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
@@ -67,12 +83,57 @@ export default function Certificates() {
                   <span className="text-xs font-bold text-primary group-hover:underline flex items-center gap-1">
                     View Certificate →
                   </span>
-                </a>
+                </button>
               </motion.div>
             );
           })}
         </div>
       </div>
+
+      <AnimatePresence>
+        {active && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setActive(null)}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-black/80 backdrop-blur-sm"
+            role="dialog"
+            aria-modal="true"
+            aria-label={active.title}
+          >
+            <button
+              type="button"
+              onClick={() => setActive(null)}
+              aria-label="Close"
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <motion.figure
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.92 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-4xl w-full flex flex-col items-center"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={active.file}
+                alt={active.title}
+                className="max-h-[80vh] w-auto max-w-full rounded-lg shadow-2xl object-contain bg-white"
+              />
+              <figcaption className="mt-4 text-center text-white">
+                <p className="font-bold text-base">{active.title}</p>
+                <p className="text-xs text-white/70">{active.desc}</p>
+              </figcaption>
+            </motion.figure>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
