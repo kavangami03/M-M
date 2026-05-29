@@ -202,13 +202,13 @@ export default function Contact() {
                            </div>
                            <div>
                               <h4 className="font-bold text-foreground text-base sm:text-lg mb-1">Headquarters</h4>
-                              <a 
-                                 href="https://maps.google.com/?q=07-01,Plaza Kiara, Jalan Semenyih, 43500 Selangor" 
-                                 target="_blank" 
+                              <a
+                                 href="https://maps.google.com/?q=D1-2-2, Jalan Dutamas 1, Taman Dutamas, Balakong, 43200 Cheras, Selangor"
+                                 target="_blank"
                                  rel="noopener noreferrer"
                                  className="text-muted-foreground text-sm sm:text-base hover:text-primary transition-colors block leading-relaxed"
                               >
-                                 07-01, Plaza Kiara, Jalan Semenyih,<br />43500 Selangor
+                                 D1-2-2, Jalan Dutamas 1, Taman Dutamas,<br />Balakong, 43200 Cheras, Selangor
                               </a>
                            </div>
                         </div>
@@ -219,11 +219,11 @@ export default function Contact() {
                            </div>
                            <div>
                               <h4 className="font-bold text-foreground text-base sm:text-lg mb-1">Phone</h4>
-                              <a 
-                                 href="tel:0109872885" 
+                              <a
+                                 href="tel:0390817774"
                                  className="text-muted-foreground text-sm sm:text-base hover:text-primary transition-colors block"
                               >
-                                 0109872885
+                                 03-90817774
                               </a>
                            </div>
                         </div>
@@ -234,11 +234,11 @@ export default function Contact() {
                            </div>
                            <div>
                               <h4 className="font-bold text-foreground text-base sm:text-lg mb-1">Email</h4>
-                              <a 
-                                 href="mailto:admin@monitormanage.com.my" 
+                              <a
+                                 href="mailto:inquiry@monitormanage.com.my"
                                  className="text-muted-foreground text-sm sm:text-base hover:text-primary transition-colors block"
                               >
-                                 admin@monitormanage.com.my
+                                 inquiry@monitormanage.com.my
                               </a>
                            </div>
                         </div>
@@ -381,7 +381,7 @@ export default function Contact() {
                                     onChange={(e) => setCompanyAddress(e.target.value)}
                                     onBlur={() => handleBlur("companyAddress")}
                                     className={`${getInputClasses("companyAddress")} resize-none h-20`}
-                                    placeholder="e.g. 07-01, Plaza Kiara, Jalan Semenyih, 43500 Selangor"
+                                    placeholder="e.g. D1-2-2, Jalan Dutamas 1, Taman Dutamas, Balakong, 43200 Cheras, Selangor"
                                  />
                               </div>
                               {touched.companyAddress && errors.companyAddress && (
