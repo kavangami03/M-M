@@ -71,13 +71,13 @@ export default function Hero() {
               variants={lineVariants}
               initial="hidden"
               animate="visible"
-              className="text-shine block text-gradient-animated"
+              className="block"
             >
               {"Manage Every Site.".split(" ").map((word, i) => (
                 <motion.span
                   key={`l2-${i}`}
                   variants={wordVariants}
-                  className="inline-block mr-[0.25em] last:mr-0"
+                  className="text-shine text-gradient-animated inline-block mr-[0.25em] last:mr-0"
                 >
                   {word}
                 </motion.span>
