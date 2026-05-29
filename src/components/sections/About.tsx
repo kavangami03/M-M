@@ -1,19 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle2, Smartphone, Cloud, Monitor } from "lucide-react";
 import Image from "next/image";
-
-const FEATURES = [
-  "No expensive devices and Zero maintenance costs.",
-  "Real-Time Guard Tracking & notifications",
-  "Automated Patrol Monitoring",
-  "Instant Incident Reporting",
-  "Attendance & Clock-In System",
-  "Live Dashboard & Reports",
-  "SOS alerts",
-  "Monitor multiple sites from one centralized platform.",
-];
 
 export default function About() {
   const scrollToFeatures = () => {
@@ -52,17 +40,8 @@ export default function About() {
               Management and guards simply download the app and start operating immediately. Go device-free, reduce unnecessary costs, and manage security operations smarter. Manage guards, patrols, attendance, incidents, reports, and live locations in one powerful real-time system.
             </p>
 
-            <div className="grid grid-cols-1 gap-3 sm:gap-4 mb-8 md:mb-10">
-              {FEATURES.map((feature, i) => (
-                <div key={i} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-foreground font-medium text-sm sm:text-base">{feature}</span>
-                </div>
-              ))}
-            </div>
-
             <div>
-              <button 
+              <button
                 onClick={scrollToFeatures}
                 className="w-full sm:w-auto bg-foreground hover:bg-slate-800 text-white px-6 py-3 rounded-xl font-medium shadow-lg transition-all hover:-translate-y-0.5"
               >
@@ -93,67 +72,27 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Architecture Flow */}
-              <div className="space-y-4 md:space-y-5">
-                {/* Guard Layer */}
-                <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-3 md:p-4 border border-blue-100">
-                  <div className="flex items-center gap-1.5 mb-2">
-                    <Smartphone className="w-3 h-3 md:w-4 md:h-4 text-blue-600" />
-                    <p className="text-[10px] md:text-xs font-bold text-blue-600 uppercase tracking-wider">Guard Mobile App</p>
-                  </div>
-                  <div className="grid grid-cols-3 gap-2">
-                    {["QR Scan", "GPS Track", "SOS Alert"].map((item, i) => (
-                      <div key={i} className="bg-white rounded-lg p-2 text-center shadow-sm border border-blue-50">
-                        <span className="text-[10px] md:text-xs font-medium text-slate-700">{item}</span>
-                      </div>
-                    ))}
-                  </div>
+              {/* Real product — web portal + mobile app */}
+              <div className="relative pb-6 pl-6">
+                {/* Web portal */}
+                <div className="rounded-xl overflow-hidden border border-border shadow-md">
+                  <Image
+                    src="/web-dashboard.png"
+                    alt="M&M web management portal — guard list"
+                    width={700}
+                    height={409}
+                    className="w-full h-auto"
+                  />
                 </div>
-
-                {/* Arrow */}
-                <div className="flex justify-center">
-                  <div className="flex flex-col items-center gap-0.5">
-                    <motion.div animate={{ y: [0, 4, 0] }} transition={{ repeat: Infinity, duration: 1.5 }} className="w-0.5 h-4 bg-gradient-to-b from-blue-400 to-primary rounded-full" />
-                    <div className="w-2.5 h-2.5 border-r-2 border-b-2 border-primary rotate-45 -mt-1" />
-                  </div>
-                </div>
-
-                {/* Cloud / Processing Layer */}
-                <div className="bg-gradient-to-r from-primary/5 to-accent/5 rounded-xl p-3 md:p-4 border border-primary/10">
-                  <div className="flex items-center gap-1.5 mb-2">
-                    <Cloud className="w-3 h-3 md:w-4 md:h-4 text-primary" />
-                    <p className="text-[10px] md:text-xs font-bold text-primary uppercase tracking-wider">Cloud Processing</p>
-                  </div>
-                  <div className="grid grid-cols-2 gap-2">
-                    {["Real-Time Sync", "Data Analysis", "Report Generation", "Alert Engine"].map((item, i) => (
-                      <div key={i} className="bg-white rounded-lg p-2 text-center shadow-sm border border-primary/5">
-                        <span className="text-[10px] md:text-xs font-medium text-slate-700">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Arrow */}
-                <div className="flex justify-center">
-                  <div className="flex flex-col items-center gap-0.5">
-                    <motion.div animate={{ y: [0, 4, 0] }} transition={{ repeat: Infinity, duration: 1.5, delay: 0.5 }} className="w-0.5 h-4 bg-gradient-to-b from-primary to-green-500 rounded-full" />
-                    <div className="w-2.5 h-2.5 border-r-2 border-b-2 border-green-500 rotate-45 -mt-1" />
-                  </div>
-                </div>
-
-                {/* Dashboard Layer */}
-                <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl p-3 md:p-4 border border-green-100">
-                  <div className="flex items-center gap-1.5 mb-2">
-                    <Monitor className="w-3 h-3 md:w-4 md:h-4 text-green-600" />
-                    <p className="text-[10px] md:text-xs font-bold text-green-600 uppercase tracking-wider">Management Dashboard</p>
-                  </div>
-                  <div className="grid grid-cols-3 gap-2">
-                    {["Live Map", "Reports", "Alerts"].map((item, i) => (
-                      <div key={i} className="bg-white rounded-lg p-2 text-center shadow-sm border border-green-50">
-                        <span className="text-[10px] md:text-xs font-medium text-slate-700">{item}</span>
-                      </div>
-                    ))}
-                  </div>
+                {/* Floating mobile app */}
+                <div className="absolute bottom-0 left-0 w-[26%] max-w-[110px] rounded-[1.1rem] overflow-hidden shadow-2xl border-2 border-white">
+                  <Image
+                    src="/home-screen.png"
+                    alt="M&M guard mobile app — patrolling schedule"
+                    width={1208}
+                    height={2328}
+                    className="w-full h-auto"
+                  />
                 </div>
               </div>
 

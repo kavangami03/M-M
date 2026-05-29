@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Users, Activity, Settings, Map, FileText } from "lucide-react";
 
 const STATS = [
-  { icon: Users, label: "Guards Managed", value: "1000+" },
+  { icon: Users, label: "Guards Supported", value: "1,000+" },
   { icon: Activity, label: "Monitoring", value: "Real-Time" },
   { icon: Settings, label: "Hardware Maintenance", value: "Zero" },
   { icon: Map, label: "Site Management", value: "Multi-Site" },

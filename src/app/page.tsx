@@ -17,13 +17,13 @@ export default function Home() {
       <Hero />
       <TrustStats />
       <About />
+      <Testimonials />
       <Features />
       <DashboardShowcase />
       <MobileAppShowcase />
       <HowItWorks />
       <Pricing />
       <Certificates />
-      <Testimonials />
       <Contact />
       <Footer />
     </div>

@@ -21,11 +21,11 @@ export default function Hero() {
             Next-Gen Security Operations
           </span>
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-foreground leading-[1.1] mb-5 md:mb-6 tracking-tight">
-            If You Are Not Monitoring, <br className="hidden md:block" />
-            <span className="text-gradient">You Are Not Managing.</span>
+            Monitor Every Guard. <br className="hidden md:block" />
+            <span className="text-gradient">Manage Every Site.</span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
-            Guard Monitor & Manage (M&M App) is a real-time mobile-based guard patrolling and workforce management platform built for modern security operations.
+            M&M App is a mobile-based guard patrolling & monitoring system that replaces physical patrol devices and manual processes. Every guard activity is recorded in real time and turned into instant, document-ready reports &mdash; making security operations smarter, faster, and more cost-effective.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <button

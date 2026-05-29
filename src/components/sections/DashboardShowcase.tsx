@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import Image from "next/image";
 
 export default function DashboardShowcase() {
   return (
@@ -55,48 +56,22 @@ export default function DashboardShowcase() {
           </div>
 
           <div className="flex-1 lg:flex-[1.5] w-full">
-            <div className="relative w-full h-[280px] sm:h-[350px] md:h-[500px] lg:h-[600px]">
-               <motion.div 
-                 initial={{ opacity: 0, scale: 0.9, y: 50 }}
-                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                 viewport={{ once: true }}
-                 transition={{ duration: 0.8, ease: "easeOut" }}
-                 className="absolute inset-0 bg-slate-900 border border-slate-700/50 rounded-xl md:rounded-2xl shadow-2xl overflow-hidden flex flex-col z-20"
-               >
-                 <div className="h-10 md:h-12 border-b border-slate-800 bg-slate-950 flex items-center px-4 md:px-6 justify-between">
-                    <div className="flex gap-3 md:gap-4">
-                      <div className="w-16 md:w-24 h-3 md:h-4 bg-slate-800 rounded" />
-                      <div className="w-10 md:w-16 h-3 md:h-4 bg-slate-800 rounded" />
-                    </div>
-                    <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-slate-800" />
-                 </div>
-                 <div className="flex-1 p-3 sm:p-4 md:p-6 flex flex-col gap-4 md:gap-6 bg-slate-900/50">
-                    <div className="flex justify-between items-center">
-                       <div className="w-32 md:w-48 h-6 md:h-8 bg-slate-800 rounded-lg" />
-                       <div className="w-20 md:w-32 h-6 md:h-8 bg-primary rounded-lg" />
-                    </div>
-                    <div className="flex-1 bg-slate-950 rounded-lg md:rounded-xl border border-slate-800 p-3 md:p-4">
-                       <div className="flex gap-2 sm:gap-4 mb-3 md:mb-4 border-b border-slate-800 pb-3 md:pb-4">
-                          <div className="w-1/4 h-3 md:h-4 bg-slate-800 rounded" />
-                          <div className="w-1/4 h-3 md:h-4 bg-slate-800 rounded" />
-                          <div className="w-1/4 h-3 md:h-4 bg-slate-800 rounded" />
-                          <div className="w-1/4 h-3 md:h-4 bg-slate-800 rounded" />
-                       </div>
-                       {[...Array(4)].map((_, i) => (
-                         <div key={i} className="flex gap-2 sm:gap-4 py-2 md:py-3">
-                            <div className="w-1/4 h-3 md:h-4 bg-slate-800/50 rounded" />
-                            <div className="w-1/4 h-3 md:h-4 bg-slate-800/50 rounded" />
-                            <div className="w-1/4 h-3 md:h-4 bg-slate-800/50 rounded" />
-                            <div className="w-1/4 flex gap-1 md:gap-2">
-                               <div className="w-6 md:w-8 h-3 md:h-4 bg-green-500/20 rounded" />
-                               <div className="w-6 md:w-8 h-3 md:h-4 bg-blue-500/20 rounded" />
-                            </div>
-                         </div>
-                       ))}
-                    </div>
-                 </div>
-               </motion.div>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 50 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="relative w-full rounded-xl md:rounded-2xl shadow-2xl overflow-hidden border border-white/10 ring-1 ring-black/5 z-20"
+            >
+              {/* Real web portal screenshot */}
+              <Image
+                src="/web-dashboard.png"
+                alt="M&M Management Web Portal — Guard List"
+                width={700}
+                height={409}
+                className="w-full h-auto"
+              />
+            </motion.div>
           </div>
         </div>
       </div>
