@@ -126,7 +126,7 @@ export default function Contact() {
    };
 
     const getInputClasses = (field: keyof FormErrors) => {
-       const base = "w-full bg-slate-50/50 border rounded-lg sm:rounded-xl pl-10 pr-3 sm:pr-4 py-1.5 sm:py-2 text-xs sm:text-sm focus:outline-none transition-all placeholder:text-slate-400/70";
+       const base = "w-full bg-slate-50/50 border rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none transition-all placeholder:text-slate-400/70";
        if (touched[field] && errors[field]) {
           return `${base} border-red-300 focus:ring-2 focus:ring-red-200 bg-red-50/20`;
        }
@@ -139,7 +139,7 @@ export default function Contact() {
    if (submitted) {
       return (
          <section id="contact" className="py-16 md:py-24 bg-secondary/30 relative">
-            <div className="container mx-auto px-4 sm:px-6 max-w-[1520px] relative z-10">
+            <div className="container mx-auto px-10 sm:px-20 2xl:px-6 max-w-[1520px] relative z-10">
                <motion.div
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -177,7 +177,7 @@ export default function Contact() {
    }
    return (
       <section id="contact" className="py-12 md:py-16 bg-secondary/30 relative">
-         <div className="container mx-auto px-4 sm:px-6 max-w-[1520px] relative z-10">
+         <div className="container mx-auto px-10 sm:px-20 2xl:px-6 max-w-[1520px] relative z-10">
             <SectionHeader
                eyebrow="Get Started"
                title={<>Ready to Upgrade Your <span className="text-gradient">Security Operation?</span></>}

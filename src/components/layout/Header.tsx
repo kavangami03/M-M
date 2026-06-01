@@ -12,7 +12,7 @@ const NAV_LINKS = [
   { name: "Home", href: "/#home" },
   { name: "About", href: "/#about" },
   { name: "Features", href: "/#features" },
-  { name: "Dashboard", href: "/#dashboard" },
+  // { name: "Dashboard", href: "/#dashboard" },
   { name: "Mobile App", href: "/#mobile-app" },
   { name: "Pricing", href: "/#pricing" },
 
@@ -21,7 +21,10 @@ const NAV_LINKS = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
   const pathname = usePathname();
+
+  const isHome = pathname === "/";
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (pathname === "/" && href.startsWith("/#")) {
@@ -29,10 +32,11 @@ export default function Header() {
       const targetId = href.replace("/", "");
       const element = document.querySelector(targetId);
       if (element) {
+        setActiveSection(targetId.replace("#", ""));
         // @ts-ignore
         if (window.lenis) {
           // @ts-ignore
-          window.lenis.scrollTo(element, { offset: -100, duration: 1.2 });
+          window.lenis.scrollTo(element, { offset: -80, duration: 1.2 });
         } else {
           element.scrollIntoView({ behavior: "smooth" });
         }
@@ -42,12 +46,40 @@ export default function Header() {
   };
 
   useEffect(() => {
+    const sectionIds = [
+      ...NAV_LINKS.map((l) => l.href.replace("/#", "")),
+      "contact",
+    ];
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      if (!isHome) return;
+
+      const offset = 140; // header height + breathing room
+      let current = sectionIds[0];
+      let closestTop = -Infinity;
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const top = el.getBoundingClientRect().top;
+        // Pick the section whose top has passed the offset line but is closest to it
+        if (top <= offset && top > closestTop) {
+          closestTop = top;
+          current = id;
+        }
+      }
+      // Snap to the last section when scrolled to the very bottom
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2) {
+        current = sectionIds[sectionIds.length - 1];
+      }
+      setActiveSection(current);
     };
-    window.addEventListener("scroll", handleScroll);
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHome]);
 
   return (
     <header
@@ -65,16 +97,26 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="text-sm font-medium transition-colors text-muted-foreground hover:text-primary"
-            >
-              {link.name}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const isActive = isHome && activeSection === link.href.replace("/#", "");
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className={`group relative text-sm font-medium transition-colors ${
+                  isActive ? "text-primary" : "text-muted-foreground hover:text-primary"
+                }`}
+              >
+                {link.name}
+                <span
+                  className={`absolute -bottom-1.5 left-0 h-0.5 rounded-full bg-primary transition-all duration-300 ease-out ${
+                    isActive ? "w-full" : "w-0 group-hover:w-full"
+                  }`}
+                />
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Desktop Actions */}
@@ -82,9 +124,18 @@ export default function Header() {
           <Link
             href="/#contact"
             onClick={(e) => handleNavClick(e, "/#contact")}
-            className="text-sm font-medium transition-colors mr-2 text-muted-foreground hover:text-primary"
+            className={`group relative text-sm font-medium transition-colors mr-2 ${
+              isHome && activeSection === "contact"
+                ? "text-primary"
+                : "text-muted-foreground hover:text-primary"
+            }`}
           >
             Contact
+            <span
+              className={`absolute -bottom-1.5 left-0 h-0.5 rounded-full bg-primary transition-all duration-300 ease-out ${
+                isHome && activeSection === "contact" ? "w-full" : "w-0 group-hover:w-full"
+              }`}
+            />
           </Link>
           <div className="flex items-center gap-2">
             <a href="https://play.google.com/store/apps/details?id=com.mandm.staff" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full transition-colors bg-secondary hover:bg-slate-200 text-foreground">
@@ -121,19 +172,26 @@ export default function Header() {
           exit={{ opacity: 0, y: -20 }}
           className="absolute top-full left-0 right-0 bg-white border-b border-border shadow-lg p-6 flex flex-col gap-4 lg:hidden"
         >
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              onClick={(e) => {
-                setMobileMenuOpen(false);
-                handleNavClick(e, link.href);
-              }}
-              className="text-base font-medium text-foreground py-2 border-b border-secondary"
-            >
-              {link.name}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const isActive = isHome && activeSection === link.href.replace("/#", "");
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                onClick={(e) => {
+                  setMobileMenuOpen(false);
+                  handleNavClick(e, link.href);
+                }}
+                className={`text-base font-medium py-2 border-b border-secondary transition-colors ${
+                  isActive
+                    ? "text-primary border-primary/30 pl-2"
+                    : "text-foreground hover:text-primary"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
           <Link
             href="/#contact"
             onClick={(e) => {

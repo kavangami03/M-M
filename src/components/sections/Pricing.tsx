@@ -26,7 +26,7 @@ export default function Pricing() {
       // @ts-ignore
       if (window.lenis) {
         // @ts-ignore
-        window.lenis.scrollTo(element, { offset: -100, duration: 1.2 });
+        window.lenis.scrollTo(element, { offset: -80, duration: 1.2 });
       } else {
         element.scrollIntoView({ behavior: "smooth" });
       }
@@ -39,7 +39,7 @@ export default function Pricing() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-accent/5 blur-[100px] rounded-full pointer-events-none" />
 
-      <div className="container mx-auto px-4 sm:px-6 max-w-[1520px] relative z-10">
+      <div className="container mx-auto px-10 sm:px-20 2xl:px-6 max-w-[1520px] relative z-10">
         {/* Header */}
         <SectionHeader
           eyebrow="Pricing Plans"

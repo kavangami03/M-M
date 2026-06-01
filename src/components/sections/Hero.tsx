@@ -40,7 +40,7 @@ export default function Hero() {
       <div className="absolute top-1/4 left-1/4 w-[300px] md:w-[600px] h-[300px] md:h-[500px] bg-blue-400/10 blur-[100px] rounded-full pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[250px] md:w-[500px] h-[250px] md:h-[400px] bg-indigo-400/10 blur-[100px] rounded-full pointer-events-none" />
 
-      <div className="container mx-auto px-4 sm:px-6 max-w-[1520px] relative z-10">
+      <div className="container mx-auto px-10 sm:px-20 2xl:px-6 max-w-[1520px] relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
           
           {/* Left Column: Text & CTAs */}
@@ -122,7 +122,7 @@ export default function Hero() {
                     // @ts-ignore
                     if (window.lenis) {
                       // @ts-ignore
-                      window.lenis.scrollTo(element, { offset: -100, duration: 1.2 });
+                      window.lenis.scrollTo(element, { offset: -80, duration: 1.2 });
                     } else {
                       element.scrollIntoView({ behavior: "smooth" });
                     }
@@ -140,7 +140,7 @@ export default function Hero() {
                     // @ts-ignore
                     if (window.lenis) {
                       // @ts-ignore
-                      window.lenis.scrollTo(element, { offset: -100, duration: 1.2 });
+                      window.lenis.scrollTo(element, { offset: -80, duration: 1.2 });
                     } else {
                       element.scrollIntoView({ behavior: "smooth" });
                     }
