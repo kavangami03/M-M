@@ -103,7 +103,7 @@ export default function About() {
                 {[
                   { val: "Always On", label: "99.9% Reliable" },
                   { val: "Instant", label: "Live Updates" },
-                  { val: "Ultra-Safe", label: "Bank-Grade Security" },
+                  { val: "AWS ICloud", label: "Bank-Grade Security" },
                 ].map((s, i) => (
                   <div key={i} className="flex-1 px-1">
                     <p className="text-sm md:text-base font-bold text-foreground">{s.val}</p>

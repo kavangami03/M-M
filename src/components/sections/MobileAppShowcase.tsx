@@ -121,7 +121,7 @@ export default function MobileAppShowcase() {
           className="flex flex-col items-center"
         >
           {/* Capability chips */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 md:mb-10">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             {[
               "Live GPS & Route Monitoring",
               "Instant QR Code Checkpoint Scans",
@@ -143,28 +143,6 @@ export default function MobileAppShowcase() {
                 </span>
               </motion.div>
             ))}
-          </div>
-
-          {/* Download buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <a
-              href="https://play.google.com/store/apps/details?id=com.mandm.staff"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-center gap-3 bg-slate-900 hover:bg-slate-800 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl font-semibold transition-all duration-300 shadow-lg shadow-slate-900/10 hover:shadow-xl hover:shadow-slate-900/15 hover:-translate-y-0.5 text-sm sm:text-base"
-            >
-              <FaGooglePlay className="w-5 h-5 text-green-400 group-hover:scale-110 transition-transform duration-300" />
-              Download for Android
-            </a>
-            <a
-              href="https://apps.apple.com/us/app/m-m-staff-app/id1660700767"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-center gap-3 bg-white border border-slate-200 hover:border-slate-300 text-slate-900 px-6 sm:px-8 py-3.5 sm:py-4 rounded-2xl font-semibold transition-all duration-300 shadow-md shadow-slate-900/5 hover:shadow-lg hover:shadow-slate-900/8 hover:-translate-y-0.5 text-sm sm:text-base"
-            >
-              <FaApple className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
-              iOS App Store
-            </a>
           </div>
         </motion.div>
       </div>

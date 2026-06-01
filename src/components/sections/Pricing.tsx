@@ -109,7 +109,7 @@ export default function Pricing() {
             </button>
 
             <p className="text-center text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4">
-              No credit card required • Setup in under 5 minutes
+              Call us for quotation
             </p>
           </div>
         </motion.div>

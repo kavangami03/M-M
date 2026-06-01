@@ -123,24 +123,6 @@ export default function Footer() {
                   admin@monitormanage.com.my
                 </a>
               </div>
-              {/* Operating Hours */}
-              <div className="pt-4 border-t border-slate-900 mt-4 space-y-2">
-                <div className="text-xs font-bold text-white uppercase tracking-wider">Operating Hours</div>
-                <div className="space-y-1.5 text-xs text-slate-400 font-medium">
-                  <div className="flex justify-between gap-4">
-                    <span>Mon to Fri</span>
-                    <span className="text-slate-300">10:00 AM - 10:00 PM</span>
-                  </div>
-                  <div className="flex justify-between gap-4">
-                    <span>Sat</span>
-                    <span className="text-slate-300">10:00 AM - 02:00 PM</span>
-                  </div>
-                  <div className="flex justify-between gap-4">
-                    <span>Sunday / Public Holiday</span>
-                    <span className="text-rose-400 font-semibold uppercase">OFF</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
