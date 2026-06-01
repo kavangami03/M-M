@@ -60,11 +60,6 @@ function StatCard({ stat, index }: { stat: (typeof STATS)[number]; index: number
           {stat.label}
         </div>
       </div>
-
-      {/* Large ghost index watermark */}
-      <div className="absolute top-1/2 right-4 -translate-y-1/2 text-[100px] md:text-[120px] font-black font-heading text-white/[0.04] group-hover:text-white/[0.07] leading-none pointer-events-none select-none transition-all duration-700">
-        {String(index + 1).padStart(2, "0")}
-      </div>
     </article>
   );
 }
