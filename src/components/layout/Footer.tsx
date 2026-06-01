@@ -126,7 +126,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
+{/* Git */}
         <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
           <p>&copy; {new Date().getFullYear()} Monitor & Manage. All rights reserved.</p>
           <p>
