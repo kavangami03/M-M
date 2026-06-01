@@ -41,14 +41,14 @@ export default function Footer() {
               The next-generation security operations platform. Guard monitoring, attendance, and reporting all in one place.
             </p>
             <div className="flex gap-3">
-              <a href="https://play.google.com/store/apps/details?id=com.mandm.client&pli=1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-lg border border-slate-800 transition-colors w-full sm:w-auto inline-flex">
+              <a href="https://play.google.com/store/apps/details?id=com.mandm.staff" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-lg border border-slate-800 transition-colors w-full sm:w-auto inline-flex">
                 <FaGooglePlay className="w-4 h-4 text-green-500" />
                 <div className="text-left">
                   <div className="text-[9px] leading-none text-slate-400">GET IT ON</div>
                   <div className="text-xs font-semibold leading-tight">Google Play</div>
                 </div>
               </a>
-              <a href="https://apps.apple.com/us/app/m-m-property-app/id1659629088" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-lg border border-slate-800 transition-colors w-full sm:w-auto inline-flex">
+              <a href="https://apps.apple.com/us/app/m-m-staff-app/id1660700767" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-lg border border-slate-800 transition-colors w-full sm:w-auto inline-flex">
                 <FaApple className="w-4 h-4" />
                 <div className="text-left">
                   <div className="text-[9px] leading-none text-slate-400">Download on the</div>
@@ -122,6 +122,24 @@ export default function Footer() {
                 >
                   admin@monitormanage.com.my
                 </a>
+              </div>
+              {/* Operating Hours */}
+              <div className="pt-4 border-t border-slate-900 mt-4 space-y-2">
+                <div className="text-xs font-bold text-white uppercase tracking-wider">Operating Hours</div>
+                <div className="space-y-1.5 text-xs text-slate-400 font-medium">
+                  <div className="flex justify-between gap-4">
+                    <span>Mon to Fri</span>
+                    <span className="text-slate-300">10:00 AM - 10:00 PM</span>
+                  </div>
+                  <div className="flex justify-between gap-4">
+                    <span>Sat</span>
+                    <span className="text-slate-300">10:00 AM - 02:00 PM</span>
+                  </div>
+                  <div className="flex justify-between gap-4">
+                    <span>Sunday / Public Holiday</span>
+                    <span className="text-rose-400 font-semibold uppercase">OFF</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

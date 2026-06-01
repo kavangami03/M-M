@@ -87,10 +87,10 @@ export default function Header() {
             Contact
           </Link>
           <div className="flex items-center gap-2">
-            <a href="https://play.google.com/store/apps/details?id=com.mandm.client&pli=1" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full transition-colors bg-secondary hover:bg-slate-200 text-foreground">
+            <a href="https://play.google.com/store/apps/details?id=com.mandm.staff" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full transition-colors bg-secondary hover:bg-slate-200 text-foreground">
               <FaGooglePlay className="w-4 h-4 text-primary" />
             </a>
-            <a href="https://apps.apple.com/us/app/m-m-property-app/id1659629088" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full transition-colors bg-secondary hover:bg-slate-200 text-foreground">
+            <a href="https://apps.apple.com/us/app/m-m-staff-app/id1660700767" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full transition-colors bg-secondary hover:bg-slate-200 text-foreground">
               <FaApple className="w-5 h-5 text-foreground" />
             </a>
           </div>
@@ -146,10 +146,10 @@ export default function Header() {
           </Link>
 
           <div className="flex gap-4 mt-4">
-            <a href="https://play.google.com/store/apps/details?id=com.mandm.client&pli=1" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg bg-secondary text-foreground font-medium">
+            <a href="https://play.google.com/store/apps/details?id=com.mandm.staff" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg bg-secondary text-foreground font-medium">
               <FaGooglePlay className="w-4 h-4 text-primary" /> Play Store
             </a>
-            <a href="https://apps.apple.com/us/app/m-m-property-app/id1659629088" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg bg-secondary text-foreground font-medium">
+            <a href="https://apps.apple.com/us/app/m-m-staff-app/id1660700767" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg bg-secondary text-foreground font-medium">
               <FaApple className="w-5 h-5" /> App Store
             </a>
           </div>
