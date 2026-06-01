@@ -8,17 +8,18 @@ import {
   Palmtree,
   Home,
   Store,
+  Building,
   Building2,
   GraduationCap,
-  Factory,
-  Settings,
-  HardHat,
+  Container,
+  Cog,
+  Pickaxe,
   Fuel,
   Construction,
   ShoppingBag,
   Dumbbell,
   HeartPulse,
-  Package,
+  Boxes,
 } from "lucide-react";
 
 // Columns structure where each column contains 3-4 staggered items vertically
@@ -35,7 +36,7 @@ const COLUMNS = [
       },
       {
         label: "Mining sites",
-        icon: HardHat,
+        icon: Pickaxe,
         bgClass: "bg-neutral-900 border-neutral-700/60 text-white",
         glowColor: "rgba(38,38,38,0.55)",
         xClass: "-translate-x-6 sm:-translate-x-8",
@@ -68,7 +69,7 @@ const COLUMNS = [
       },
       {
         label: "Wholesale Store",
-        icon: Package,
+        icon: Boxes,
         bgClass: "bg-white border-slate-200/40 text-slate-800",
         glowColor: "rgba(255,255,255,0.35)",
         xClass: "-translate-x-4",
@@ -113,7 +114,7 @@ const COLUMNS = [
       },
       {
         label: "Manufacturing companies",
-        icon: Settings,
+        icon: Cog,
         bgClass: "bg-white border-slate-200/40 text-slate-800",
         glowColor: "rgba(255,255,255,0.35)",
         xClass: "translate-x-6 sm:translate-x-8",
@@ -127,7 +128,7 @@ const COLUMNS = [
       },
       {
         label: "Industrial companies",
-        icon: Factory,
+        icon: Container,
         bgClass: "bg-white border-slate-200/40 text-slate-800",
         glowColor: "rgba(255,255,255,0.35)",
         xClass: "translate-x-4 sm:translate-x-6",
@@ -146,7 +147,7 @@ const COLUMNS = [
       },
       {
         label: "Office premises",
-        icon: Building2,
+        icon: Building,
         bgClass: "bg-slate-500 border-slate-400/40 text-white",
         glowColor: "rgba(100,116,139,0.55)",
         xClass: "-translate-x-4 sm:-translate-x-6",
@@ -231,14 +232,14 @@ const COLUMNS = [
       },
       {
         label: "Office premises",
-        icon: Building2,
+        icon: Building,
         bgClass: "bg-slate-500 border-slate-400/40 text-white",
         glowColor: "rgba(100,116,139,0.55)",
         xClass: "translate-x-6",
       },
       {
         label: "Industrial companies",
-        icon: Factory,
+        icon: Container,
         bgClass: "bg-white border-slate-200/40 text-slate-800",
         glowColor: "rgba(255,255,255,0.35)",
         xClass: "-translate-x-2 sm:-translate-x-4",

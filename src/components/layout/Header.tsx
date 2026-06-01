@@ -87,7 +87,7 @@ export default function Header() {
         isScrolled ? "py-3" : "py-4 md:py-5"
       }`}
     >
-      <div className="container mx-auto px-6 max-w-[1520px] flex items-center justify-between">
+      <div className="container mx-auto px-6 max-w-380 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center group">
           <div className="relative w-32 h-14 md:w-40 md:h-16 group-hover:scale-105 transition-transform">
