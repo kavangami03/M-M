@@ -20,7 +20,7 @@ const CERTIFICATES = [
   },
   {
     icon: Copyright,
-    title: "Copyright Registered",
+    title: "MyIpo Registered",
     desc: "Voluntary Copyright Notification (CRLY2023W00694)",
     file: "/copyright-certificate-full.png",
     badge: "Voluntary Notification"

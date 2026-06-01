@@ -74,9 +74,7 @@ export default function Pricing() {
               <div className="flex items-baseline gap-2 mt-1.5">
                 <span className="text-4xl sm:text-5xl font-bold font-heading text-foreground">RM 80</span>
                 <span className="text-lg sm:text-xl text-muted-foreground">/ Month</span>
-              </div>
-              <p className="text-sm text-muted-foreground mt-2">Patrolling Guard, billed monthly. Volume discounts available.</p>
-            </div>
+              </div>            </div>
 
             {/* Divider */}
             <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-6 md:mb-8" />

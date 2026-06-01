@@ -10,7 +10,7 @@ const STATS = [
   { icon: Radar, kicker: "Tracking", label: "Live Monitoring", value: "Real-Time", image: "/stat-tracking.png", color: "from-emerald-600 to-emerald-400" },
   { icon: MonitorSmartphone, kicker: "Infrastructure", label: "Hardware Maintenance", value: "Zero", image: "/stat-devices.png", color: "from-violet-600 to-violet-400" },
   { icon: Building2, kicker: "Coverage", label: "Site Management", value: "Multi-Site", image: "/stat-sites.png", color: "from-amber-600 to-amber-400" },
-  { icon: FileCheck, kicker: "Reporting", label: "Field Reports", value: "Instant", image: "/stat-reports.png", color: "from-rose-600 to-rose-400" },
+  { icon: FileCheck, kicker: "Reporting", label: "Field Audit Reports", value: "Instant", image: "/stat-reports.png", color: "from-rose-600 to-rose-400" },
 ];
 
 function StatCard({ stat, index }: { stat: (typeof STATS)[number]; index: number }) {
@@ -77,10 +77,10 @@ export default function TrustStats() {
 
       <div className="relative z-10">
         {/* Compact header — unified SectionHeader */}
-        <div className="container mx-auto px-4 sm:px-6 max-w-[1520px]">
+        <div className="container mx-auto px-4 sm:px-6 max-w-[1520px]  capitalize">
           <SectionHeader
             eyebrow="Trusted at scale"
-            title="Built for security teams of every size."
+            title="Built for security operational teams of every size."
             align="center"
           />
         </div>

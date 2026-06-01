@@ -141,7 +141,6 @@ type Feature = {
   title: string;
   desc: string;
   accent: keyof typeof ACCENTS;
-  span: string; // lg col-span
 };
 
 const FEATURES: Feature[] = [
@@ -149,73 +148,64 @@ const FEATURES: Feature[] = [
     icon: Smartphone,
     badge: CheckCircle2,
     title: "No Expensive Devices",
-    desc: "Run entirely on standard smartphones. No need for specialized rugged hardware or upfront device spend.",
+    desc: "Turn any smartphone into a powerful security operations device.",
     accent: "emerald",
-    span: "lg:col-span-4",
   },
   {
     icon: Cloud,
     badge: Database,
     title: "Zero Maintenance",
-    desc: "Cloud-based architecture means no servers to patch and no hardware costs.",
+    desc: "Zero Maintenance. Maximum Reliability.",
     accent: "indigo",
-    span: "lg:col-span-2",
   },
   {
     icon: Radar,
     badge: MapPin,
     title: "Real-Time Tracking",
-    desc: "Monitor guards live as they move between checkpoints with GPS accuracy.",
+    desc: "Track guard movements in real time with precise GPS visibility.",
     accent: "rose",
-    span: "lg:col-span-2",
   },
   {
     icon: Route,
     badge: Scan,
-    title: "Patrol Monitoring",
-    desc: "Automated logging of QR code and GPS checkpoint scans throughout every patrol route.",
+    title: "Patrolling",
+    desc: "Automatically verify every checkpoint with QR and GPS validation.",
     accent: "blue",
-    span: "lg:col-span-4",
   },
   {
     icon: ScanFace,
     badge: UserCheck,
     title: "Attendance System",
-    desc: "Facial recognition and geofenced check-ins for perfect time tracking.",
+    desc: "Automatically track attendance and instantly alert managers to missed or late check-ins.",
     accent: "violet",
-    span: "lg:col-span-2",
   },
   {
     icon: ClipboardList,
     badge: AlertCircle,
     title: "Incident Reporting",
-    desc: "Submit photo and text reports directly from the field, instantly.",
+    desc: "Capture and submit field reports with photos in real time.",
     accent: "amber",
-    span: "lg:col-span-2",
   },
   {
     icon: LayoutDashboard,
     badge: Activity,
     title: "Live Dashboard",
-    desc: "A bird's-eye view of every operation from one unified command center.",
+    desc: "Monitor every site, team, and incident from one dashboard.",
     accent: "teal",
-    span: "lg:col-span-2",
   },
   {
     icon: Siren,
     badge: Shield,
     title: "SOS Alerts",
-    desc: "One-tap panic button lets guards instantly alert central command in an emergency.",
+    desc: "Instantly alert command center with a single tap during emergencies.",
     accent: "red",
-    span: "lg:col-span-3",
   },
   {
     icon: Network,
     badge: MapPin,
     title: "Centralized Control",
-    desc: "Manage multiple sites and properties from a single master account.",
+    desc: "One account. Unlimited locations. Total control.",
     accent: "sky",
-    span: "lg:col-span-3",
   },
 ];
 
@@ -783,8 +773,6 @@ function handleSpotlight(e: React.MouseEvent<HTMLDivElement>) {
 
 function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
   const a = ACCENTS[feature.accent];
-  const Icon = feature.icon;
-  const isLarge = feature.span.includes("col-span-4");
 
   return (
     <motion.div
@@ -795,7 +783,7 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
       whileHover={{ y: -6 }}
       onMouseMove={handleSpotlight}
       style={{ "--spot": a.spot } as React.CSSProperties}
-      className={`group relative ${feature.span} rounded-[26px] p-[1.5px] bg-gradient-to-b from-slate-200/70 via-slate-100/40 to-slate-200/30 transition-shadow duration-500 shadow-[0_8px_30px_rgba(15,23,42,0.04)] hover:shadow-[0_24px_60px_-12px_rgba(37,99,235,0.16)]`}
+      className="group relative rounded-[26px] p-[1.5px] bg-gradient-to-b from-slate-200/70 via-slate-100/40 to-slate-200/30 transition-shadow duration-500 shadow-[0_8px_30px_rgba(15,23,42,0.04)] hover:shadow-[0_24px_60px_-12px_rgba(37,99,235,0.16)]"
     >
       {/* Animated gradient border on hover */}
       <span
@@ -827,15 +815,7 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
           {String(index + 1).padStart(2, "0")}
         </div>
 
-        {/* Oversized ghost icon for hero cards */}
-        {isLarge && (
-          <Icon
-            aria-hidden
-            className="pointer-events-none absolute -bottom-8 right-6 h-44 w-44 text-slate-900/[0.03] transition-all duration-700 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:rotate-3"
-          />
-        )}
-
-        <div className={`relative z-10 flex h-full flex-col ${isLarge ? "p-7 md:p-9 min-h-[260px]" : "p-6 md:p-7 min-h-[230px]"}`}>
+        <div className="relative z-10 flex h-full p-7 md:p-8 gap-3">
           {/* Layered custom premium graphic */}
           <div className="mb-5">
             <div className="transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-105 w-max">
@@ -844,14 +824,14 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
           </div>
 
           {/* Copy */}
-          <div className="mt-auto">
+          <div>
             <h3
-              className={`font-heading font-bold tracking-tight text-slate-900 mb-2.5 ${isLarge ? "text-xl md:text-2xl" : "text-lg"}`}
+              className="font-heading font-bold tracking-tight text-slate-900 mb-2.5 text-lg md:text-xl"
             >
               {feature.title}
             </h3>
             <p
-              className={`leading-relaxed font-medium text-slate-600 ${isLarge ? "text-[15px] md:text-base max-w-md" : "text-sm"}`}
+              className="leading-relaxed font-medium text-slate-600 text-sm md:text-[15px]"
             >
               {feature.desc}
             </p>
@@ -894,8 +874,8 @@ export default function Features() {
           align="center"
         />
 
-        {/* Asymmetric bento grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-5 md:gap-6">
+        {/* Clean, premium symmetrical 3-column grid design */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {FEATURES.map((feature, i) => (
             <FeatureCard key={feature.title} feature={feature} index={i} />
           ))}

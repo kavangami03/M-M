@@ -74,7 +74,7 @@ export default function Hero() {
               Next-Gen Security Operations
             </motion.span>
 
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7.5xl font-bold font-heading leading-[1.1] mb-6 tracking-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7.5xl font-bold font-heading leading-[1.1] mb-6 tracking-tight capitalize">
               <motion.span
                 aria-hidden
                 variants={lineVariants}
@@ -172,16 +172,28 @@ export default function Hero() {
           >
             <div className="relative w-full aspect-[4.3/3] max-w-[560px] lg:max-w-none flex items-center justify-center select-none">
               
-              {/* A. Live Telemetry SVG Sync Lines */}
+              {/* A. Live Telemetry SVG Sync Lines with smooth self-contained flow animation */}
               <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible opacity-50" xmlns="http://www.w3.org/2000/svg">
-                {/* Proportional sync path from Phone to Laptop */}
-                <path d="M 330,210 C 330,160 260,160 220,130" stroke="url(#lineGrad)" strokeWidth="2.5" strokeDasharray="5 8" fill="none" className="animate-[dash_12s_linear_infinite]" />
                 <defs>
                   <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#3b82f6" />
                     <stop offset="100%" stopColor="#818cf8" />
                   </linearGradient>
+                  <style>{`
+                    @keyframes svg-telemetry-flow {
+                      to {
+                        stroke-dashoffset: -26;
+                      }
+                    }
+                    .telemetry-flow-path {
+                      stroke-dasharray: 6 8;
+                      stroke-dashoffset: 26;
+                      animation: svg-telemetry-flow 1.8s linear infinite;
+                    }
+                  `}</style>
                 </defs>
+                {/* Proportional sync path from Phone to Laptop */}
+                <path d="M 330,210 C 330,160 260,160 220,130" stroke="url(#lineGrad)" strokeWidth="2.5" fill="none" className="telemetry-flow-path" />
               </svg>
 
               {/* B. Laptop Deck (Percentage Width & Absolute Positioned - Scales Perfectly) */}
@@ -200,8 +212,8 @@ export default function Hero() {
                       src="/web-dashboard.png"
                       alt="M&M Web Dashboard Setup"
                       fill
-                      className="object-cover object-top pointer-events-none select-none"
-                      quality={100}
+                      unoptimized
+                      className="object-fill pointer-events-none select-none"
                       priority
                     />
                     
@@ -233,6 +245,7 @@ export default function Hero() {
                   alt="M&M Guard App Home Screen"
                   width={1208}
                   height={2328}
+                  unoptimized
                   className="w-full h-auto drop-shadow-[0_20px_40px_rgba(15,23,42,0.20)] pointer-events-none"
                   priority
                 />

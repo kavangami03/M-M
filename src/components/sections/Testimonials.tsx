@@ -3,11 +3,16 @@
 import { motion } from "framer-motion";
 import SectionHeader from "../SectionHeader";
 import Image from "next/image";
+import { CheckCircle2, Shield, Activity, Globe } from "lucide-react";
 
 export default function Testimonials() {
   return (
-    <section className="py-16 md:py-24 bg-foreground text-white overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 max-w-[1520px]">
+    <section className="py-16 md:py-24 bg-[#0a0f1d] text-white overflow-hidden relative">
+      {/* Dynamic Background Glowing Orbs for immersive tech feel */}
+      <div className="absolute top-1/4 left-1/3 w-[500px] h-[500px] bg-blue-500/10 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-indigo-500/10 blur-[130px] rounded-full pointer-events-none" />
+
+      <div className="container mx-auto px-4 sm:px-6 max-w-[1520px] relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -33,7 +38,7 @@ export default function Testimonials() {
             </p>
           </motion.div>
 
-          {/* Code-built Dashboard Mockup */}
+          {/* Premium Highly Informative Product Collage (Real Screenshots of Dashboard, Phone, and Reports) */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -41,88 +46,190 @@ export default function Testimonials() {
             transition={{ duration: 0.8 }}
             className="flex-1 relative w-full"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/30 blur-3xl rounded-full" />
-            <div className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border border-slate-700/50 bg-slate-900">
-              {/* Browser Chrome */}
-              <div className="h-9 md:h-11 bg-slate-950 border-b border-slate-800 flex items-center px-3 md:px-4 gap-1.5 md:gap-2">
-                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500/70" />
-                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-amber-500/70" />
-                <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500/70" />
-                <div className="mx-auto flex items-center gap-1.5 bg-slate-800 rounded-md px-3 py-1">
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
-                  <span className="text-[10px] md:text-xs text-slate-400 font-mono">dashboard.monitormanage.com.my</span>
+            {/* Glowing background highlights */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 blur-3xl rounded-full pointer-events-none" />
+            
+            {/* Aspect ratio bounding box for perfect proportional responsive scaling */}
+            <div className="relative w-full aspect-[4.3/3] max-w-[560px] lg:max-w-none flex items-center justify-center select-none">
+              
+              {/* Telemetry line tracings with smooth self-contained flow animation */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible opacity-30" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <style>{`
+                    @keyframes svg-telemetry-flow {
+                      to {
+                        stroke-dashoffset: -26;
+                      }
+                    }
+                    .telemetry-flow-path {
+                      stroke-dasharray: 6 8;
+                      stroke-dashoffset: 26;
+                      animation: svg-telemetry-flow 1.8s linear infinite;
+                    }
+                  `}</style>
+                </defs>
+                <path d="M 330,210 C 330,160 260,160 220,130" stroke="#3b82f6" strokeWidth="2.5" fill="none" className="telemetry-flow-path" />
+              </svg>
+
+              {/* 1. M&M Live GPS Tracking Dashboard Web Console (Center Left) */}
+              <div className="absolute w-[86%] left-[0%] top-[4%] z-10 shadow-[0_25px_60px_rgba(0,0,0,0.5)] rounded-2xl overflow-hidden bg-slate-900 border border-slate-700/50 flex flex-col">
+                {/* Browser Chrome Header */}
+                <div className="h-7 md:h-9 bg-slate-950 border-b border-slate-800/80 flex items-center px-3 gap-1.5 flex-shrink-0">
+                  <div className="w-2 h-2 rounded-full bg-red-500/70" />
+                  <div className="w-2 h-2 rounded-full bg-amber-500/70" />
+                  <div className="w-2 h-2 rounded-full bg-green-500/70" />
+                  <div className="mx-auto flex items-center gap-1.5 bg-slate-800 rounded px-2.5 py-0.5">
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-500/60" />
+                    <span className="text-[8px] md:text-[9px] text-slate-400 font-mono leading-none">dashboard.monitormanage.com.my</span>
+                  </div>
+                </div>
+                {/* Screen content wrapper (Using high-res desktop screenshot for horizontal layout) */}
+                <div className="relative w-full aspect-[2799/1636] bg-slate-900">
+                  <Image
+                    src="/web-dashboard.png"
+                    alt="M&M Web Patrolling Dashboard Screen"
+                    fill
+                    unoptimized
+                    className="object-cover object-top pointer-events-none"
+                    priority
+                  />
+                  {/* Physical glare reflection */}
+                  <div className="absolute inset-0 pointer-events-none z-15 bg-gradient-to-tr from-white/5 to-transparent" />
                 </div>
               </div>
 
-              {/* Dashboard Header */}
-              <div className="h-12 md:h-14 bg-slate-900 border-b border-slate-800 flex items-center px-3 md:px-5 justify-between">
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="relative w-6 h-6 md:w-8 md:h-8">
-                    <Image src="/logo.svg" alt="M&M" fill className="object-contain" />
+              {/* 2. Guard Patrol Mobile App Mockup (Overlapping Right, Floating Bobbing) */}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                whileHover={{ scale: 1.05, y: -12 }}
+                className="absolute w-[30%] right-[-4%] bottom-[-2%] z-20 select-none"
+              >
+                {/* Ultra-premium smartphone physical bezel wrapper */}
+                <div className="relative w-full aspect-[1094/2208] rounded-[24px] md:rounded-[32px] border-[5px] md:border-[7px] border-slate-950 bg-slate-950 shadow-[0_25px_50px_rgba(0,0,0,0.65)] overflow-hidden">
+                  {/* Dynamic Island notch at the top */}
+                  <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-[35%] h-[4.5%] bg-slate-950 rounded-full z-30" />
+                  
+                  {/* Real-time map patrolling mobile app screenshot */}
+                  <div className="relative w-full h-full aspect-[1094/2208]">
+                    <Image
+                      src="/map-screen.png"
+                      alt="M&M Guard GPS Map Patrol App"
+                      fill
+                      unoptimized
+                      className="object-cover pointer-events-none"
+                      priority
+                    />
                   </div>
-                  <span className="text-xs md:text-sm font-bold text-white">M&M Dashboard</span>
                 </div>
-                <div className="flex items-center gap-2 md:gap-3">
-                  <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-green-500/20 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  </div>
-                  <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary/30 flex items-center justify-center">
-                    <span className="text-[10px] md:text-xs font-bold text-primary">A</span>
-                  </div>
-                </div>
-              </div>
+              </motion.div>
 
-              {/* Dashboard Content */}
-              <div className="flex">
-                {/* Sidebar */}
-                <div className="hidden sm:flex w-14 md:w-40 bg-slate-950 border-r border-slate-800 flex-col py-3 md:py-4 gap-1">
-                  {["Dashboard", "Guards", "Patrols", "Reports", "Attendance", "Settings"].map((item, i) => (
-                    <div key={i} className={`flex items-center gap-2 px-3 md:px-4 py-2 rounded-r-lg mx-1 ${i === 0 ? 'bg-primary/20 text-primary' : 'text-slate-500 hover:text-slate-300'}`}>
-                      <div className={`w-2 h-2 rounded-sm ${i === 0 ? 'bg-primary' : 'bg-slate-700'}`} />
-                      <span className="hidden md:block text-xs font-medium">{item}</span>
+              {/* 3. Generated Patrolling PDF Audit Report (Highly Realistic HTML Corporate Document Card) */}
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 0.8 }}
+                whileHover={{ scale: 1.04, y: -2 }}
+                className="absolute w-[38%] left-[-10%] bottom-[-8%] z-25 bg-white border border-slate-200/90 p-3 sm:p-4 rounded-2xl shadow-[0_20px_45px_rgba(0,0,0,0.35)] select-none text-slate-800 flex flex-col font-sans"
+              >
+                {/* Document Header */}
+                <div className="flex items-center justify-between border-b border-slate-100 pb-2 mb-2">
+                  <div>
+                    <h4 className="text-[9px] md:text-[11px] font-black text-slate-900 tracking-tight uppercase">Patrol Audit Report</h4>
+                    <p className="text-[7px] md:text-[8px] text-slate-500 font-bold">M&M App Patrolling System</p>
+                  </div>
+                  <div className="bg-emerald-500/10 text-emerald-700 text-[6px] md:text-[7px] font-black tracking-wider uppercase py-0.5 px-2 rounded border border-emerald-200">
+                    PASSED AUDIT
+                  </div>
+                </div>
+
+                {/* Report Metadata */}
+                <div className="grid grid-cols-2 gap-x-2 gap-y-1 text-[6px] md:text-[7.5px] font-bold text-slate-600 mb-2.5 pb-2 border-b border-slate-100">
+                  <div><span className="text-slate-400 font-semibold">SITE:</span> Zone A Center</div>
+                  <div><span className="text-slate-400 font-semibold">DATE:</span> Jun 01, 2026</div>
+                  <div><span className="text-slate-400 font-semibold">GUARD:</span> Ahmad R.</div>
+                  <div><span className="text-slate-400 font-semibold">STATUS:</span> 100% Completed</div>
+                </div>
+
+                {/* Audit Checklist Items */}
+                <div className="space-y-1.5 flex-1">
+                  {[
+                    { checkpoint: "Checkpoint 1 - Main Gate", time: "08:32 AM", status: "VERIFIED" },
+                    { checkpoint: "Checkpoint 2 - Perimeter North", time: "08:45 AM", status: "VERIFIED" },
+                    { checkpoint: "Checkpoint 3 - Warehouse East", time: "09:12 AM", status: "VERIFIED" }
+                  ].map((item, idx) => (
+                    <div key={idx} className="flex items-center justify-between text-[6.5px] md:text-[8px] bg-slate-50 p-1.5 rounded border border-slate-100">
+                      <div className="flex items-center gap-1.5 min-w-0">
+                        <CheckCircle2 className="w-2.5 h-2.5 text-emerald-500 flex-shrink-0" />
+                        <span className="font-semibold text-slate-700 truncate">{item.checkpoint}</span>
+                      </div>
+                      <span className="text-slate-500 font-mono flex-shrink-0">{item.time}</span>
                     </div>
                   ))}
                 </div>
 
-                {/* Main Area */}
-                <div className="flex-1 p-3 md:p-5 bg-slate-900/50 space-y-3 md:space-y-4">
-                  {/* Stats Row */}
-                  <div className="grid grid-cols-3 gap-2 md:gap-3">
-                    {[
-                      { label: "Active Guards", value: "24", color: "text-green-400", bg: "bg-green-500/10" },
-                      { label: "Patrols Today", value: "156", color: "text-blue-400", bg: "bg-blue-500/10" },
-                      { label: "Incidents", value: "3", color: "text-amber-400", bg: "bg-amber-500/10" },
-                    ].map((stat, i) => (
-                      <div key={i} className={`${stat.bg} border border-slate-800 rounded-lg p-2 md:p-3`}>
-                        <p className="text-[9px] md:text-xs text-slate-400">{stat.label}</p>
-                        <p className={`text-lg md:text-2xl font-bold ${stat.color}`}>{stat.value}</p>
-                      </div>
-                    ))}
+                {/* Stamp/Signature block */}
+                <div className="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[6px] md:text-[7px]">
+                  <div className="text-slate-400 font-bold">
+                    SYSTEM SECURITY VERIFIED<br />
+                    <span className="text-slate-600 font-extrabold uppercase">M&M AUTO-AUDIT SECURE</span>
                   </div>
-
-                  {/* Table */}
-                  <div className="bg-slate-950 rounded-lg border border-slate-800 overflow-hidden">
-                    <div className="grid grid-cols-4 gap-1 px-2 md:px-3 py-2 border-b border-slate-800 text-[8px] md:text-[10px] uppercase tracking-wider text-slate-500 font-semibold">
-                      <span>Guard</span><span>Location</span><span>Status</span><span>Last Scan</span>
-                    </div>
-                    {[
-                      { name: "Ahmad R.", loc: "Zone A", status: "On Patrol", statusColor: "bg-green-500", time: "08:32" },
-                      { name: "Raju K.", loc: "Zone B", status: "Stationed", statusColor: "bg-blue-500", time: "08:28" },
-                      { name: "Siti N.", loc: "Zone C", status: "On Patrol", statusColor: "bg-green-500", time: "08:35" },
-                    ].map((row, i) => (
-                      <div key={i} className="grid grid-cols-4 gap-1 px-2 md:px-3 py-1.5 md:py-2 border-b border-slate-800/50 text-[9px] md:text-xs text-slate-300">
-                        <span className="font-medium">{row.name}</span>
-                        <span className="text-slate-400">{row.loc}</span>
-                        <span className="flex items-center gap-1">
-                          <span className={`w-1.5 h-1.5 rounded-full ${row.statusColor}`} />
-                          <span className="hidden md:inline">{row.status}</span>
-                        </span>
-                        <span className="text-slate-500">{row.time}</span>
-                      </div>
-                    ))}
+                  {/* Glowing Pulse PDF Badge */}
+                  <div className="bg-blue-600 text-white text-[6.5px] md:text-[7.5px] font-black tracking-wider uppercase py-0.5 px-2 rounded shadow shadow-blue-500/20 whitespace-nowrap animate-pulse">
+                    PDF AUDIT READY
                   </div>
                 </div>
-              </div>
+              </motion.div>
+
+              {/* 4. FLOATING WIDGET A: Live GPS Sync Tracker (Top-Left of browser window) */}
+              <motion.div
+                animate={{ y: [0, -4, 0] }}
+                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.3 }}
+                className="absolute w-[46%] max-w-[210px] top-[-8%] left-[-10%] z-30 hidden sm:flex items-center gap-3 py-2 px-3 sm:py-2.5 sm:px-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-700/50 shadow-[0_12px_28px_rgba(0,0,0,0.4)] select-none"
+              >
+                <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                  <Activity className="w-4 h-4 animate-pulse" />
+                </div>
+                <div className="min-w-0">
+                  <h5 className="text-[10px] font-bold text-slate-100 leading-tight">GPS Telemetry</h5>
+                  <p className="text-[9px] text-slate-400 flex items-center gap-1 font-bold mt-0.5 whitespace-nowrap">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse flex-shrink-0" />
+                    99.9% Sync Active
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* 5. FLOATING WIDGET B: Incident & Control Pulse (Mid-Right, near phone) */}
+              <motion.div
+                animate={{ y: [0, 4, 0] }}
+                transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 0.9 }}
+                className="absolute w-[36%] max-w-[160px] top-[40%] right-[-15%] z-30 hidden sm:flex items-center gap-2.5 py-1.5 px-3 rounded-xl bg-slate-900/90 backdrop-blur-md border border-slate-700/50 shadow-[0_8px_18px_rgba(0,0,0,0.3)] select-none"
+              >
+                <div className="w-6 h-6 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 flex-shrink-0">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                </div>
+                <div className="min-w-0">
+                  <h5 className="text-[9px] font-bold text-slate-100 leading-none">Security Status</h5>
+                  <span className="text-[8px] text-blue-400 font-extrabold mt-0.5 block whitespace-nowrap">Geofence Verified</span>
+                </div>
+              </motion.div>
+
+              {/* 6. FLOATING WIDGET C: Site Security Level Indicator (Top-Right, over phone) */}
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ repeat: Infinity, duration: 6.5, ease: "easeInOut", delay: 1.4 }}
+                className="absolute w-[40%] max-w-[180px] top-[-8%] right-[-12%] z-30 hidden sm:flex items-center gap-3 py-2 px-3 sm:py-2.5 sm:px-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-700/50 shadow-[0_15px_30px_rgba(0,0,0,0.4)] select-none"
+              >
+                <div className="w-8 h-8 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0">
+                  <Globe className="w-4.5 h-4.5" />
+                </div>
+                <div className="min-w-0">
+                  <h5 className="text-[10px] font-bold text-slate-100 leading-tight">Multi-Site Operations</h5>
+                  <p className="text-[9px] text-indigo-400 font-extrabold mt-0.5 whitespace-nowrap">
+                    24/7 Command Control
+                  </p>
+                </div>
+              </motion.div>
+
             </div>
           </motion.div>
         </div>

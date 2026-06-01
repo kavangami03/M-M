@@ -193,7 +193,7 @@ export default function Contact() {
             >
                <div className="bg-white rounded-2xl md:rounded-3xl p-4 sm:p-5 md:p-6 shadow-2xl border border-border relative overflow-hidden">
                   <div className="absolute top-0 left-0 right-0 h-1.5 md:h-2 bg-gradient-to-r from-primary to-accent" />
-                  <h3 className="text-lg sm:text-xl font-bold font-heading mb-4 md:mb-5 text-foreground text-center">Start Free Trial</h3>
+                  <h3 className="text-lg sm:text-xl font-bold font-heading mb-4 md:mb-5 text-foreground text-center">Request a Demo</h3>
 
                   <form className="space-y-4 sm:space-y-5" onSubmit={handleSubmit} noValidate>
                      
