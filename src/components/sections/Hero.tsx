@@ -1,9 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, CheckCircle2, Shield, Activity } from "lucide-react";
 import Image from "next/image";
 
+// Text animation variants
 const lineVariants = {
   hidden: {},
   visible: {
@@ -23,12 +24,12 @@ const wordVariants = {
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen pt-28 sm:pt-36 lg:pt-40 pb-16 md:pb-20 overflow-hidden flex items-center bg-gradient-to-br from-[#f3f6ff] to-[#e4e8ff]">
+    <section id="home" className="relative min-h-screen pt-28 sm:pt-36 lg:pt-40 pb-16 md:pb-24 overflow-hidden flex items-center bg-gradient-to-br from-[#f8fafc] via-[#f1f5f9] to-[#e4e8ff]">
       
-      {/* Background Image asset related to website */}
-      <div className="absolute inset-0 pointer-events-none select-none opacity-[0.12]">
+      {/* 1. Sleek High-Definition Sharp Security Operations Background Image in Widescreen Landscape */}
+      <div className="absolute inset-0 pointer-events-none select-none opacity-40 z-0">
         <Image
-          src="/security_hero_bg.png"
+          src="/security_sharp_bg.png"
           alt="Security Operations Control Room Background"
           fill
           priority
@@ -36,14 +37,23 @@ export default function Hero() {
         />
       </div>
 
-      {/* Background glow effects */}
-      <div className="absolute top-1/4 left-1/4 w-[300px] md:w-[600px] h-[300px] md:h-[500px] bg-blue-400/10 blur-[100px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[250px] md:w-[500px] h-[250px] md:h-[400px] bg-indigo-400/10 blur-[100px] rounded-full pointer-events-none" />
+      {/* 2. Soft Gradient Overlays for Perfect Edge Blending */}
+      {/* Vertical fade: blends with header and trust stats sections */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc]/90 via-transparent to-[#e4e8ff] z-0" />
+      {/* Horizontal fade: ensures left-hand text is perfectly readable while background stays visible */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#f8fafc]/95 via-[#f8fafc]/40 to-transparent z-0" />
+      
+      {/* 3. Glowing Ambient Mesh Light behind the mockups */}
+      <div className="absolute right-[-10%] top-[20%] w-[450px] md:w-[700px] h-[450px] md:h-[600px] bg-blue-300/10 blur-[130px] rounded-full pointer-events-none z-0" />
+      <div className="absolute right-[20%] bottom-[10%] w-[350px] md:w-[600px] h-[350px] md:h-[500px] bg-indigo-300/10 blur-[120px] rounded-full pointer-events-none z-0" />
+
+      {/* 4. Fine Dot Grid Network for Tech Texture */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle,rgba(0,0,0,0.15)_1px,transparent_1px)] [background-size:24px_24px] z-0" />
 
       <div className="container mx-auto px-10 sm:px-20 2xl:px-6 max-w-[1520px] relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-8">
           
-          {/* Left Column: Text & CTAs */}
+          {/* Left Column: Text & CTAs (Intact exact original styling) */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -128,7 +138,7 @@ export default function Hero() {
                     }
                   }
                 }}
-                className="group w-full sm:w-auto relative overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-medium shadow-[0_4px_20px_rgba(37,99,235,0.25)] transition-all hover:shadow-[0_4px_35px_rgba(37,99,235,0.4)] hover:-translate-y-1 flex items-center justify-center gap-2 text-base sm:text-lg cursor-pointer"
+                className="group w-full sm:w-auto relative overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold shadow-[0_4px_20px_rgba(37,99,235,0.25)] hover:shadow-[0_4px_35px_rgba(37,99,235,0.4)] hover:-translate-y-1 flex items-center justify-center gap-2 text-base sm:text-lg cursor-pointer"
               >
                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent" />
                 <span className="relative flex items-center gap-2">Start Free Trial <ArrowRight className="w-5 h-5" /></span>
@@ -146,55 +156,140 @@ export default function Hero() {
                     }
                   }
                 }}
-                className="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 hover:border-slate-300 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-medium shadow-sm transition-all hover:-translate-y-1 flex items-center justify-center gap-2 text-base sm:text-lg cursor-pointer"
+                className="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 hover:border-slate-300 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 text-base sm:text-lg cursor-pointer"
               >
                 <Play className="w-5 h-5 text-slate-500 fill-slate-500" /> Watch Demo
               </button>
             </div>
           </motion.div>
 
-          {/* Right Column: Premium High-Fi Graphics Showcase with Laptop & Phone Mockups */}
+          {/* Right Column: Premium High-Fidelity Responsive Showcase (Native Razor-Sharp 2D Layered Collage) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="w-full lg:w-6/12 flex justify-center items-center relative py-8 px-2 md:px-4"
+            className="w-full lg:w-6/12 flex justify-center items-center relative py-12 px-2 z-10 select-none"
           >
-            <div className="relative w-full max-w-[480px] sm:max-w-[520px] lg:max-w-none">
+            <div className="relative w-full aspect-[4.3/3] max-w-[560px] lg:max-w-none flex items-center justify-center select-none">
               
-              {/* Laptop Screen Mockup */}
-              <div className="relative w-full aspect-[700/409] rounded-t-2xl border-t-[8px] border-x-[8px] border-b-[14px] md:border-t-[10px] md:border-x-[10px] md:border-b-[18px] border-slate-900 bg-slate-950 shadow-2xl overflow-hidden z-10">
-                <div className="absolute inset-0 bg-white">
-                  <Image
-                    src="/web-dashboard.png"
-                    alt="M&M Web Dashboard Setup"
-                    fill
-                    className="object-cover object-top"
-                    quality={100}
-                    priority
-                  />
+              {/* A. Live Telemetry SVG Sync Lines */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible opacity-50" xmlns="http://www.w3.org/2000/svg">
+                {/* Proportional sync path from Phone to Laptop */}
+                <path d="M 330,210 C 330,160 260,160 220,130" stroke="url(#lineGrad)" strokeWidth="2.5" strokeDasharray="5 8" fill="none" className="animate-[dash_12s_linear_infinite]" />
+                <defs>
+                  <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#3b82f6" />
+                    <stop offset="100%" stopColor="#818cf8" />
+                  </linearGradient>
+                </defs>
+              </svg>
+
+              {/* B. Laptop Deck (Percentage Width & Absolute Positioned - Scales Perfectly) */}
+              <div className="absolute w-[88%] left-[0%] top-[8%] z-10 shadow-[0_25px_60px_rgba(15,23,42,0.14)]">
+                {/* Outer premium screen bezel with black frame */}
+                <div className="relative w-full aspect-[700/409] rounded-t-2xl border-t-[8px] border-x-[8px] border-b-[4px] md:border-t-[10px] md:border-x-[10px] md:border-b-[6px] border-slate-900 bg-slate-950 overflow-hidden flex flex-col">
+                  
+                  {/* Webcam dot simulation */}
+                  <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-slate-900 rounded-full z-20 border border-slate-800 flex items-center justify-center">
+                    <div className="w-[3px] h-[3px] bg-blue-900/70 rounded-full" />
+                  </div>
+                  
+                  {/* Screen Content Wrapper */}
+                  <div className="relative flex-1 w-full h-full bg-slate-900">
+                    <Image
+                      src="/web-dashboard.png"
+                      alt="M&M Web Dashboard Setup"
+                      fill
+                      className="object-cover object-top pointer-events-none select-none"
+                      quality={100}
+                      priority
+                    />
+                    
+                    {/* Ultra-realistic physical glass reflection */}
+                    <div 
+                      className="absolute inset-0 pointer-events-none z-15"
+                      style={{
+                        background: "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 40%, transparent 60%)"
+                      }}
+                    />
+                  </div>
+                </div>
+                
+                {/* Laptop Base (Sleek Matte-Black Metallic Keyboard Hinge) */}
+                <div className="relative w-[110%] -ml-[5%] h-3.5 md:h-4.5 bg-gradient-to-b from-slate-800 via-slate-900 to-slate-950 rounded-b-2xl shadow-[0_20px_45px_rgba(0,0,0,0.4)] z-10 origin-top [transform:perspective(800px)_rotateX(22deg)] border-t border-slate-700/50">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 md:w-24 h-1 bg-black/60 rounded-b-md" />
                 </div>
               </div>
-              
-              {/* Laptop Keyboard/Base Mockup with Realistic 3D Perspective */}
-              <div className="relative w-[110%] -ml-[5%] h-3.5 md:h-4.5 bg-gradient-to-b from-slate-700 via-slate-800 to-slate-900 rounded-b-2xl shadow-xl z-10 origin-top [transform:perspective(800px)_rotateX(20deg)]">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 md:w-24 h-1 bg-slate-950/40 rounded-b-md" />
-              </div>
-              
-              {/* Phone Mockup (overlapping right side of laptop) - Rendered directly since it has pre-rendered bezel */}
+
+              {/* C. iPhone Mobile Mockup (Rendered directly with its own pre-rendered bezel, floating bobbing) */}
               <motion.div
-                whileHover={{ y: -8, scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="absolute -right-4 sm:-right-8 md:-right-10 -bottom-6 sm:-bottom-8 md:-bottom-10 w-[120px] sm:w-[155px] md:w-[185px] z-20"
+                animate={{ y: [0, -8, 0] }}
+                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                whileHover={{ scale: 1.04, y: -12 }}
+                className="absolute w-[32%] right-[-5%] bottom-[-5%] z-25 select-none cursor-default"
               >
                 <Image
                   src="/home-screen.png"
                   alt="M&M Guard App Home Screen"
                   width={1208}
                   height={2328}
-                  className="w-full h-auto drop-shadow-[0_25px_50px_rgba(0,0,0,0.35)]"
+                  className="w-full h-auto drop-shadow-[0_20px_40px_rgba(15,23,42,0.20)] pointer-events-none"
                   priority
                 />
+              </motion.div>
+
+              {/* D. FLOATING WIDGET 1: Real-Time Guard Tracking Card (Top-Left, floating bobbing) */}
+              <motion.div
+                animate={{ y: [0, -4, 0] }}
+                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.5 }}
+                whileHover={{ scale: 1.03, y: -2 }}
+                className="absolute w-[46%] max-w-[210px] top-[-8%] left-[-10%] z-20 hidden sm:flex items-center gap-3 py-2 px-3 sm:py-2.5 sm:px-4 rounded-2xl bg-white border border-slate-200/80 shadow-[0_12px_28px_rgba(15,23,42,0.08)] select-none"
+              >
+                <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 flex-shrink-0">
+                  <Activity className="w-4 h-4 animate-pulse" />
+                </div>
+                <div className="min-w-0">
+                  <h5 className="text-[10px] font-black text-slate-800 leading-tight truncate">Sarah Jenkins</h5>
+                  <p className="text-[9px] text-slate-500 flex items-center gap-1 font-bold mt-0.5 whitespace-nowrap">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse flex-shrink-0" />
+                    Patrolling Site A
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* E. FLOATING WIDGET 2: Security Checked Status Badge (Mid-Left, floating bobbing) */}
+              <motion.div
+                animate={{ y: [0, 4, 0] }}
+                transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 1 }}
+                whileHover={{ scale: 1.03, y: 2 }}
+                className="absolute w-[40%] max-w-[170px] top-[45%] left-[-15%] z-20 hidden sm:flex items-center gap-2.5 py-1.5 px-3 rounded-xl bg-white border border-slate-200/80 shadow-[0_8px_18px_rgba(15,23,42,0.06)] select-none"
+              >
+                <div className="w-6 h-6 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-600 flex-shrink-0">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                </div>
+                <div className="min-w-0">
+                  <h5 className="text-[9px] font-black text-slate-800 leading-none truncate">Checkpoint 7</h5>
+                  <span className="text-[8px] text-blue-600 font-extrabold mt-0.5 block whitespace-nowrap">VERIFIED • 10s ago</span>
+                </div>
+              </motion.div>
+
+              {/* F. FLOATING WIDGET 3: SOS Alert Warning Badge (Top-Right, floating bobbing) */}
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ repeat: Infinity, duration: 6.5, ease: "easeInOut", delay: 1.5 }}
+                whileHover={{ scale: 1.03, y: -2 }}
+                className="absolute w-[44%] max-w-[200px] top-[-8%] right-[-10%] z-20 hidden sm:flex items-center gap-3 py-2 px-3 sm:py-2.5 sm:px-4 rounded-2xl bg-white border border-red-200/80 shadow-[0_15px_30px_rgba(15,23,42,0.08)] select-none"
+              >
+                <div className="w-8 h-8 rounded-full bg-red-500/10 flex items-center justify-center text-red-600 animate-pulse flex-shrink-0">
+                  <Shield className="w-4.5 h-4.5" />
+                </div>
+                <div className="min-w-0">
+                  <h5 className="text-[10px] font-black text-slate-800 leading-tight truncate">SOS Alert System</h5>
+                  <p className="text-[9px] text-red-600 font-extrabold flex items-center gap-1 mt-0.5 whitespace-nowrap">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping flex-shrink-0" />
+                    Live Cellular Sync
+                  </p>
+                </div>
               </motion.div>
 
             </div>
