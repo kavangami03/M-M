@@ -95,7 +95,7 @@ export default function MobileAppShowcase() {
                   alt={shot.alt}
                   fill
                   sizes="(max-width: 640px) 150px, (max-width: 768px) 180px, (max-width: 1024px) 210px, 230px"
-                  className="object-cover"
+                  className="object-contain md:object-cover"
                   loading="lazy"
                 />
 
