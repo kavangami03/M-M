@@ -33,7 +33,7 @@ export default function Hero() {
           alt="Security Operations Control Room Background"
           fill
           priority
-          className="object-fill"
+          className="object-cover object-bottom"
         />
       </div>
 
