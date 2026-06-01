@@ -238,7 +238,7 @@ export default function Hero() {
                 animate={{ y: [0, -8, 0] }}
                 transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
                 whileHover={{ scale: 1.04, y: -12 }}
-                className="absolute w-[32%] right-[-5%] bottom-[-5%] z-25 select-none cursor-default"
+                className="absolute w-[32%] right-[0%] bottom-[-5%] z-25 select-none cursor-default"
               >
                 <Image
                   src="/home-screen.png"
@@ -291,7 +291,7 @@ export default function Hero() {
                 animate={{ y: [0, -6, 0] }}
                 transition={{ repeat: Infinity, duration: 6.5, ease: "easeInOut", delay: 1.5 }}
                 whileHover={{ scale: 1.03, y: -2 }}
-                className="absolute w-[44%] max-w-[200px] top-[-8%] right-[-10%] z-20 hidden sm:flex items-center gap-3 py-2 px-3 sm:py-2.5 sm:px-4 rounded-2xl bg-white border border-red-200/80 shadow-[0_15px_30px_rgba(15,23,42,0.08)] select-none"
+                className="absolute w-[44%] max-w-[200px] top-[-8%] right-[0%] z-20 hidden sm:flex items-center gap-3 py-2 px-3 sm:py-2.5 sm:px-4 rounded-2xl bg-white border border-red-200/80 shadow-[0_15px_30px_rgba(15,23,42,0.08)] select-none"
               >
                 <div className="w-8 h-8 rounded-full bg-red-500/10 flex items-center justify-center text-red-600 animate-pulse flex-shrink-0">
                   <Shield className="w-4.5 h-4.5" />
