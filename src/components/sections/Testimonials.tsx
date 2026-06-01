@@ -100,13 +100,10 @@ export default function Testimonials() {
 
               {/* 2. Guard Patrol Mobile App Mockup (Overlapping Right, Floating Bobbing) */}
               <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                whileHover={{ scale: 1.05, y: -12 }}
-                className="absolute w-[30%] right-[-4%] bottom-[-2%] z-20 select-none"
+                className="absolute w-[30%] right-[0%] bottom-[-2%] z-20 select-none"
               >
                 {/* Ultra-premium smartphone physical bezel wrapper */}
-                <div className="relative w-full aspect-[1094/2208] rounded-[24px] md:rounded-[32px] border-[5px] md:border-[7px] border-slate-950 bg-slate-950 shadow-[0_25px_50px_rgba(0,0,0,0.65)] overflow-hidden">
+                <div className="relative w-full aspect-[1094/2208] overflow-hidden">
                   {/* Dynamic Island notch at the top */}
                   <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-[35%] h-[4.5%] bg-slate-950 rounded-full z-30" />
                   
@@ -126,10 +123,7 @@ export default function Testimonials() {
 
               {/* 3. Generated Patrolling PDF Audit Report (Highly Realistic HTML Corporate Document Card) */}
               <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 0.8 }}
-                whileHover={{ scale: 1.04, y: -2 }}
-                className="absolute w-[38%] left-[-10%] bottom-[-8%] z-25 bg-white border border-slate-200/90 p-3 sm:p-4 rounded-2xl shadow-[0_20px_45px_rgba(0,0,0,0.35)] select-none text-slate-800 flex flex-col font-sans"
+                className="absolute w-[38%] left-[-4%] bottom-[-8%] z-25 bg-white border border-slate-200/90 p-3 sm:p-4 rounded-2xl shadow-[0_20px_45px_rgba(0,0,0,0.35)] select-none text-slate-800 flex flex-col font-sans"
               >
                 {/* Document Header */}
                 <div className="flex items-center justify-between border-b border-slate-100 pb-2 mb-2">
@@ -202,7 +196,7 @@ export default function Testimonials() {
               <motion.div
                 animate={{ y: [0, 4, 0] }}
                 transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 0.9 }}
-                className="absolute w-[36%] max-w-[160px] top-[40%] right-[-15%] z-30 hidden sm:flex items-center gap-2.5 py-1.5 px-3 rounded-xl bg-slate-900/90 backdrop-blur-md border border-slate-700/50 shadow-[0_8px_18px_rgba(0,0,0,0.3)] select-none"
+                className="absolute w-[36%] max-w-[160px] top-[40%] right-[-5%] z-30 hidden sm:flex items-center gap-2.5 py-1.5 px-3 rounded-xl bg-slate-900/90 backdrop-blur-md border border-slate-700/50 shadow-[0_8px_18px_rgba(0,0,0,0.3)] select-none"
               >
                 <div className="w-6 h-6 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 flex-shrink-0">
                   <CheckCircle2 className="w-3.5 h-3.5" />
@@ -217,7 +211,7 @@ export default function Testimonials() {
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ repeat: Infinity, duration: 6.5, ease: "easeInOut", delay: 1.4 }}
-                className="absolute w-[40%] max-w-[180px] top-[-8%] right-[-12%] z-30 hidden sm:flex items-center gap-3 py-2 px-3 sm:py-2.5 sm:px-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-700/50 shadow-[0_15px_30px_rgba(0,0,0,0.4)] select-none"
+                className="absolute w-[40%] max-w-[180px] top-[-12%] right-[-2%] z-30 hidden sm:flex items-center gap-3 py-2 px-3 sm:py-2.5 sm:px-4 rounded-2xl bg-slate-900/90 backdrop-blur-md border border-slate-700/50 shadow-[0_15px_30px_rgba(0,0,0,0.4)] select-none"
               >
                 <div className="w-8 h-8 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 flex-shrink-0">
                   <Globe className="w-4.5 h-4.5" />
