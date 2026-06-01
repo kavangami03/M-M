@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import SectionHeader from "../SectionHeader";
+import Image from "next/image";
 import { Copyright, Cpu, X, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
 
 const MIN_ZOOM = 1;
@@ -58,49 +60,65 @@ export default function Certificates() {
   return (
     <section className="py-20 bg-secondary/30 border-y border-border">
       <div className="container mx-auto px-6 max-w-[1520px]">
-        <div className="text-center mb-12">
-          <h3 className="text-sm font-bold tracking-widest text-muted-foreground uppercase mb-2">
-            Recognized & Certified
-          </h3>
-          <h2 className="text-3xl font-bold font-heading text-foreground">
-            Built to Government Standards
-          </h2>
-        </div>
+        <SectionHeader
+          eyebrow="Recognized & Certified"
+          title="Built to Government Standards"
+          align="center"
+        />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
           {CERTIFICATES.map((cert, i) => {
-            const Icon = cert.icon;
             return (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="relative h-full"
+                className="flex flex-col items-center w-full"
               >
                 <button
                   type="button"
                   onClick={() => setActive(cert)}
-                  className="w-full h-full bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-border flex flex-col items-center justify-between text-center group hover:shadow-premium hover:-translate-y-1 hover:border-primary/20 transition-all duration-300 cursor-pointer relative min-h-[220px]"
+                  className="group relative w-full bg-white p-3 rounded-2xl border border-slate-200/80 shadow-[0_10px_35px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_50px_rgba(37,99,235,0.12)] hover:border-primary/30 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer overflow-hidden flex flex-col"
                 >
                   {cert.badge && (
-                    <div className="absolute top-3 right-3 text-[9px] font-bold bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm">
+                    <div className="absolute top-5 right-5 text-[9px] font-bold bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 px-2 py-0.5 rounded-full flex items-center gap-1 shadow-sm z-10">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                       <span>{cert.badge}</span>
                     </div>
                   )}
-                  <div className="flex flex-col items-center w-full">
-                    <div className="w-16 h-16 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center mb-4 group-hover:scale-105 group-hover:bg-primary/5 transition-all duration-300">
-                      <Icon className="w-8 h-8 text-primary group-hover:text-primary/90 transition-colors" />
+
+                  {/* Elegant Matte-Frame containing fully visible Certificate */}
+                  <div className="relative w-full aspect-[4/3] sm:aspect-[1.414/1] rounded-lg overflow-hidden bg-slate-50 border border-slate-100/70 flex items-center justify-center">
+                    <Image
+                      src={cert.file}
+                      alt={cert.title}
+                      fill
+                      sizes="(max-w-768px) 100vw, 600px"
+                      priority={i === 0}
+                      className="object-contain p-2.5 transition-transform duration-500 group-hover:scale-105"
+                    />
+
+                    {/* Magnification Hover Overlay */}
+                    <div className="absolute inset-0 bg-slate-950/0 group-hover:bg-slate-950/15 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                      <div className="bg-white/95 text-slate-900 px-4 py-2 rounded-full text-xs font-semibold shadow-md flex items-center gap-2 transform translate-y-3 group-hover:translate-y-0 transition-all duration-300">
+                        <ZoomIn className="w-4 h-4 text-primary" />
+                        <span>Click to Zoom</span>
+                      </div>
                     </div>
-                    <h4 className="font-bold text-foreground mb-1 group-hover:text-primary transition-colors text-lg">{cert.title}</h4>
-                    <p className="text-xs text-muted-foreground mb-4 max-w-[280px]">{cert.desc}</p>
                   </div>
-                  <span className="text-xs font-bold text-primary group-hover:underline flex items-center gap-1">
-                    View Certificate →
-                  </span>
                 </button>
+
+                {/* Elegant description underneath */}
+                <div className="mt-4 text-center">
+                  <h4 className="font-bold text-slate-800 mb-1 text-lg group-hover:text-primary transition-colors">
+                    {cert.title}
+                  </h4>
+                  <p className="text-xs text-slate-400 font-medium leading-relaxed max-w-[320px] mx-auto">
+                    {cert.desc}
+                  </p>
+                </div>
               </motion.div>
             );
           })}

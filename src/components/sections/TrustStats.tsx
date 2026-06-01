@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Users, Radar, MonitorSmartphone, Building2, FileCheck } from "lucide-react";
 import Image from "next/image";
+import SectionHeader from "../SectionHeader";
 
 const STATS = [
   { icon: Users, kicker: "Workforce", label: "Guards Supported", value: "10K+", image: "/stat-guards.png" },
@@ -15,45 +16,47 @@ const STATS = [
 function StatCard({ stat, index }: { stat: (typeof STATS)[number]; index: number }) {
   const Icon = stat.icon;
   return (
-    <article className="group relative w-[270px] md:w-[310px] h-[230px] md:h-[260px] flex-shrink-0 mr-4 md:mr-5 rounded-2xl overflow-hidden bg-[#0c1322] border border-white/[0.07] transition-all duration-500 hover:border-cyan-400/35 hover:-translate-y-1">
-      {/* Image — light unifying tint so photos stay vivid but cohesive */}
-      <div className="absolute inset-0">
+    <article className="group relative w-[270px] md:w-[310px] h-[260px] md:h-[290px] flex-shrink-0 mr-4 md:mr-5 rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.02)] transition-all duration-500 hover:border-blue-400 hover:shadow-[0_15px_40px_rgba(37,99,235,0.08)] hover:-translate-y-1 flex flex-col">
+      {/* Image Container — clean and razor-sharp without overlays */}
+      <div className="relative w-full h-[125px] md:h-[145px] overflow-hidden shrink-0">
         <Image
           src={stat.image}
           alt={stat.label}
           fill
           sizes="310px"
-          className="object-cover grayscale-[0.3] contrast-[1.05] brightness-[0.95] transition-transform duration-[1600ms] ease-out group-hover:scale-105"
+          className="object-cover transition-transform duration-[1600ms] ease-out group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-blue-950/20" />
-        {/* Legibility gradient toward the text */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a1120] via-[#0a1120]/45 to-[#0a1120]/5" />
-      </div>
-
-      {/* Top row: outline icon + kicker + index */}
-      <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-        <span className="inline-flex items-center gap-2">
-          <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg border border-white/20 bg-black/20 backdrop-blur-sm">
-            <Icon className="w-3.5 h-3.5 text-cyan-300" strokeWidth={1.75} />
-          </span>
-          <span className="text-[10px] font-mono uppercase tracking-[0.22em] text-white/70">
-            {stat.kicker}
-          </span>
-        </span>
-        <span className="text-[10px] font-mono text-white/40">
+        {/* Soft, ultra-subtle vignette overlay for depth */}
+        <div className="absolute inset-0 bg-slate-900/[0.02]" />
+        
+        {/* Floating Icon Badge */}
+        <div className="absolute top-3 left-3 flex items-center justify-center w-8 h-8 rounded-lg bg-white/95 backdrop-blur-sm shadow-sm text-blue-600 border border-slate-200/50">
+          <Icon className="w-4 h-4 text-blue-600" strokeWidth={2} />
+        </div>
+        
+        {/* Floating Stat Index */}
+        <div className="absolute top-3 right-3 text-[9px] font-mono font-bold text-white bg-slate-900/40 backdrop-blur-sm py-0.5 px-2 rounded-full">
           /{String(index + 1).padStart(2, "0")}
-        </span>
+        </div>
       </div>
 
-      {/* Bottom content */}
-      <div className="absolute inset-x-0 bottom-0 p-5">
-        <div className="text-3xl md:text-4xl font-bold font-heading text-white tracking-tight tabular-nums leading-none">
-          {stat.value}
+      {/* Content Body — solid white background with perfect typographic legibility */}
+      <div className="p-4 md:p-5 flex flex-col justify-between flex-1 bg-white">
+        <div>
+          <div className="text-[10px] font-mono font-bold uppercase tracking-[0.18em] text-blue-600 mb-1">
+            {stat.kicker}
+          </div>
+          <div className="text-2xl md:text-3xl font-bold font-heading text-slate-900 tracking-tight tabular-nums leading-tight">
+            {stat.value}
+          </div>
         </div>
-        <div className="mt-2 text-xs font-medium uppercase tracking-[0.14em] text-slate-300/90">
-          {stat.label}
+        
+        <div className="mt-2">
+          <div className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">
+            {stat.label}
+          </div>
+          <span className="mt-2 md:mt-3 block h-0.5 w-8 group-hover:w-full bg-gradient-to-r from-blue-500 via-indigo-400 to-transparent transition-all duration-500" />
         </div>
-        <span className="mt-3 block h-px w-10 group-hover:w-full bg-gradient-to-r from-cyan-400/70 via-cyan-400/20 to-transparent transition-all duration-500" />
       </div>
     </article>
   );
@@ -64,38 +67,26 @@ export default function TrustStats() {
   const loop = [...STATS, ...STATS];
 
   return (
-    <section className="relative overflow-hidden bg-[#060b16] py-10 md:py-14">
-      {/* Fine dot-grid texture */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.12] [background-image:radial-gradient(circle,rgba(148,163,184,0.4)_1px,transparent_1px)] [background-size:24px_24px]" />
-      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[200px] bg-blue-700/[0.07] blur-[130px] rounded-full" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/[0.06]" />
+    <section className="relative overflow-hidden bg-[#ffffff] py-10 md:py-14">
+      {/* Fine dot-grid texture - subtle and elegant */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle,rgba(0,0,0,0.3)_1px,transparent_1px)] [background-size:24px_24px]" />
+      <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[200px] bg-blue-400/[0.05] blur-[130px] rounded-full" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-slate-200/50" />
 
       <div className="relative z-10">
-        {/* Compact header — eyebrow + headline on one row */}
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="container mx-auto px-4 sm:px-6 max-w-[1520px] mb-6 md:mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3"
-        >
-          <div>
-            <div className="flex items-center gap-3 mb-2">
-              <span className="h-px w-8 bg-cyan-400/50" />
-              <span className="text-[11px] font-mono uppercase tracking-[0.28em] text-cyan-300/80">
-                Trusted at scale
-              </span>
-            </div>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold font-heading text-white leading-tight">
-              Built for security teams of <span className="text-slate-500">every size.</span>
-            </h2>
-          </div>
-        </motion.div>
+        {/* Compact header — unified SectionHeader */}
+        <div className="container mx-auto px-4 sm:px-6 max-w-[1520px]">
+          <SectionHeader
+            eyebrow="Trusted at scale"
+            title="Built for security teams of every size."
+            align="center"
+          />
+        </div>
 
         {/* Marquee */}
         <div className="marquee-track relative">
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-32 z-20 bg-gradient-to-r from-[#060b16] to-transparent" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 z-20 bg-gradient-to-l from-[#060b16] to-transparent" />
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 sm:w-32 z-20 bg-gradient-to-r from-white to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 z-20 bg-gradient-to-l from-white to-transparent" />
 
           <div className="flex w-max animate-marquee">
             {loop.map((stat, i) => (

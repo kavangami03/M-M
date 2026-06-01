@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import SectionHeader from "../SectionHeader";
 
 type Step = {
   num: string;
@@ -47,25 +48,12 @@ export default function HowItWorks() {
   return (
     <section className="relative overflow-hidden py-16 md:py-20 bg-gradient-to-b from-white to-secondary/60">
       <div className="container relative mx-auto px-6 max-w-[1280px]">
-        <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold font-heading text-foreground mb-4"
-          >
-            How It Works
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-base md:text-lg text-muted-foreground"
-          >
-            Deploy your modern security operation in three simple steps.
-          </motion.p>
-        </div>
+        <SectionHeader
+          eyebrow="Workflow"
+          title="How It Works"
+          description="Deploy your modern security operation in three simple steps."
+          align="center"
+        />
 
         <div className="grid gap-6 md:grid-cols-3">
           {STEPS.map((step, i) => (

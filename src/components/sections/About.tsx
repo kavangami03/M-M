@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import SectionHeader from "../SectionHeader";
 import Image from "next/image";
 
 export default function About() {
@@ -29,11 +30,12 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="flex-1 w-full"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-foreground mb-5 md:mb-6 leading-tight">
-              One System. <br />
-              <span className="text-gradient">Everything Runs Automatically.</span>
-            </h2>
-            <p className="text-base sm:text-lg text-muted-foreground mb-4 leading-relaxed">
+            <SectionHeader
+              eyebrow="All-In-One Ecosystem"
+              title={<>One System. <br /> <span className="text-gradient">Everything Runs Automatically.</span></>}
+              align="left"
+            />
+            <p className="text-base sm:text-lg text-muted-foreground mb-4 leading-relaxed mt-[-20px]">
               M&M App brings together all essential tools into a single, easy-to-use platform. It provides real-time guard monitoring through live GPS location tracking, giving supervisors complete visibility of every guard on duty. The smart QR Code combined with GPS checkpoint system ensures highly accurate patrol verification while being extremely easy to replace whenever needed.
             </p>
             <p className="text-base sm:text-lg text-muted-foreground mb-6 md:mb-8 leading-relaxed">

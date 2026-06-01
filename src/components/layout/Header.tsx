@@ -51,17 +51,15 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "py-3 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm"
-          : "py-5 bg-transparent border-b border-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-slate-100 shadow-sm ${
+        isScrolled ? "py-3" : "py-4 md:py-5"
       }`}
     >
       <div className="container mx-auto px-6 max-w-[1520px] flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center group">
           <div className="relative w-32 h-14 md:w-40 md:h-16 group-hover:scale-105 transition-transform">
-            <Image src="/logo.svg" alt="Monitor & Manage Logo" fill className={`object-contain object-left transition-all duration-500 ${isScrolled ? "" : "brightness-0 invert"}`} />
+            <Image src="/logo.svg" alt="Monitor & Manage Logo" fill className="object-contain object-left transition-all duration-500" />
           </div>
         </Link>
 
@@ -72,7 +70,7 @@ export default function Header() {
               key={link.name}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className={`text-sm font-medium transition-colors ${isScrolled ? "text-muted-foreground hover:text-primary" : "text-white/70 hover:text-white"}`}
+              className="text-sm font-medium transition-colors text-muted-foreground hover:text-primary"
             >
               {link.name}
             </Link>
@@ -84,16 +82,16 @@ export default function Header() {
           <Link
             href="/#contact"
             onClick={(e) => handleNavClick(e, "/#contact")}
-            className={`text-sm font-medium transition-colors mr-2 ${isScrolled ? "hover:text-primary" : "text-white/70 hover:text-white"}`}
+            className="text-sm font-medium transition-colors mr-2 text-muted-foreground hover:text-primary"
           >
             Contact
           </Link>
           <div className="flex items-center gap-2">
-            <a href="https://play.google.com/store/apps/details?id=com.mandm.client&pli=1" target="_blank" rel="noopener noreferrer" className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors ${isScrolled ? "bg-secondary hover:bg-slate-200 text-foreground" : "bg-white/10 hover:bg-white/20 text-white"}`}>
-              <FaGooglePlay className={`w-4 h-4 ${isScrolled ? "text-primary" : "text-white"}`} />
+            <a href="https://play.google.com/store/apps/details?id=com.mandm.client&pli=1" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full transition-colors bg-secondary hover:bg-slate-200 text-foreground">
+              <FaGooglePlay className="w-4 h-4 text-primary" />
             </a>
-            <a href="https://apps.apple.com/us/app/m-m-property-app/id1659629088" target="_blank" rel="noopener noreferrer" className={`flex items-center justify-center w-10 h-10 rounded-full transition-colors ${isScrolled ? "bg-secondary hover:bg-slate-200 text-foreground" : "bg-white/10 hover:bg-white/20 text-white"}`}>
-              <FaApple className={`w-5 h-5 ${isScrolled ? "" : "text-white"}`} />
+            <a href="https://apps.apple.com/us/app/m-m-property-app/id1659629088" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-10 h-10 rounded-full transition-colors bg-secondary hover:bg-slate-200 text-foreground">
+              <FaApple className="w-5 h-5 text-foreground" />
             </a>
           </div>
           <a
@@ -108,7 +106,7 @@ export default function Header() {
 
         {/* Mobile Toggle */}
         <button
-          className={`lg:hidden p-2 transition-colors ${isScrolled ? "text-foreground" : "text-white"}`}
+          className="lg:hidden p-2 transition-colors text-foreground"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X /> : <Menu />}

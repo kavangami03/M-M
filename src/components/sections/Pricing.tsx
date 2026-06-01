@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import SectionHeader from "../SectionHeader";
 import { Check, Sparkles, Zap, Shield } from "lucide-react";
 
 const FEATURES = [
@@ -40,33 +41,12 @@ export default function Pricing() {
 
       <div className="container mx-auto px-4 sm:px-6 max-w-[1520px] relative z-10">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
-          <motion.span
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-block py-1.5 px-4 rounded-full bg-primary/10 text-primary font-semibold text-xs sm:text-sm mb-4 md:mb-6 border border-primary/10"
-          >
-            Simple & Transparent Pricing
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-foreground mb-4 md:mb-6"
-          >
-            One Plan. <span className="text-gradient">Everything Included.</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-base sm:text-lg text-muted-foreground leading-relaxed"
-          >
-            No hidden fees. No complicated tiers. Just one affordable plan that gives your team full access to every feature from real-time tracking to unlimited reports.
-          </motion.p>
-        </div>
+        <SectionHeader
+          eyebrow="Pricing Plans"
+          title={<>One Plan. <span className="text-gradient">Everything Included.</span></>}
+          description="No hidden fees. No complicated tiers. Just one affordable plan that gives your team full access to every feature from real-time tracking to unlimited reports."
+          align="center"
+        />
 
         {/* Pricing Card */}
         <motion.div

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import SectionHeader from "../SectionHeader";
 import { CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 
@@ -12,24 +13,13 @@ export default function DashboardShowcase() {
       <div className="container mx-auto px-4 sm:px-6 max-w-[1520px] relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           <div className="flex-1 w-full max-w-2xl">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading mb-5 md:mb-6"
-            >
-              DASHBOARD (Web-Portal) <br />
-              <span className="text-gradient">Everything You Need In One Dashboard</span>
-            </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-base sm:text-lg text-slate-400 mb-6 md:mb-8"
-            >
-              Take complete control over your security operations. Our powerful web portal gives management real-time visibility and instant access to all essential reports.
-            </motion.p>
+            <SectionHeader
+              eyebrow="Command Center"
+              title={<>DASHBOARD (Web-Portal) <br /> <span className="text-gradient">Everything You Need In One Dashboard</span></>}
+              description="Take complete control over your security operations. Our powerful web portal gives management real-time visibility and instant access to all essential reports."
+              dark={true}
+              align="left"
+            />
 
             <motion.ul 
               initial={{ opacity: 0, x: -20 }}

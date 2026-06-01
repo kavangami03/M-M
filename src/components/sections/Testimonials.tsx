@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import SectionHeader from "../SectionHeader";
 import Image from "next/image";
 
 export default function Testimonials() {
@@ -15,19 +16,19 @@ export default function Testimonials() {
             transition={{ duration: 0.8 }}
             className="flex-1 w-full"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading mb-5 md:mb-6">
-              Monitor Every Guard.
-              <br className="hidden sm:block" />
-              <span className="text-gradient">Manage Every Site.
-              </span>
-            </h2>
-            <p className="text-base sm:text-lg text-slate-300 mb-5 md:mb-6 leading-relaxed">
+            <SectionHeader
+              eyebrow="Unified Management"
+              title={<>Monitor Every Guard. <br className="hidden sm:block" /> <span className="text-gradient">Manage Every Site.</span></>}
+              dark={true}
+              align="left"
+            />
+            <p className="text-base sm:text-lg text-slate-300 mb-5 md:mb-6 leading-relaxed font-medium mt-[-20px]">
               Guard Monitor & Manage (M&M App) sdn bhd is a mobile-based guard patrolling & monitoring system designed to replace physical patrol devices and manual processes. A modern guard monitoring and workforce management platform built for security companies and property management.
             </p>
-            <p className="text-base sm:text-lg text-slate-300 mb-5 md:mb-6 leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-300 mb-5 md:mb-6 leading-relaxed font-medium">
               All guard activities are recorded in real time, generated into instant, document-ready reports and free from device maintenance cost. The system operates fully through a mobile application, making security operations smarter, faster, and more cost-effective.
             </p>
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-medium">
               The system also enhances your company&apos;s professional image with modern technology that impresses both clients and management. Whether you manage a small team of 10 guards or a large force of over 1,000, M&M App scales effortlessly to meet your needs, making security operations faster, smarter, and far more transparent.
             </p>
           </motion.div>

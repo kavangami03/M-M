@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import SectionHeader from "../SectionHeader";
 import {
   Smartphone,
   Cloud,
@@ -46,36 +47,13 @@ export default function Features() {
       />
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6 max-w-[1520px]">
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
-          <motion.span
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/70 backdrop-blur-sm mb-6"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            Capabilities
-          </motion.span>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading mb-4 md:mb-6"
-          >
-            Powerful Features. <br />
-            <span className="text-gradient-animated">Simple Execution.</span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-base sm:text-lg text-white/60"
-          >
-            Everything you need to run a modern, efficient, and accountable security operation without the enterprise price tag.
-          </motion.p>
-        </div>
+        <SectionHeader
+          eyebrow="Capabilities"
+          title={<>Powerful Features. <br /> <span className="text-gradient-animated">Simple Execution.</span></>}
+          description="Everything you need to run a modern, efficient, and accountable security operation without the enterprise price tag."
+          dark={true}
+          align="center"
+        />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           {FEATURES.map((feature, i) => {

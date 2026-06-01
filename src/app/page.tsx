@@ -1,5 +1,6 @@
 import Hero from "@/components/sections/Hero";
 import TrustStats from "@/components/sections/TrustStats";
+import CoverageArea from "@/components/sections/CoverageArea";
 import About from "@/components/sections/About";
 import Features from "@/components/sections/Features";
 import DashboardShowcase from "@/components/sections/DashboardShowcase";
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <TrustStats />
       <Testimonials />
+      <CoverageArea />
       <About />
       <Features />
       <MobileAppShowcase />

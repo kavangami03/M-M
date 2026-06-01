@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import SectionHeader from "../SectionHeader";
 import { CheckCircle2 } from "lucide-react";
 import { FaGooglePlay, FaApple } from "react-icons/fa";
 import Image from "next/image";
@@ -63,13 +64,12 @@ export default function MobileAppShowcase() {
             transition={{ duration: 0.8 }}
             className="flex-1 order-1 lg:order-2 w-full"
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-foreground mb-5 md:mb-6 leading-tight">
-              Mobile App <br />
-              <span className="text-gradient">Powerful Tools In Their Pocket.</span>
-            </h2>
-            <p className="text-base sm:text-lg text-muted-foreground mb-6 md:mb-8 leading-relaxed">
-              Equip your guards with a native mobile app designed for speed and reliability. From GPS tracking to instant SOS alerts, it has everything they need and nothing they don&apos;t.
-            </p>
+            <SectionHeader
+              eyebrow="On-The-Field App"
+              title={<>Mobile App <br /> <span className="text-gradient">Powerful Tools In Their Pocket.</span></>}
+              description="Equip your guards with a native mobile app designed for speed and reliability. From GPS tracking to instant SOS alerts, it has everything they need and nothing they don't."
+              align="left"
+            />
 
             <ul className="space-y-3 sm:space-y-4 mb-8 md:mb-10">
                {[

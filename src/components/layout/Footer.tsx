@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { FaApple, FaGooglePlay, FaFacebook, FaInstagram } from "react-icons/fa";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -28,39 +29,39 @@ export default function Footer() {
   return (
     <footer className="bg-slate-950 text-slate-300 pt-20 pb-10 border-t border-slate-900">
       <div className="container mx-auto px-6 max-w-[1520px]">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          {/* Brand & App Download */}
-          <div className="col-span-1 lg:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-20 mb-16">
+          {/* Brand Column */}
+          <div>
             <Link href="/" className="flex items-center mb-6">
               <div className="relative w-32 h-14 md:w-40 md:h-16">
                 <Image src="/logo.svg" alt="Monitor & Manage Logo" fill className="object-contain object-left brightness-0 invert" />
               </div>
             </Link>
-            <p className="text-slate-400 max-w-sm mb-8 leading-relaxed">
+            <p className="text-slate-400 mb-6 leading-relaxed text-sm">
               The next-generation security operations platform. Guard monitoring, attendance, and reporting all in one place.
             </p>
-            <div className="flex gap-4 flex-wrap">
-              <a href="https://play.google.com/store/apps/details?id=com.mandm.client&pli=1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-4 py-2.5 rounded-lg border border-slate-800 transition-colors">
-                <FaGooglePlay className="w-5 h-5 text-green-500" />
+            <div className="flex gap-3">
+              <a href="https://play.google.com/store/apps/details?id=com.mandm.client&pli=1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-lg border border-slate-800 transition-colors w-full sm:w-auto inline-flex">
+                <FaGooglePlay className="w-4 h-4 text-green-500" />
                 <div className="text-left">
-                  <div className="text-[10px] leading-none text-slate-400">GET IT ON</div>
-                  <div className="text-sm font-semibold leading-tight">Google Play</div>
+                  <div className="text-[9px] leading-none text-slate-400">GET IT ON</div>
+                  <div className="text-xs font-semibold leading-tight">Google Play</div>
                 </div>
               </a>
-              <a href="https://apps.apple.com/us/app/m-m-property-app/id1659629088" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-4 py-2.5 rounded-lg border border-slate-800 transition-colors">
-                <FaApple className="w-5 h-5" />
+              <a href="https://apps.apple.com/us/app/m-m-property-app/id1659629088" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white px-4 py-2 rounded-lg border border-slate-800 transition-colors w-full sm:w-auto inline-flex">
+                <FaApple className="w-4 h-4" />
                 <div className="text-left">
-                  <div className="text-[10px] leading-none text-slate-400">Download on the</div>
-                  <div className="text-sm font-semibold leading-tight">App Store</div>
+                  <div className="text-[9px] leading-none text-slate-400">Download on the</div>
+                  <div className="text-xs font-semibold leading-tight">App Store</div>
                 </div>
               </a>
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* Quick Links Column */}
           <div>
             <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
-            <ul className="space-y-4">
+            <ul className="space-y-4 text-sm">
               <li><Link href="/#home" onClick={(e) => handleNavClick(e, "/#home")} className="hover:text-primary transition-colors">Home</Link></li>
               <li><Link href="/#features" onClick={(e) => handleNavClick(e, "/#features")} className="hover:text-primary transition-colors">Features</Link></li>
               <li><Link href="/#dashboard" onClick={(e) => handleNavClick(e, "/#dashboard")} className="hover:text-primary transition-colors">Dashboard</Link></li>
@@ -69,10 +70,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Legal & Social */}
+          {/* Legal & Social Column */}
           <div>
             <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Legal & Social</h4>
-            <ul className="space-y-4 mb-8">
+            <ul className="space-y-4 mb-8 text-sm">
               <li><Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms-and-conditions" className="hover:text-primary transition-colors">Terms & Conditions</Link></li>
             </ul>
@@ -83,6 +84,45 @@ export default function Footer() {
               <a href="https://www.instagram.com/guardmonitormanage/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-primary transition-colors">
                 <FaInstagram className="w-5 h-5" />
               </a>
+            </div>
+          </div>
+
+          {/* Contact Info Column */}
+          <div>
+            <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact Info</h4>
+            <div className="space-y-4 text-slate-400 text-sm leading-relaxed">
+              {/* Address */}
+              <div className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-primary shrink-0 mt-1" />
+                <a 
+                  href="https://maps.google.com/?q=07-01, Plaza Kiara, Jalan Semenyih, 43500 Selangor"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  07-01, Plaza Kiara, Jalan Semenyih, 43500 Selangor
+                </a>
+              </div>
+              {/* Phone */}
+              <div className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-primary shrink-0" />
+                <a 
+                  href="tel:0109872885"
+                  className="hover:text-primary transition-colors"
+                >
+                  010-987 2885
+                </a>
+              </div>
+              {/* Email */}
+              <div className="flex items-center gap-2.5 font-sans break-all">
+                <Mail className="w-4 h-4 text-primary shrink-0" />
+                <a 
+                  href="mailto:admin@monitormanage.com.my"
+                  className="hover:text-primary transition-colors"
+                >
+                  admin@monitormanage.com.my
+                </a>
+              </div>
             </div>
           </div>
         </div>
