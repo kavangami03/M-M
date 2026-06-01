@@ -152,6 +152,31 @@
   animation-play-state: paused;
 }
 
+/* App screenshots infinite marquee — slower & taller for phone screens */
+@keyframes app-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-app-marquee {
+  animation: app-marquee 60s linear infinite;
+  will-change: transform;
+}
+
+.animate-app-marquee-reverse {
+  animation: app-marquee 55s linear infinite reverse;
+  will-change: transform;
+}
+
+.app-marquee-track:hover .animate-app-marquee,
+.app-marquee-track:hover .animate-app-marquee-reverse {
+  animation-play-state: paused;
+}
+
 /* Lenis Recommended CSS */
 html.lenis,
 html.lenis body {
