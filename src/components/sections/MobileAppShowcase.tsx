@@ -81,8 +81,8 @@ export default function MobileAppShowcase() {
             {doubled.map((shot, i) => (
               <div
                 key={`${shot.src}-${i}`}
-                className="group relative flex-shrink-0 w-[150px] sm:w-[180px] md:w-[210px] lg:w-[230px] rounded-2xl sm:rounded-3xl overflow-hidden transition-transform duration-500  shadow-lg shadow-slate-900/5 hover:shadow-xl hover:shadow-blue-500/10"
-                style={{ aspectRatio: "9 / 19.5" }}
+                className="group relative flex-shrink-0 w-[150px] sm:w-[180px] md:w-[210px] lg:w-[230px] rounded-2xl sm:rounded-3xl overflow-hidden transition-transform duration-500 shadow-lg shadow-slate-900/5 hover:shadow-xl hover:shadow-blue-500/10"
+                style={{ aspectRatio: `${shot.w} / ${shot.h}` }}
               >
                 {/* Glowing border on hover */}
                 <div className="absolute inset-0 rounded-2xl sm:rounded-3xl ring-1 ring-slate-200/60 group-hover:ring-blue-400/50 transition-all duration-500 z-10 pointer-events-none" />
@@ -95,7 +95,7 @@ export default function MobileAppShowcase() {
                   alt={shot.alt}
                   fill
                   sizes="(max-width: 640px) 150px, (max-width: 768px) 180px, (max-width: 1024px) 210px, 230px"
-                  className="object-contain md:object-cover"
+                  className="object-cover w-full h-full"
                   loading="lazy"
                 />
 

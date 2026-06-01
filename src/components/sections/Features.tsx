@@ -219,6 +219,560 @@ const FEATURES: Feature[] = [
   },
 ];
 
+/* ─── Premium Glassmorphic / Animated CSS Micro-Graphics ──────────────── */
+const EmeraldGraphic = () => (
+  <div className="relative w-16 h-16 flex items-center justify-center">
+    <div className="absolute inset-0 bg-emerald-500/10 rounded-2xl blur-md group-hover:bg-emerald-500/20 transition-all duration-500" />
+    <svg className="w-14 h-14 relative z-10 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Background Circle */}
+      <circle cx="60" cy="60" r="52" fill="#F5F7FF"/>
+
+      {/* Smartphone */}
+      <rect x="36" y="22" width="34" height="64" rx="8" stroke="#111827" strokeWidth="4"/>
+      <rect x="44" y="30" width="18" height="40" rx="3" fill="#E5E7EB"/>
+      <circle cx="53" cy="78" r="2.5" fill="#111827"/>
+
+      {/* Price Tag */}
+      <path d="M75 42L96 42L104 50L104 70L84 70L75 61V42Z"
+            fill="#EEF2FF"
+            stroke="#111827"
+            strokeWidth="4"
+            strokeLinejoin="round"/>
+
+      <circle cx="90" cy="50" r="3" fill="#111827"/>
+
+      {/* Cross Line (No Expensive) */}
+      <path d="M72 36L108 76"
+            stroke="#EF4444"
+            strokeWidth="5"
+            strokeLinecap="round"/>
+
+      {/* Check Badge */}
+      <circle cx="82" cy="84" r="14" fill="#22C55E"/>
+      <path d="M76 84L80 88L88 80"
+            stroke="white"
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeLinejoin="round"/>
+    </svg>
+  </div>
+);
+
+const IndigoGraphic = () => (
+  <div className="relative w-16 h-16 flex items-center justify-center">
+    <div className="absolute inset-0 bg-indigo-500/10 rounded-2xl blur-md group-hover:bg-indigo-500/20 transition-all duration-500" />
+    <svg className="w-14 h-14 relative z-10 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Background */}
+      <circle cx="60" cy="60" r="52" fill="#F5F7FF"/>
+
+      {/* Cloud */}
+      <path d="M38 66C30 66 24 60 24 52C24 44 30 38 38 38C40 28 49 22 59 22C71 22 81 31 82 43C91 43 98 50 98 59C98 68 91 75 82 75H38C30 75 24 69 24 61"
+            fill="#EEF2FF"
+            stroke="#111827"
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeLinejoin="round"/>
+
+      {/* Gear */}
+      <circle cx="60" cy="58" r="10" fill="white" stroke="#111827" strokeWidth="3"/>
+      <path d="M60 42V38M60 78V74M76 58H80M40 58H44M71 47L74 44M46 72L49 69M71 69L74 72M46 44L49 47"
+            stroke="#111827"
+            strokeWidth="3"
+            strokeLinecap="round"/>
+
+      {/* Shield */}
+      <path d="M60 84L48 78V64L60 60L72 64V78L60 84Z"
+            fill="#22C55E"
+            stroke="#111827"
+            strokeWidth="3"
+            strokeLinejoin="round"/>
+
+      <path d="M55 72L59 76L66 69"
+            stroke="white"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"/>
+    </svg>
+  </div>
+);
+
+const RoseGraphic = () => (
+  <div className="relative w-16 h-16 flex items-center justify-center">
+    <div className="absolute inset-0 bg-rose-500/10 rounded-2xl blur-md group-hover:bg-rose-500/20 transition-all duration-500" />
+    <svg className="w-14 h-14 relative z-10 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="60" cy="60" r="52" fill="#F8FAFC"/>
+
+      {/* Radar Rings */}
+      <circle cx="60" cy="60" r="14" stroke="#CBD5E1" strokeWidth="2"/>
+      <circle cx="60" cy="60" r="28" stroke="#CBD5E1" strokeWidth="2"/>
+      <circle cx="60" cy="60" r="42" stroke="#CBD5E1" strokeWidth="2"/>
+
+      {/* Crosshair */}
+      <path d="M60 18V32" stroke="#94A3B8" strokeWidth="2"/>
+      <path d="M60 88V102" stroke="#94A3B8" strokeWidth="2"/>
+      <path d="M18 60H32" stroke="#94A3B8" strokeWidth="2"/>
+      <path d="M88 60H102" stroke="#94A3B8" strokeWidth="2"/>
+
+      {/* Radar Sweep */}
+      <path d="M60 60L88 34"
+            stroke="#2563EB"
+            strokeWidth="4"
+            strokeLinecap="round"/>
+
+      {/* Live Target */}
+      <circle cx="80" cy="40" r="7" fill="#22C55E"/>
+
+      <circle cx="80" cy="40" r="12"
+              stroke="#22C55E"
+              strokeWidth="2"
+              opacity="0.35"/>
+    </svg>
+  </div>
+);
+
+const BlueGraphic = () => (
+  <div className="relative w-16 h-16 flex items-center justify-center">
+    <div className="absolute inset-0 bg-blue-500/10 rounded-2xl blur-md group-hover:bg-blue-500/20 transition-all duration-500" />
+    <svg className="w-14 h-14 relative z-10 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Background */}
+      <circle cx="60" cy="60" r="54" fill="#F8FAFC"/>
+
+      {/* QR Scanner Frame */}
+      <path d="M22 22H34V26H26V34H22V22Z" fill="#2563EB"/>
+      <path d="M98 22H86V26H94V34H98V22Z" fill="#2563EB"/>
+      <path d="M22 98H34V94H26V86H22V98Z" fill="#2563EB"/>
+      <path d="M98 98H86V94H94V86H98V98Z" fill="#2563EB"/>
+
+      {/* QR Code */}
+      <rect x="38" y="20" width="6" height="6" fill="#111827"/>
+      <rect x="48" y="20" width="6" height="6" fill="#111827"/>
+      <rect x="58" y="20" width="6" height="6" fill="#111827"/>
+
+      <rect x="38" y="30" width="6" height="6" fill="#111827"/>
+      <rect x="58" y="30" width="6" height="6" fill="#111827"/>
+
+      <rect x="38" y="40" width="6" height="6" fill="#111827"/>
+      <rect x="48" y="40" width="6" height="6" fill="#111827"/>
+      <rect x="58" y="40" width="6" height="6" fill="#111827"/>
+
+      {/* Route */}
+      <path d="M28 66C40 56 50 72 62 62C72 54 82 58 92 48"
+            stroke="#94A3B8"
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeDasharray="5 5"/>
+
+      {/* Checkpoints */}
+      <circle cx="28" cy="66" r="5" fill="#2563EB"/>
+      <circle cx="62" cy="62" r="5" fill="#2563EB"/>
+      <circle cx="92" cy="48" r="5" fill="#2563EB"/>
+
+      {/* Checkpoint Verified */}
+      <circle cx="92" cy="48" r="12" fill="#22C55E"/>
+
+      <path d="M87 48L91 52L98 44"
+            stroke="white"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"/>
+
+      {/* Log Sheet */}
+      <rect x="42" y="72" width="36" height="28" rx="4"
+            fill="white"
+            stroke="#111827"
+            strokeWidth="2"/>
+
+      <path d="M50 80H70" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round"/>
+      <path d="M50 87H66" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round"/>
+
+      {/* Log Check */}
+      <circle cx="78" cy="92" r="10" fill="#22C55E"/>
+
+      <path d="M74 92L77 95L83 88"
+            stroke="white"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"/>
+    </svg>
+  </div>
+);
+
+const VioletGraphic = () => (
+  <div className="relative w-16 h-16 flex items-center justify-center">
+    <div className="absolute inset-0 bg-violet-500/10 rounded-2xl blur-md group-hover:bg-violet-500/20 transition-all duration-500" />
+    <svg className="w-14 h-14 relative z-10 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Background */}
+      <circle cx="60" cy="60" r="54" fill="#F8FAFC"/>
+
+      {/* Phone */}
+      <rect x="35" y="18" width="50" height="78" rx="10"
+            fill="white"
+            stroke="#0F172A"
+            strokeWidth="2.5"/>
+
+      {/* Face Scan Corners */}
+      <path d="M45 34V28H51" stroke="#2563EB" strokeWidth="2.5" strokeLinecap="round"/>
+      <path d="M75 28H69" stroke="#2563EB" strokeWidth="2.5" strokeLinecap="round"/>
+      <path d="M75 28V34" stroke="#2563EB" strokeWidth="2.5" strokeLinecap="round"/>
+
+      <path d="M45 58V64H51" stroke="#2563EB" strokeWidth="2.5" strokeLinecap="round"/>
+      <path d="M75 58V64H69" stroke="#2563EB" strokeWidth="2.5" strokeLinecap="round"/>
+
+      {/* Employee */}
+      <circle cx="60" cy="42" r="8"
+              stroke="#0F172A"
+              strokeWidth="2"/>
+
+      <path d="M50 58C53 52 67 52 70 58"
+            stroke="#0F172A"
+            strokeWidth="2"
+            strokeLinecap="round"/>
+
+      {/* Verification Line */}
+      <path d="M60 96V104"
+            stroke="#94A3B8"
+            strokeWidth="2.5"
+            strokeLinecap="round"/>
+
+      {/* Geofence */}
+      <circle cx="60" cy="118" r="16"
+              stroke="#2563EB"
+              strokeWidth="2.5"
+              strokeDasharray="4 4"/>
+
+      {/* GPS Pin */}
+      <path d="M60 126C65 126 69 122 69 117C69 112 65 108 60 108C55 108 51 112 51 117C51 122 55 126 60 126Z"
+            fill="#2563EB"/>
+
+      <circle cx="60" cy="117" r="2.5" fill="white"/>
+
+      {/* Clock Badge */}
+      <circle cx="92" cy="42" r="14"
+              fill="#22C55E"/>
+
+      <circle cx="92" cy="42" r="6"
+              stroke="white"
+              strokeWidth="2"/>
+
+      <path d="M92 42V38"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"/>
+
+      <path d="M92 42L96 45"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"/>
+    </svg>
+  </div>
+);
+
+const AmberGraphic = () => (
+  <div className="relative w-16 h-16 flex items-center justify-center">
+    <div className="absolute inset-0 bg-amber-500/10 rounded-2xl blur-md group-hover:bg-amber-500/20 transition-all duration-500" />
+    <svg className="w-14 h-14 relative z-10 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Background */}
+      <circle cx="60" cy="60" r="54" fill="#F8FAFC"/>
+
+      {/* Mobile Device */}
+      <rect x="32" y="18" width="56" height="84" rx="10"
+            fill="white"
+            stroke="#0F172A"
+            strokeWidth="2.5"/>
+
+      {/* Photo Area */}
+      <rect x="40" y="28" width="40" height="24" rx="4"
+            stroke="#2563EB"
+            strokeWidth="2"/>
+
+      <circle cx="51" cy="37" r="3"
+              fill="#2563EB"/>
+
+      <path d="M44 48L54 40L62 46L76 34"
+            stroke="#2563EB"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"/>
+
+      {/* Report Lines */}
+      <path d="M42 62H78"
+            stroke="#94A3B8"
+            strokeWidth="2.5"
+            strokeLinecap="round"/>
+
+      <path d="M42 72H72"
+            stroke="#94A3B8"
+            strokeWidth="2.5"
+            strokeLinecap="round"/>
+
+      <path d="M42 82H66"
+            stroke="#94A3B8"
+            strokeWidth="2.5"
+            strokeLinecap="round"/>
+
+      {/* Send Badge */}
+      <circle cx="92" cy="88" r="14"
+              fill="#2563EB"/>
+
+      <path d="M86 88L98 83L94 94L91 90L86 88Z"
+            fill="white"/>
+
+      {/* Success Badge */}
+      <circle cx="92" cy="36" r="11"
+              fill="#22C55E"/>
+
+      <path d="M87 36L91 40L97 32"
+            stroke="white"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"/>
+    </svg>
+  </div>
+);
+
+const TealGraphic = () => (
+  <div className="relative w-16 h-16 flex items-center justify-center">
+    <div className="absolute inset-0 bg-teal-500/10 rounded-2xl blur-md group-hover:bg-teal-500/20 transition-all duration-500" />
+    <svg className="w-14 h-14 relative z-10 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Background */}
+      <circle cx="70" cy="70" r="62" fill="#F8FAFC"/>
+
+      {/* Monitor */}
+      <rect x="25" y="28" width="90" height="65" rx="8"
+            fill="white"
+            stroke="#0F172A"
+            strokeWidth="3"/>
+
+      {/* Dashboard Header */}
+      <rect x="35" y="38" width="70" height="6" rx="3"
+            fill="#E2E8F0"/>
+
+      {/* Map Section */}
+      <rect x="35" y="52" width="42" height="28" rx="4"
+            fill="#EFF6FF"/>
+
+      <path d="M42 72L52 62L60 67L70 58"
+            stroke="#2563EB"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"/>
+
+      <circle cx="52" cy="62" r="2.5" fill="#22C55E"/>
+      <circle cx="70" cy="58" r="2.5" fill="#22C55E"/>
+
+      {/* Analytics Cards */}
+      <rect x="83" y="52" width="22" height="10" rx="2"
+            fill="#2563EB"/>
+
+      <rect x="83" y="68" width="16" height="6" rx="2"
+            fill="#CBD5E1"/>
+
+      {/* Live Status */}
+      <circle cx="102" cy="100" r="14"
+              fill="#22C55E"/>
+
+      <circle cx="102" cy="100" r="4"
+              fill="white"/>
+
+      {/* Monitor Stand */}
+      <path d="M60 93H80"
+            stroke="#0F172A"
+            strokeWidth="3"
+            strokeLinecap="round"/>
+
+      <path d="M70 93V105"
+            stroke="#0F172A"
+            strokeWidth="3"
+            strokeLinecap="round"/>
+
+      <path d="M52 110H88"
+            stroke="#0F172A"
+            strokeWidth="3"
+            strokeLinecap="round"/>
+    </svg>
+  </div>
+);
+
+const RedGraphic = () => (
+  <div className="relative w-16 h-16 flex items-center justify-center">
+    <div className="absolute inset-0 bg-red-500/10 rounded-2xl blur-md group-hover:bg-red-500/20 transition-all duration-500" />
+    <svg className="w-14 h-14 relative z-10 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Background */}
+      <circle cx="70" cy="70" r="62" fill="#F8FAFC"/>
+
+      {/* Panic Button */}
+      <circle cx="70" cy="70" r="28"
+              fill="white"
+              stroke="#DC2626"
+              strokeWidth="3"/>
+
+      <circle cx="70" cy="70" r="18"
+              fill="#DC2626"/>
+
+      {/* Alert Waves */}
+      <path d="M70 22C92 22 110 40 110 62"
+            stroke="#F87171"
+            strokeWidth="3"
+            strokeLinecap="round"/>
+
+      <path d="M70 14C98 14 122 38 122 66"
+            stroke="#FCA5A5"
+            strokeWidth="3"
+            strokeLinecap="round"/>
+
+      {/* Exclamation */}
+      <path d="M70 60V74"
+            stroke="white"
+            strokeWidth="4"
+            strokeLinecap="round"/>
+
+      <circle cx="70" cy="82" r="2.5" fill="white"/>
+
+      {/* Command Center */}
+      <rect x="92" y="88"
+            width="24"
+            height="18"
+            rx="4"
+            fill="#2563EB"/>
+
+      <path d="M98 94H110"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"/>
+
+      {/* Connection */}
+      <path d="M88 86L96 92"
+            stroke="#2563EB"
+            strokeWidth="2.5"
+            strokeLinecap="round"/>
+    </svg>
+  </div>
+);
+
+const SkyGraphic = () => (
+  <div className="relative w-16 h-16 flex items-center justify-center">
+    <div className="absolute inset-0 bg-sky-500/10 rounded-2xl blur-md group-hover:bg-sky-500/20 transition-all duration-500" />
+    <svg className="w-14 h-14 relative z-10 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* Background */}
+      <circle cx="70" cy="70" r="62" fill="#F8FAFC"/>
+
+      {/* Master Account */}
+      <circle cx="70" cy="70" r="18"
+              fill="white"
+              stroke="#0F172A"
+              strokeWidth="3"/>
+
+      <circle cx="70" cy="64" r="4" fill="#2563EB"/>
+      <path d="M63 77C65 72 75 72 77 77"
+            stroke="#2563EB"
+            strokeWidth="2.5"
+            strokeLinecap="round"/>
+
+      {/* Top Property */}
+      <rect x="58" y="16"
+            width="24"
+            height="24"
+            rx="5"
+            fill="white"
+            stroke="#0F172A"
+            strokeWidth="2.5"/>
+
+      <path d="M63 30L70 24L77 30"
+            stroke="#2563EB"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"/>
+
+      {/* Left Property */}
+      <rect x="14" y="58"
+            width="24"
+            height="24"
+            rx="5"
+            fill="white"
+            stroke="#0F172A"
+            strokeWidth="2.5"/>
+
+      <path d="M19 72L26 66L33 72"
+            stroke="#2563EB"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"/>
+
+      {/* Right Property */}
+      <rect x="102" y="58"
+            width="24"
+            height="24"
+            rx="5"
+            fill="white"
+            stroke="#0F172A"
+            strokeWidth="2.5"/>
+
+      <path d="M107 72L114 66L121 72"
+            stroke="#2563EB"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"/>
+
+      {/* Bottom Property */}
+      <rect x="58" y="100"
+            width="24"
+            height="24"
+            rx="5"
+            fill="white"
+            stroke="#0F172A"
+            strokeWidth="2.5"/>
+
+      <path d="M63 114L70 108L77 114"
+            stroke="#2563EB"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"/>
+
+      {/* Connections */}
+      <path d="M70 40V52"
+            stroke="#2563EB"
+            strokeWidth="2.5"
+            strokeLinecap="round"/>
+
+      <path d="M38 70H52"
+            stroke="#2563EB"
+            strokeWidth="2.5"
+            strokeLinecap="round"/>
+
+      <path d="M88 70H102"
+            stroke="#2563EB"
+            strokeWidth="2.5"
+            strokeLinecap="round"/>
+
+      <path d="M70 88V100"
+            stroke="#2563EB"
+            strokeWidth="2.5"
+            strokeLinecap="round"/>
+
+      {/* Status Dots */}
+      <circle cx="70" cy="52" r="3" fill="#22C55E"/>
+      <circle cx="52" cy="70" r="3" fill="#22C55E"/>
+      <circle cx="88" cy="70" r="3" fill="#22C55E"/>
+      <circle cx="70" cy="88" r="3" fill="#22C55E"/>
+    </svg>
+  </div>
+);
+
+function FeatureVisual({ accent }: { accent: string }) {
+  switch (accent) {
+    case "emerald": return <EmeraldGraphic />;
+    case "indigo": return <IndigoGraphic />;
+    case "rose": return <RoseGraphic />;
+    case "blue": return <BlueGraphic />;
+    case "violet": return <VioletGraphic />;
+    case "amber": return <AmberGraphic />;
+    case "teal": return <TealGraphic />;
+    case "red": return <RedGraphic />;
+    case "sky": return <SkyGraphic />;
+    default: return null;
+  }
+}
+
 /* Cursor-following spotlight — updates CSS vars on the hovered card */
 function handleSpotlight(e: React.MouseEvent<HTMLDivElement>) {
   const el = e.currentTarget;
@@ -230,7 +784,6 @@ function handleSpotlight(e: React.MouseEvent<HTMLDivElement>) {
 function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
   const a = ACCENTS[feature.accent];
   const Icon = feature.icon;
-  const Badge = feature.badge;
   const isLarge = feature.span.includes("col-span-4");
 
   return (
@@ -283,20 +836,10 @@ function FeatureCard({ feature, index }: { feature: Feature; index: number }) {
         )}
 
         <div className={`relative z-10 flex h-full flex-col ${isLarge ? "p-7 md:p-9 min-h-[260px]" : "p-6 md:p-7 min-h-[230px]"}`}>
-          {/* Layered icon badge */}
+          {/* Layered custom premium graphic */}
           <div className="mb-5">
-            <div
-              className={`relative flex items-center justify-center rounded-2xl border bg-gradient-to-br ${a.wrap} ${a.hoverWrap} shadow-[0_6px_16px_-6px_rgba(15,23,42,0.12)] transition-all duration-500 group-hover:-translate-y-1 group-hover:scale-105 ${isLarge ? "h-16 w-16" : "h-14 w-14"}`}
-            >
-              <Icon
-                className={`${a.icon} transition-all duration-500 group-hover:rotate-6 group-hover:text-white ${isLarge ? "h-8 w-8" : "h-6 w-6"}`}
-              />
-              {/* Floating micro-badge */}
-              <span
-                className={`absolute -bottom-1.5 -right-1.5 flex h-5 w-5 items-center justify-center rounded-full border shadow-[0_2px_6px_rgba(0,0,0,0.08)] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12 ${a.badge}`}
-              >
-                <Badge className="h-2.5 w-2.5 text-white" />
-              </span>
+            <div className="transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-105 w-max">
+              <FeatureVisual accent={feature.accent} />
             </div>
           </div>
 
