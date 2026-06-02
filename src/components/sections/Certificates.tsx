@@ -112,9 +112,9 @@ export default function Certificates() {
 
                 {/* Elegant description underneath */}
                 <div className="mt-4 text-center">
-                  <h4 className="font-bold text-slate-800 mb-1 text-lg group-hover:text-primary transition-colors">
+                  <h3 className="font-bold text-slate-800 mb-1 text-lg group-hover:text-primary transition-colors">
                     {cert.title}
-                  </h4>
+                  </h3>
                   <p className="text-xs text-slate-400 font-medium leading-relaxed max-w-[320px] mx-auto">
                     {cert.desc}
                   </p>

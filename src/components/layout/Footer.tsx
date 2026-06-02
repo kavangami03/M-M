@@ -78,10 +78,10 @@ export default function Footer() {
               <li><Link href="/terms-and-conditions" className="hover:text-primary transition-colors">Terms & Conditions</Link></li>
             </ul>
             <div className="flex gap-4">
-              <a href="https://www.facebook.com/guardmonitormanage/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-primary transition-colors">
+              <a href="https://www.facebook.com/guardmonitormanage/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Page" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-primary transition-colors">
                 <FaFacebook className="w-5 h-5" />
               </a>
-              <a href="https://www.instagram.com/guardmonitormanage/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-primary transition-colors">
+              <a href="https://www.instagram.com/guardmonitormanage/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Page" className="w-10 h-10 rounded-full bg-slate-900 flex items-center justify-center hover:bg-primary transition-colors">
                 <FaInstagram className="w-5 h-5" />
               </a>
             </div>
@@ -127,7 +127,7 @@ export default function Footer() {
           </div>
         </div>
 {/* Git */}
-        <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
+        <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-sm">
           <p>&copy; {new Date().getFullYear()} Monitor & Manage. All rights reserved.</p>
           <p>
             Website design & developed by{" "}

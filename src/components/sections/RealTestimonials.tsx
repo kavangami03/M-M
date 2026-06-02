@@ -102,7 +102,7 @@ export default function RealTestimonials() {
                   {review.initials}
                 </div>
                 <div className="min-w-0">
-                  <h5 className="font-bold text-slate-900 text-base truncate">{review.name}</h5>
+                  <p className="font-bold text-slate-900 text-base truncate">{review.name}</p>
                   <p className="text-xs text-slate-500 font-semibold truncate mt-0.5">{review.role}</p>
                   <p className="text-[10px] text-blue-600 font-bold uppercase tracking-widest mt-1">{review.company}</p>
                 </div>

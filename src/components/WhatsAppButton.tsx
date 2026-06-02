@@ -99,7 +99,7 @@ export default function WhatsAppButton() {
                 onClick={() => {
                   setShowPopup(false);
                 }}
-                className="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#20ba59] text-white py-2 rounded-xl text-xs font-bold transition-all shadow-md shadow-green-500/10 hover:shadow-lg hover:shadow-green-500/25 active:scale-95"
+                className="flex items-center justify-center gap-2 w-full bg-[#128C7E] hover:bg-[#075E54] text-white py-2 rounded-xl text-xs font-bold transition-all shadow-md shadow-green-500/10 hover:shadow-lg hover:shadow-green-500/25 active:scale-95"
               >
                 <Send className="w-3.5 h-3.5" />
                 Start Live Chat

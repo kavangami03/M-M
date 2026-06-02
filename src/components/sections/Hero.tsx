@@ -213,7 +213,7 @@ export default function Hero() {
                       alt="M&M Web Dashboard Setup"
                       fill
                       unoptimized
-                      className="object-fill pointer-events-none select-none"
+                      className="object-cover pointer-events-none select-none"
                       priority
                     />
                     

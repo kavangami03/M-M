@@ -70,7 +70,7 @@ export default function FAQ() {
                 <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-500/10">
                   <MessageSquare className="w-5 h-5" />
                 </div>
-                <h4 className="font-extrabold text-lg text-slate-900">Still have questions?</h4>
+                <h3 className="font-extrabold text-lg text-slate-900">Still have questions?</h3>
               </div>
               <p className="text-slate-500 text-sm leading-relaxed mb-6 font-medium">
                 Cannot find the answer you are looking for? Get in touch with our operations desk, available 24/7.
