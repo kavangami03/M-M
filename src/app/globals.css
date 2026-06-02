@@ -203,3 +203,10 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 0px;
 }
+
+/* Custom responsiveness: Scale container to 92% of screen width on extra-large viewports */
+@media (min-width: 1520px) {
+  .container {
+    max-width: 92% !important;
+  }
+}

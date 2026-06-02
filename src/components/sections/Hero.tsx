@@ -168,7 +168,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="w-full lg:w-6/12 flex justify-center items-center relative py-12 px-2 z-10 select-none"
+            className="w-full lg:w-6/12 flex justify-center items-center relative sm:py-12 px-2 z-10 select-none"
           >
             <div className="relative w-full aspect-[4.3/3] max-w-[560px] lg:max-w-none flex items-center justify-center select-none">
               

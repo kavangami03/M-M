@@ -4,7 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Header from "@/components/layout/Header";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import Script from "next/script";
+import TawkTracker from "@/components/TawkTracker";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -127,20 +127,8 @@ export default function RootLayout({
           <WhatsAppButton />
         </SmoothScroll>
 
-        {/* Tawk.to Script for Real-time tracking and push alerts */}
-        <Script id="tawk-to" strategy="afterInteractive">
-          {`
-            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-            (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/6a1e7ae50a89cf1c34823d2b/1jq3h052s';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
-            s0.parentNode.insertBefore(s1,s0);
-            })();
-          `}
-        </Script>
+        {/* Tawk.to Real-time tracking and push alerts loaded purely client-side after hydration */}
+        <TawkTracker />
       </body>
     </html>
   );

@@ -123,21 +123,21 @@ export default function Testimonials() {
 
               {/* 3. Generated Patrolling PDF Audit Report (Highly Realistic HTML Corporate Document Card) */}
               <motion.div
-                className="absolute w-[38%] left-[-4%] bottom-[-8%] z-25 bg-white border border-slate-200/90 p-3 sm:p-4 rounded-2xl shadow-[0_20px_45px_rgba(0,0,0,0.35)] select-none text-slate-800 flex flex-col font-sans"
+                className="absolute w-[44%] sm:w-[38%] left-[-4%] bottom-[-8%] z-25 bg-white border border-slate-200/90 p-2 sm:p-4 rounded-xl sm:rounded-2xl shadow-[0_20px_45px_rgba(0,0,0,0.35)] select-none text-slate-800 flex flex-col font-sans"
               >
                 {/* Document Header */}
-                <div className="flex items-center justify-between border-b border-slate-100 pb-2 mb-2">
+                <div className="flex items-center justify-between border-b border-slate-100 pb-1.5 sm:pb-2 mb-1.5 sm:mb-2">
                   <div>
-                    <p className="text-[9px] md:text-[11px] font-black text-slate-900 tracking-tight uppercase">Patrol Audit Report</p>
-                    <p className="text-[7px] md:text-[8px] text-slate-500 font-bold">M&M App Patrolling System</p>
+                    <p className="text-[7.5px] sm:text-[9px] md:text-[11px] font-black text-slate-900 tracking-tight uppercase">Patrol Audit Report</p>
+                    <p className="text-[5.5px] sm:text-[7px] md:text-[8px] text-slate-500 font-bold">M&M App Patrolling System</p>
                   </div>
-                  <div className="bg-emerald-500/10 text-emerald-700 text-[6px] md:text-[7px] font-black tracking-wider uppercase py-0.5 px-2 rounded border border-emerald-200">
+                  <div className="bg-emerald-500/10 text-emerald-700 text-[5px] sm:text-[6px] md:text-[7px] font-black tracking-wider uppercase py-0.5 px-1.5 sm:px-2 rounded border border-emerald-200">
                     PASSED AUDIT
                   </div>
                 </div>
 
                 {/* Report Metadata */}
-                <div className="grid grid-cols-2 gap-x-2 gap-y-1 text-[6px] md:text-[7.5px] font-bold text-slate-600 mb-2.5 pb-2 border-b border-slate-100">
+                <div className="grid grid-cols-2 gap-x-1 gap-y-0.5 text-[5px] sm:text-[6px] md:text-[7.5px] font-bold text-slate-600 mb-2 pb-1.5 sm:pb-2 border-b border-slate-100">
                   <div><span className="text-slate-400 font-semibold">SITE:</span> Zone A Center</div>
                   <div><span className="text-slate-400 font-semibold">DATE:</span> Jun 01, 2026</div>
                   <div><span className="text-slate-400 font-semibold">GUARD:</span> Ahmad R.</div>
@@ -145,15 +145,15 @@ export default function Testimonials() {
                 </div>
 
                 {/* Audit Checklist Items */}
-                <div className="space-y-1.5 flex-1">
+                <div className="space-y-1 flex-1">
                   {[
                     { checkpoint: "Checkpoint 1 - Main Gate", time: "08:32 AM", status: "VERIFIED" },
                     { checkpoint: "Checkpoint 2 - Perimeter North", time: "08:45 AM", status: "VERIFIED" },
                     { checkpoint: "Checkpoint 3 - Warehouse East", time: "09:12 AM", status: "VERIFIED" }
                   ].map((item, idx) => (
-                    <div key={idx} className="flex items-center justify-between text-[6.5px] md:text-[8px] bg-slate-50 p-1.5 rounded border border-slate-100">
-                      <div className="flex items-center gap-1.5 min-w-0">
-                        <CheckCircle2 className="w-2.5 h-2.5 text-emerald-500 flex-shrink-0" />
+                    <div key={idx} className="flex items-center justify-between text-[5.5px] sm:text-[6.5px] md:text-[8px] bg-slate-50 p-1 sm:p-1.5 rounded border border-slate-100">
+                      <div className="flex items-center gap-1 min-w-0">
+                        <CheckCircle2 className="w-2 h-2 sm:w-2.5 sm:h-2.5 text-emerald-500 flex-shrink-0" />
                         <span className="font-semibold text-slate-700 truncate">{item.checkpoint}</span>
                       </div>
                       <span className="text-slate-500 font-mono flex-shrink-0">{item.time}</span>
@@ -162,13 +162,13 @@ export default function Testimonials() {
                 </div>
 
                 {/* Stamp/Signature block */}
-                <div className="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-[6px] md:text-[7px]">
-                  <div className="text-slate-400 font-bold">
+                <div className="mt-2 sm:mt-3 pt-1.5 sm:pt-2 border-t border-slate-100 flex items-center justify-between text-[5px] sm:text-[6px] md:text-[7px]">
+                  <div className="text-slate-400 font-bold leading-tight">
                     SYSTEM SECURITY VERIFIED<br />
-                    <span className="text-slate-600 font-extrabold uppercase">M&M AUTO-AUDIT SECURE</span>
+                    <span className="text-slate-600 font-extrabold uppercase text-[5.5px] sm:text-[6.5px]">M&M AUTO-AUDIT SECURE</span>
                   </div>
                   {/* Glowing Pulse PDF Badge */}
-                  <div className="bg-blue-600 text-white text-[6.5px] md:text-[7.5px] font-black tracking-wider uppercase py-0.5 px-2 rounded shadow shadow-blue-500/20 whitespace-nowrap animate-pulse">
+                  <div className="bg-blue-600 text-white text-[5.5px] sm:text-[6.5px] md:text-[7.5px] font-black tracking-wider uppercase py-0.5 px-1 sm:px-2 rounded shadow shadow-blue-500/20 whitespace-nowrap animate-pulse">
                     PDF AUDIT READY
                   </div>
                 </div>
