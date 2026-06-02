@@ -11,7 +11,7 @@ const policyPoints = [
     title: "User Consent",
     icon: FaShieldAlt,
     content: [
-      "By using the services provided by Guard Monitor & Manage Sdn Bhd (herein after referred as Monitor & Manage) the user consents to the collection and/or usage and/or sharing of data under the Privacy Policy and agree to all the terms and conditions."
+      "1. By using the services provided by Guard Monitor & Manage Sdn Bhd (here in after referred as Monitor & Manage) the user consents to the collection and/or usage and/or sharing of data under the Privacy Policy and agree to all the terms and conditions."
     ]
   },
   {
@@ -19,8 +19,8 @@ const policyPoints = [
     title: "Policy Updates",
     icon: FaUserEdit,
     content: [
-      "The user consents to the changes on the privacy policy upon using the service subsequent to an update.",
-      "Monitor & Manage may and/or will modify the privacy policy from time to time and a notice will be provided in regards to the changes in the mobile app and/or web portal. By continuing to use the app and/or web portal upon receiving the notice of any amendments and/or changes, the User consents to the latest privacy policy."
+      "2. The user consents to the changes on the privacy policy upon using the service subsequent to an update.",
+      "3. Monitor & Manage may and/or will modify the privacy policy from time to time and a notice will be provided in regards to the changes in the mobile app and/or web portal. By continuing to use the app and/or web portal upon receiving the notice of any amendments and/or changes, the User consents to the latest privacy policy."
     ]
   },
   {
@@ -28,8 +28,8 @@ const policyPoints = [
     title: "Information Collection",
     icon: FaClipboardList,
     content: [
-      "Monitor & Manage may collects information’s such as user’s name, company name, contact details of the user, correspondence address of the user (including e-mail address). These details may be obtained when the user registers to use the App and/or web portal.",
-      "Personal data may be obtained when the user lodges any complaint and/or feedback to Monitor & Manage regarding the app and/or web portal."
+      "4. Monitor & Manage may collects information’s such as user’s name, company name, contact details of the user, correspondence address of the user (including e-mail address). These details may be obtained when the user registers to use the App and/or web portal.",
+      "5. Personal data may be obtained when the user lodges any complaint and/or feedback to Monitor & Manage regarding the app and/or web portal."
     ]
   },
   {
@@ -37,8 +37,8 @@ const policyPoints = [
     title: "Purpose of Collection",
     icon: FaDatabase,
     content: [
-      "The collected information will be used by Monitor & Manage to verify the identity of the user, to verify financial worthiness, preventing illegal activities, to smoothen process of communication, to provide update regarding the app, to investigate, respond and/or defend the company from any legal action and/or claims arising in the future, for any other purposes that is required and/or permitted by law, regulation, guidelines.",
-      "The information’s collected are also to enable Monitor & Manage to comply with the legal requirements, auditing purposes, analysing of data, and future researches done by Monitor & Manage and/or purposes required by the governing laws, regulations guidelines and relevant authorities."
+      "6. The collected information will be used by Monitor & Manage to verify the identity of the user, to verify financial worthiness, preventing illegal activities, to smoothen process of communication, to provide update regarding the app, to investigate, respond and/or defend the company from any legal action and/or claims arising in the future, for any other purposes that is required and/or permitted by law, regulation, guidelines.",
+      "7. The information’s collected are also to enable Monitor & Manage to comply with the legal requirements, auditing purposes, analysing of data, and future researches done by Monitor & Manage and/or purposes required by the governing laws, regulations guidelines and relevant authorities."
     ]
   },
   {
@@ -46,8 +46,8 @@ const policyPoints = [
     title: "Data Sharing & Disclosure",
     icon: FaShareAlt,
     content: [
-      "Monitor & Manage may and/or be required to provide the details collected from the user to law enforcement agencies, organisations that may be our agents, contractors, service providers and/or advisers and/or business associates, government agencies",
-      "Monitor & Manage will obtain and collect personal data of the users for as long as needed. Those Obtained data may be used by Monitor & Manage as it requires and/or deemed fit."
+      "8. Monitor & Manage may and/or be required to provide the details collected from the user to law enforcement agencies, organizations that may be our agents, contractors, service providers and/or advisers and/or business associates, government agencies",
+      "9. Monitor & Manage will obtain and collect personal data of the users for as long as needed. Those Obtained data may be used by Monitor & Manage as it requires and/or deemed fit."
     ]
   },
   {
@@ -55,7 +55,7 @@ const policyPoints = [
     title: "Third-Party Consent",
     icon: FaUsers,
     content: [
-      "Security Company’s and/or Branch Managers are required to provide information’s about the users and update Monitor & Manage if there are any changes and/or incorrect information. In the event the Security Company and/or Branch Manager must provide information about a third party, they must obtain prior consent from the third party before providing the information to the company."
+      "10. Security Company’s and/or Branch Managers are required to provide information’s about the users and update Monitor & Manage if there are any changes and/or incorrect information. In the event the Security Company and/or Branch Manager must provide information about a third party, they must obtain prior consent from the third party before providing the information to the company."
     ]
   }
 ];

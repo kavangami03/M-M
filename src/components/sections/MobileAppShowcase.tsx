@@ -13,10 +13,8 @@ const ALL_SCREENSHOTS = [
   { src: "/guards-live-patrolling.png", alt: "Guards Live Patrolling", w: 1094, h: 2208 },
   { src: "/patrolling-report.png", alt: "Patrolling Report", w: 1094, h: 2208 },
   { src: "/incident-report.png", alt: "Incident Report", w: 1094, h: 2208 },
-  { src: "/visitors-report.png", alt: "Visitors Report", w: 1094, h: 2208 },
   { src: "/replacement-temporary-guard.png", alt: "Replacement / Temporary Guard", w: 1094, h: 2208 },
   { src: "/security-guard.png", alt: "Security Guard", w: 1094, h: 2208 },
-  { src: "/in-charge.png", alt: "In-Charge", w: 1094, h: 2208 },
   { src: "/notification-missed-clockin.png", alt: "Notification If Guard Failed To Clock In On Time", w: 1094, h: 2208 },
 ];
 

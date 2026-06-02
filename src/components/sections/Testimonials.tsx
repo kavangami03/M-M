@@ -19,11 +19,11 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="flex-1 w-full"
+            className="flex-1 w-full capitalize"
           >
             <SectionHeader
               eyebrow="Unified Management"
-              title={<>If you are not monitoring, <br className="hidden sm:block" /> <span className="text-gradient">youarenotmanaging.</span></>}
+              title={<>If you are not monitoring, <br className="hidden sm:block" /> <span className="text-gradient">you are not managing.</span></>}
               dark={true}
               align="left"
             />
@@ -34,7 +34,7 @@ export default function Testimonials() {
               All guard activities are recorded in real time, generated into instant, document-ready reports and free from device maintenance cost. The system operates fully through a mobile application, making security operations smarter, faster, and more cost-effective.
             </p>
             <p className="text-base sm:text-lg text-slate-300 leading-relaxed font-medium">
-              The system also enhances your company&apos;s professional image with modern technology that impresses both clients and management. Whether you manage a small team of 10 guards or a large force of over 1,000, M&M App scales effortlessly to meet your needs, making security operations faster, smarter, and far more transparent.
+              The system also enhances your company&apos;s professional image with modern technology that impresses both clients and management. Whether you manage a small team of 10 guards or a large force of over 10,000, M&M App scales effortlessly to meet your needs, making security operations faster, smarter, and far more transparent.
             </p>
           </motion.div>
 

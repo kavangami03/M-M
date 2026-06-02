@@ -62,7 +62,7 @@ export default function Certificates() {
       <div className="container mx-auto px-6 max-w-[1520px]">
         <SectionHeader
           eyebrow="Recognized & Certified"
-          title="Built to Government Standards"
+          title="Certificates"
           align="center"
         />
 

@@ -18,7 +18,7 @@ const STEPS: Step[] = [
   {
     num: "01",
     title: "Download the App",
-    desc: "Guards download the M&M app on their smartphones. No extra hardware required.",
+    desc: "Download the M&M app from Google Play or the App Store.",
     image: "/home-screen.png",
     alt: "M&M mobile app home screen on a smartphone",
     width: 1208,

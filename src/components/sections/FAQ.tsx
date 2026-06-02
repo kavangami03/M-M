@@ -7,10 +7,6 @@ import { HelpCircle, ChevronDown, MessageSquare, Mail, PhoneCall } from "lucide-
 
 const faqData = [
   {
-    question: "Do guards need internet access to run M&M App?",
-    answer: "No, M&M App features a robust offline mode. Guards can scan checkpoints, capture incident photos, and log notes completely offline. The data will automatically sync as soon as cellular or Wi-Fi connectivity is restored."
-  },
-  {
     question: "How does the geofencing and GPS verification work?",
     answer: "Every checkpoint scan and clock-in is verified using the smartphone's high-accuracy hardware GPS. The app validates the guard's coordinates against your pre-defined geofenced site radius, preventing remote clock-ins or false patrols."
   },

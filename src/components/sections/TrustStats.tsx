@@ -1,14 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users, Radar, MonitorSmartphone, Building2, FileCheck } from "lucide-react";
+import { Users, Radar, Wrench, Building2, FileCheck } from "lucide-react";
 import Image from "next/image";
 import SectionHeader from "../SectionHeader";
 
 const STATS = [
   { icon: Users, kicker: "Workforce", label: "Guards Supported", value: "10K+", image: "/stat-guards.png", color: "from-blue-600 to-blue-400" },
   { icon: Radar, kicker: "Tracking", label: "Live Monitoring", value: "Real-Time", image: "/stat-tracking.png", color: "from-emerald-600 to-emerald-400" },
-  { icon: MonitorSmartphone, kicker: "Infrastructure", label: "Hardware Maintenance", value: "Zero", image: "/stat-devices.png", color: "from-violet-600 to-violet-400" },
+  { icon: Wrench, kicker: "Infrastructure", label: "Hardware Maintenance", value: "Zero", image: "/stat-devices.png", color: "from-violet-600 to-violet-400" },
   { icon: Building2, kicker: "Coverage", label: "Site Management", value: "Multi-Site", image: "/stat-sites.png", color: "from-amber-600 to-amber-400" },
   { icon: FileCheck, kicker: "Reporting", label: "Field Audit Reports", value: "Instant", image: "/stat-reports.png", color: "from-rose-600 to-rose-400" },
 ];

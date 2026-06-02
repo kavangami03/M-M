@@ -21,6 +21,8 @@ import {
   Activity,
   Shield,
   Scan,
+  Wrench,
+  Settings,
   type LucideIcon,
 } from "lucide-react";
 
@@ -152,8 +154,8 @@ const FEATURES: Feature[] = [
     accent: "emerald",
   },
   {
-    icon: Cloud,
-    badge: Database,
+    icon: Wrench,
+    badge: Settings,
     title: "Zero Maintenance",
     desc: "Zero Maintenance. Maximum Reliability.",
     accent: "indigo",
@@ -204,7 +206,7 @@ const FEATURES: Feature[] = [
     icon: Network,
     badge: MapPin,
     title: "Centralized Control",
-    desc: "One account. Unlimited locations. Total control.",
+    desc: "One account. Unlimited Sites. Total control.",
     accent: "sky",
   },
 ];
@@ -255,33 +257,37 @@ const IndigoGraphic = () => (
       {/* Background */}
       <circle cx="60" cy="60" r="52" fill="#F5F7FF"/>
 
-      {/* Cloud */}
-      <path d="M38 66C30 66 24 60 24 52C24 44 30 38 38 38C40 28 49 22 59 22C71 22 81 31 82 43C91 43 98 50 98 59C98 68 91 75 82 75H38C30 75 24 69 24 61"
-            fill="#EEF2FF"
-            stroke="#111827"
-            strokeWidth="4"
-            strokeLinecap="round"
-            strokeLinejoin="round"/>
+      {/* Settings Gear Background */}
+      <path d="M60,34 L63,26 L69,28 L68,36 C71.5,37.5 74.5,39.5 77,42 L84,39 L88,44 L81,50 C82.5,53 83.5,56.5 83.9,60 L92,60 L92,66 L83.9,66 C83.5,69.5 82.5,73 81,76 L88,82 L84,87 L77,84 C74.5,86.5 71.5,88.5 68,90 L69,98 L63,100 L60,92 C56.5,92.5 53,92.5 50,92 L47,100 L41,98 L42,90 C38.5,88.5 35.5,86.5 33,84 L26,87 L22,82 L29,76 C27.5,73 26.5,69.5 26.1,66 L18,66 L18,60 L26.1,60 C26.5,56.5 27.5,53 29,50 L22,44 L26,39 L33,42 C35.5,39.5 38.5,37.5 42,36 L41,28 L47,26 L50,34 C53,33.5 56.5,33.5 60,34 Z" fill="#EEF2FF" stroke="#818cf8" strokeWidth="2.5" strokeLinejoin="round"/>
+      <circle cx="60" cy="60" r="12" fill="#F5F7FF" stroke="#818cf8" strokeWidth="2.5"/>
 
-      {/* Gear */}
-      <circle cx="60" cy="58" r="10" fill="white" stroke="#111827" strokeWidth="3"/>
-      <path d="M60 42V38M60 78V74M76 58H80M40 58H44M71 47L74 44M46 72L49 69M71 69L74 72M46 44L49 47"
-            stroke="#111827"
-            strokeWidth="3"
-            strokeLinecap="round"/>
+      {/* Crossed Wrench and Screwdriver Group */}
+      {/* 1. Screwdriver rotated 45 degrees around center */}
+      <g transform="rotate(45 60 60)">
+        {/* Metal Shaft */}
+        <rect x="58" y="16" width="4" height="32" fill="#E2E8F0" stroke="#111827" strokeWidth="3.5" strokeLinejoin="round"/>
+        {/* Flat Tip */}
+        <line x1="55" y1="16" x2="65" y2="16" stroke="#111827" strokeWidth="3.5" strokeLinecap="round"/>
+        {/* Contoured Handle */}
+        <path d="M 50,48 C 50,48 48,58 48,78 C 48,83.5 53.5,87 60,87 C 66.5,87 72,83.5 72,78 C 72,58 70,48 70,48 Z" fill="#3B82F6" stroke="#111827" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
+        {/* Handle Ribs */}
+        <line x1="55" y1="56" x2="55" y2="76" stroke="#1D4ED8" strokeWidth="2" strokeLinecap="round"/>
+        <line x1="60" y1="54" x2="60" y2="78" stroke="#1D4ED8" strokeWidth="2" strokeLinecap="round"/>
+        <line x1="65" y1="56" x2="65" y2="76" stroke="#1D4ED8" strokeWidth="2" strokeLinecap="round"/>
+      </g>
 
-      {/* Shield */}
-      <path d="M60 84L48 78V64L60 60L72 64V78L60 84Z"
-            fill="#22C55E"
-            stroke="#111827"
-            strokeWidth="3"
-            strokeLinejoin="round"/>
-
-      <path d="M55 72L59 76L66 69"
-            stroke="white"
-            strokeWidth="3"
-            strokeLinecap="round"
-            strokeLinejoin="round"/>
+      {/* 2. Wrench rotated -45 degrees around center */}
+      <g transform="rotate(-45 60 60)">
+        {/* Handle */}
+        <rect x="54" y="30" width="12" height="44" rx="4" fill="#93C5FD" stroke="#111827" strokeWidth="3.5" strokeLinejoin="round"/>
+        {/* Bottom Head */}
+        <circle cx="60" cy="74" r="9" fill="#93C5FD" stroke="#111827" strokeWidth="3.5"/>
+        <circle cx="60" cy="74" r="3.5" fill="#F5F7FF" stroke="#111827" strokeWidth="2"/>
+        {/* Top Head */}
+        <circle cx="60" cy="26" r="15" fill="#93C5FD" stroke="#111827" strokeWidth="3.5"/>
+        {/* Jaw Cutout Mask */}
+        <path d="M 50,14 L 60,24 L 70,14 L 65,8 L 60,12 L 55,8 Z" fill="#F5F7FF" stroke="#111827" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"/>
+      </g>
     </svg>
   </div>
 );
