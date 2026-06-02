@@ -146,7 +146,7 @@ export default function Header() {
             </a>
           </div>
           <a
-            href="https://portal.monitormanage.com.my/"
+            href="http://portal.monitormanage.com.my/portal/login"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-primary hover:bg-accent text-white px-5 py-2.5 rounded-full text-sm font-medium shadow-premium transition-all hover:-translate-y-0.5 inline-block"
@@ -213,7 +213,7 @@ export default function Header() {
             </a>
           </div>
           <a
-            href="https://portal.monitormanage.com.my/"
+            href="http://portal.monitormanage.com.my/portal/login"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileMenuOpen(false)}
