@@ -40,7 +40,7 @@ export default function WhatsAppButton() {
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${defaultMessage}`;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 pointer-events-none">
+    <div className="fixed bottom-6 left-6 z-50 flex flex-col items-start gap-3 pointer-events-none">
       {/* Interactive Chat Popup */}
       <AnimatePresence>
         {showPopup && !hasDismissed && (
@@ -80,7 +80,7 @@ export default function WhatsAppButton() {
             {/* Message Body */}
             <div className="p-4 bg-slate-50 relative">
               {/* Decorative speech bubble arrow */}
-              <div className="absolute right-6 -bottom-2 w-4 h-4 bg-slate-50 rotate-45 border-r border-b border-slate-100" />
+              <div className="absolute left-6 -bottom-2 w-4 h-4 bg-slate-50 rotate-45 border-r border-b border-slate-100" />
               <div className="bg-white rounded-xl p-3 border border-slate-100 shadow-sm text-xs text-slate-600 leading-relaxed">
                 <p className="font-semibold text-slate-800 mb-1 flex items-center gap-1.5">
                   <span>Hey there!</span>
