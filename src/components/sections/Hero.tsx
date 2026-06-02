@@ -33,7 +33,7 @@ export default function Hero() {
           alt="Security Operations Control Room Background"
           fill
           priority
-          className="object-cover object-bottom"
+          className="object-cover object-center"
         />
       </div>
 
@@ -143,7 +143,7 @@ export default function Hero() {
                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent" />
                 <span className="relative flex items-center gap-2">Start Free Trial <ArrowRight className="w-5 h-5" /></span>
               </button>
-              <button 
+              {/* <button 
                 onClick={() => {
                   const element = document.querySelector("#contact");
                   if (element) {
@@ -159,7 +159,7 @@ export default function Hero() {
                 className="w-full sm:w-auto bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 hover:border-slate-300 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 text-base sm:text-lg cursor-pointer"
               >
                 <Play className="w-5 h-5 text-slate-500 fill-slate-500" /> Watch Demo
-              </button>
+              </button> */}
             </div>
           </motion.div>
 

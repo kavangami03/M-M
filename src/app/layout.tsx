@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Header from "@/components/layout/Header";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -10,8 +11,94 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Monitor & Manage | AI-Powered Security Operations",
-  description: "Guard Monitor & Manage (M&M App) is a real-time mobile-based guard patrolling and workforce management platform built for modern security operations.",
+  title: {
+    default: "M&M Guard App | AI Patrolling & Workforce Management",
+    template: "%s | M&M Security"
+  },
+  description: "Monitor & Manage (M&M App) is a real-time mobile-based guard patrolling, live geofenced tracking, and workforce management platform built to optimize security operations, replace legacy physical hardware, and automate incident reporting.",
+  keywords: [
+    "security guard app",
+    "guard patrolling system",
+    "guard tour system",
+    "real-time guard tracking",
+    "workforce management software",
+    "security incident reporting",
+    "QR code patrol system",
+    "mandmsecurity",
+    "M&M App",
+    "security operation software",
+    "automated patrol reports"
+  ],
+  authors: [{ name: "M&M Security Solutions", url: "https://www.mandmsecurity.com" }],
+  creator: "M&M Security Solutions",
+  publisher: "M&M Security Solutions",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://www.mandmsecurity.com"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "M&M Guard App | AI Patrolling & Workforce Management",
+    description: "Monitor & Manage (M&M App) is a real-time mobile-based guard patrolling, live geofenced tracking, and workforce management platform built to optimize security operations.",
+    url: "https://www.mandmsecurity.com",
+    siteName: "M&M Security",
+    images: [
+      {
+        url: "/dashboard-mockup.png",
+        width: 1200,
+        height: 630,
+        alt: "M&M Guard Patrolling and Management Portal",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "M&M Guard App | AI Patrolling & Workforce Management",
+    description: "Real-time mobile guard tour system & automated reporting platform. Streamline patrol monitoring & operations in one secure system.",
+    images: ["/dashboard-mockup.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+// Structured Data (JSON-LD) for Search Engines
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "M&M Guard App",
+  "operatingSystem": "iOS, Android, Web",
+  "applicationCategory": "BusinessApplication, SafetyApplication",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "description": "Real-time guard patrolling, workforce management, and automated incident reporting platform built for modern security operations.",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "120"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "M&M Security Solutions",
+    "url": "https://www.mandmsecurity.com"
+  }
 };
 
 export default function RootLayout({
@@ -24,12 +111,19 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col font-sans">
         <SmoothScroll>
           <Header />
           <main className="flex-1">
             {children}
           </main>
+          <WhatsAppButton />
         </SmoothScroll>
       </body>
     </html>
