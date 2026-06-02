@@ -30,7 +30,7 @@ const dashboardScreens = [
   },
   {
     title: "Incident Reports & Log Management",
-    shortTitle: "Attendance & Logs",
+    shortTitle: "Incident Reports",
     description: "Detailed, automated digital incident logging with image capture, e-signatures, and shift schedules.",
     image: "/DASHBOARD-3.png",
     icon: ClipboardCheck,
