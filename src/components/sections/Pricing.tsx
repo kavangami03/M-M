@@ -5,11 +5,13 @@ import SectionHeader from "../SectionHeader";
 import { Check, Sparkles, Zap, Shield } from "lucide-react";
 
 const FEATURES = [
-  "Without Device",
-  "20 Checkpoints",
+  "No Hardware Required",
+  "Up to 20 Checkpoints",
   "Unlimited Reports",
-  "SOS",
-  "Live GPS",
+  "SOS Emergency Alerts",
+  "Live GPS Tracking",
+  "Incident Reporting",
+  "Real-Time Dashboard",
 ];
 
 const HIGHLIGHTS = [
@@ -59,22 +61,55 @@ export default function Pricing() {
           {/* Glowing Border Effect */}
           <div className="absolute -inset-1 bg-gradient-to-r from-primary via-accent to-primary rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 animate-pulse" />
 
-          <div className="relative bg-white rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 border border-border shadow-2xl flex flex-col">
-            {/* Badge */}
-            <div className="flex items-center gap-2 mb-5 md:mb-6">
+          <div className="relative bg-gradient-to-b from-white to-[#f8fbff] rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 border border-border shadow-2xl flex flex-col overflow-hidden">
+            {/* Top-Right Badge */}
+            <div className="absolute top-6 right-6 sm:top-8 sm:right-8 z-20">
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200/50 font-bold text-[10px] sm:text-xs uppercase tracking-wider shadow-sm">
+                Best Value
+              </span>
+            </div>
+
+            {/* Badge & Short Line */}
+            <div className="flex items-center gap-2 mb-2 md:mb-3">
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 text-primary font-semibold text-xs sm:text-sm border border-primary/10">
                 <Sparkles className="w-3.5 h-3.5" />
                 All-in-One Solution
               </div>
             </div>
 
+            <p className="text-slate-600 text-sm sm:text-base font-semibold mb-5 md:mb-6 pr-24">
+              Complete guard tour and incident management platform.
+            </p>
+
             {/* Price */}
             <div className="mb-6 md:mb-8">
-              <span className="text-muted-foreground font-medium text-sm sm:text-base">Price From</span>
-              <div className="flex items-baseline gap-2 mt-1.5">
+              <span className="text-muted-foreground font-medium text-sm sm:text-base">Starting at</span>
+              <div className="flex flex-wrap items-center gap-2 mt-1.5">
                 <span className="text-4xl sm:text-5xl font-bold font-heading text-foreground">RM 80</span>
                 <span className="text-lg sm:text-xl text-muted-foreground">/ Month</span>
-              </div>            </div>
+                
+                {/* Savings highlight next to price */}
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/50 font-semibold text-[10px] sm:text-xs">
+                  Save 60% on Hardware
+                </span>
+              </div>
+              
+              {/* Quick Value Props under price */}
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5 mt-4 text-[10px] sm:text-[11px] font-semibold text-slate-600">
+                <div className="flex items-center gap-1 bg-slate-50 px-2 py-0.5 rounded-full border border-slate-200/60">
+                  <Check className="w-3.5 h-3.5 text-emerald-600" strokeWidth={3} />
+                  <span>14-Day Free Trial</span>
+                </div>
+                <div className="flex items-center gap-1 bg-slate-50 px-2 py-0.5 rounded-full border border-slate-200/60">
+                  <Check className="w-3.5 h-3.5 text-emerald-600" strokeWidth={3} />
+                  <span>No Setup Fees</span>
+                </div>
+                <div className="flex items-center gap-1 bg-slate-50 px-2 py-0.5 rounded-full border border-slate-200/60">
+                  <Check className="w-3.5 h-3.5 text-emerald-600" strokeWidth={3} />
+                  <span>Cancel Anytime</span>
+                </div>
+              </div>
+            </div>
 
             {/* Divider */}
             <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-6 md:mb-8" />
@@ -101,13 +136,13 @@ export default function Pricing() {
             {/* CTA Button */}
             <button
               onClick={scrollToContact}
-              className="w-full bg-gradient-to-r from-primary to-accent hover:from-accent hover:to-primary text-white py-3.5 sm:py-4 rounded-xl font-semibold shadow-lg transition-all duration-500 hover:-translate-y-1 hover:shadow-xl text-sm sm:text-base"
+              className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white py-3.5 sm:py-4 rounded-xl font-bold shadow-[0_12px_30px_rgba(59,130,246,0.25)] hover:-translate-y-[2px] transition-all duration-300 hover:shadow-[0_15px_35px_rgba(59,130,246,0.4)] text-sm sm:text-base cursor-pointer"
             >
-              Contact Us to sign up for 2 Week Free trial
+              Get Started Free
             </button>
 
             <p className="text-center text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4">
-              Call us for quotation
+              Trusted by security teams across multiple sites
             </p>
           </div>
         </motion.div>

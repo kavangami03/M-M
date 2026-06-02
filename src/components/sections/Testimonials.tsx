@@ -23,7 +23,7 @@ export default function Testimonials() {
           >
             <SectionHeader
               eyebrow="Unified Management"
-              title={<>Monitor Every Guard. <br className="hidden sm:block" /> <span className="text-gradient">Manage Every Site.</span></>}
+              title={<>If you are not monitoring, <br className="hidden sm:block" /> <span className="text-gradient">youarenotmanaging.</span></>}
               dark={true}
               align="left"
             />

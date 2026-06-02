@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import SectionHeader from "../SectionHeader";
 import { 
@@ -40,6 +40,13 @@ const dashboardScreens = [
 
 export default function DashboardShowcase() {
   const [activeTab, setActiveTab] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveTab((prev) => (prev + 1) % dashboardScreens.length);
+    }, 2000);
+    return () => clearInterval(timer);
+  }, [activeTab]);
 
   return (
     <section id="dashboard" className="py-16 md:py-24 bg-foreground text-white overflow-hidden relative">
@@ -139,33 +146,39 @@ export default function DashboardShowcase() {
                 })}
               </div>
 
-              {/* Main Image Display Area with transitions */}
+              {/* Main Image Display Area with smooth crossfade transitions */}
               <div className="relative w-full aspect-[16/10] bg-[#070913] overflow-hidden">
-                <motion.div
-                  key={activeTab}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.4, ease: "easeOut" }}
-                  className="relative w-full h-full"
-                >
-                  <Image
-                    src={dashboardScreens[activeTab].image}
-                    alt={dashboardScreens[activeTab].title}
-                    fill
-                    unoptimized
-                    className="object-contain"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    priority
-                  />
-                  
-                  {/* Real-time reflection gloss */}
-                  <div 
-                    className="absolute inset-0 pointer-events-none z-10"
-                    style={{
-                      background: "linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.01) 40%, transparent 60%)"
-                    }}
-                  />
-                </motion.div>
+                {dashboardScreens.map((screen, idx) => {
+                  const isActive = activeTab === idx;
+                  return (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: isActive ? 1 : 0 }}
+                      transition={{ duration: 0.6, ease: "easeInOut" }}
+                      className="absolute inset-0 w-full h-full"
+                      style={{ pointerEvents: isActive ? "auto" : "none" }}
+                    >
+                      <Image
+                        src={screen.image}
+                        alt={screen.title}
+                        fill
+                        unoptimized
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        priority
+                      />
+                    </motion.div>
+                  );
+                })}
+                
+                {/* Real-time reflection gloss */}
+                <div 
+                  className="absolute inset-0 pointer-events-none z-20"
+                  style={{
+                    background: "linear-gradient(135deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.01) 40%, transparent 60%)"
+                  }}
+                />
               </div>
             </motion.div>
           </div>

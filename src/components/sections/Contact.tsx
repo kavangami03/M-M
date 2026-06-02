@@ -180,8 +180,8 @@ export default function Contact() {
          <div className="container mx-auto px-10 sm:px-20 2xl:px-6 max-w-[1520px] relative z-10">
             <SectionHeader
                eyebrow="Get Started"
-               title={<>Ready to Upgrade Your <span className="text-gradient">Security Operation?</span></>}
-               description="Start your 2-week free trial today. Fill out the form, and our team will get your enterprise dashboard set up within 24 hours."
+               title={<>Ready to Upgrade Security Operation?</>}
+               description="Start a 2-week free trial today. Fill out the form, and the team will have the enterprise dashboard set up within 24 hours."
                align="center"
             />
 

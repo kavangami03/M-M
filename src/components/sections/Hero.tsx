@@ -82,7 +82,7 @@ export default function Hero() {
                 animate="visible"
                 className="block text-slate-900"
               >
-                {"If you are not monitoring,".split(" ").map((word, i) => (
+                {"Monitor Every Guard.".split(" ").map((word, i) => (
                   <motion.span
                     key={`l1-${i}`}
                     variants={wordVariants}
@@ -99,7 +99,7 @@ export default function Hero() {
                 animate="visible"
                 className="block text-slate-900"
               >
-                {"you are not managing.".split(" ").map((word, i) => (
+                {"Manage Every Site.".split(" ").map((word, i) => (
                   <motion.span
                     key={`l2-${i}`}
                     variants={wordVariants}
