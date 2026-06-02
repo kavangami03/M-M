@@ -12,10 +12,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "M&M Guard App | AI Patrolling & Workforce Management",
+    default: "Security Guard Monitoring Software | Monitor & Manage",
     template: "%s | M&M Security"
   },
-  description: "Monitor & Manage (M&M App) is a real-time mobile-based guard patrolling, live geofenced tracking, and workforce management platform built to optimize security operations, replace legacy physical hardware, and automate incident reporting.",
+  description: "Real-time security guard monitoring software with patrol tracking, attendance management, SOS alerts and incident reporting.",
   keywords: [
     "security guard app",
     "guard patrolling system",
@@ -42,8 +42,8 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "M&M Guard App | AI Patrolling & Workforce Management",
-    description: "Monitor & Manage (M&M App) is a real-time mobile-based guard patrolling, live geofenced tracking, and workforce management platform built to optimize security operations.",
+    title: "Security Guard Monitoring Software | Monitor & Manage",
+    description: "Real-time security guard monitoring software with patrol tracking, attendance management, SOS alerts and incident reporting.",
     url: "https://www.mandmsecurity.com",
     siteName: "M&M Security",
     images: [
@@ -59,8 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "M&M Guard App | AI Patrolling & Workforce Management",
-    description: "Real-time mobile guard tour system & automated reporting platform. Streamline patrol monitoring & operations in one secure system.",
+    title: "Security Guard Monitoring Software | Monitor & Manage",
+    description: "Real-time security guard monitoring software with patrol tracking, attendance management, SOS alerts and incident reporting.",
     images: ["/dashboard-mockup.png"],
   },
   robots: {
