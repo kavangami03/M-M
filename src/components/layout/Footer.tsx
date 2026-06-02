@@ -128,7 +128,7 @@ export default function Footer() {
         </div>
 {/* Git */}
         <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} Monitor & Manage. All rights reserved.</p>
+          <p>&copy; 2025 Monitor & Manage. All rights reserved.</p>
           <p>
             Website design & developed by{" "}
             <a
