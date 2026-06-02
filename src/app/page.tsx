@@ -6,7 +6,9 @@ import Features from "@/components/sections/Features";
 import DashboardShowcase from "@/components/sections/DashboardShowcase";
 import MobileAppShowcase from "@/components/sections/MobileAppShowcase";
 import HowItWorks from "@/components/sections/HowItWorks";
+import RealTestimonials from "@/components/sections/RealTestimonials";
 import Pricing from "@/components/sections/Pricing";
+import FAQ from "@/components/sections/FAQ";
 import Certificates from "@/components/sections/Certificates";
 import Testimonials from "@/components/sections/Testimonials";
 import Contact from "@/components/sections/Contact";
@@ -24,7 +26,9 @@ export default function Home() {
       <MobileAppShowcase />
       <DashboardShowcase />
       <HowItWorks />
+      <RealTestimonials />
       <Pricing />
+      <FAQ />
       <Certificates />
       <Contact />
       <Footer />

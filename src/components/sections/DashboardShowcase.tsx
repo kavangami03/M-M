@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 import SectionHeader from "../SectionHeader";
 import { 
   CheckCircle2, 
-  Activity, 
-  MapPin, 
-  LayoutDashboard 
+  LayoutDashboard, 
+  Map, 
+  ClipboardCheck 
 } from "lucide-react";
 import Image from "next/image";
 
@@ -25,7 +25,7 @@ const dashboardScreens = [
     shortTitle: "Live Patrols",
     description: "Complete geo-tracking map showing live guard locations, checkpoint scans, and patrol routes.",
     image: "/DASHBOARD-2.png",
-    icon: MapPin,
+    icon: Map,
     url: "dashboard.mandmsecurity.com/patrolling",
   },
   {
@@ -33,7 +33,7 @@ const dashboardScreens = [
     shortTitle: "Attendance & Logs",
     description: "Detailed, automated digital incident logging with image capture, e-signatures, and shift schedules.",
     image: "/DASHBOARD-3.png",
-    icon: Activity,
+    icon: ClipboardCheck,
     url: "dashboard.mandmsecurity.com/reports",
   },
 ];
