@@ -6,10 +6,11 @@ import { Star, Quote, ShieldCheck } from "lucide-react";
 
 const reviews = [
   {
-    name: "Ahmad Ridzuan",
+    name: "Mr John",
     role: "Director of Security Operations",
-    company: "Metro Safeguard Group",
-    initials: "AR",
+    company: "Shelter Security Sdn Bhd",
+    logo: "/logo-1.jpg",
+    initials: "MJ",
     rating: 5,
     text: "M&M App has completely transformed our patrol audits. We slashed manual reporting times down to absolute zero. Our clients are wowed by the automated, professional GPS-verified PDF reports they receive instantly.",
     color: "from-blue-500 to-indigo-500",
@@ -17,10 +18,11 @@ const reviews = [
     offset: "lg:translate-y-0",
   },
   {
-    name: "Sarah Chen",
+    name: "Mr Sundra",
     role: "Senior Property Manager",
-    company: "Lakeside Towers Management",
-    initials: "SC",
+    company: "Prima Platinum Sdn Bhd",
+    logo: "/logo-2.png",
+    initials: "MS",
     rating: 5,
     text: "Getting rid of expensive physical patrol sticks was the best decision we made. Every checkpoint scan is geofence-validated on the guard's phone, giving our management team absolute transparency and zero hardware maintenance costs.",
     color: "from-emerald-500 to-teal-500",
@@ -28,10 +30,11 @@ const reviews = [
     offset: "lg:translate-y-6", // Staggered offset to break generic grid look
   },
   {
-    name: "Rajesh Kumar",
-    role: "Head of Security Force",
-    company: "Sentosa Commercial Precinct",
-    initials: "RK",
+    name: "Ms Meera",
+    role: "Manager",
+    company: "Gemini Force Sdn Bhd",
+    logo: "/logo-3.png",
+    initials: "MM",
     rating: 5,
     text: "The real-time tracking, offline sync, and instant SOS cellular alerts give our command center complete operational control. This is the most reliable, comprehensive patrol app we have ever deployed.",
     color: "from-violet-500 to-purple-500",
@@ -49,7 +52,7 @@ export default function RealTestimonials() {
       
       {/* Premium Tech Grid Accent */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:radial-gradient(circle,rgba(0,0,0,0.15)_1px,transparent_1px)] [background-size:24px_24px]" />
-
+ 
       <div className="container mx-auto px-10 sm:px-20 2xl:px-6 max-w-[1520px] relative z-10 pb-12">
         <SectionHeader
           eyebrow="Proven Success"
@@ -58,7 +61,7 @@ export default function RealTestimonials() {
           dark={false}
           align="center"
         />
-
+ 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-16 lg:gap-10">
           {reviews.map((review, idx) => (
             <motion.div
@@ -72,7 +75,7 @@ export default function RealTestimonials() {
             >
               {/* Premium Top Border Accent on Hover */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
+ 
               <div>
                 {/* Header elements (Star ratings & verified tag pill) */}
                 <div className="flex items-center justify-between mb-8">
@@ -86,21 +89,31 @@ export default function RealTestimonials() {
                     {review.badge}
                   </span>
                 </div>
-
+ 
                 {/* Decorative Giant Quote Watermark in Background */}
                 <Quote className="absolute right-6 top-16 w-20 h-20 text-slate-100/70 pointer-events-none group-hover:text-blue-50/60 transition-colors duration-500" />
-
+ 
                 {/* Review Text */}
                 <p className="text-slate-650 leading-relaxed font-medium text-base sm:text-[17px] mb-8 relative z-10 italic">
                   &ldquo;{review.text}&rdquo;
                 </p>
               </div>
-
+ 
               {/* Reviewer details block */}
               <div className="border-t border-slate-100 pt-6 mt-auto flex items-center gap-4 relative z-10">
-                <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${review.color} flex items-center justify-center font-black text-white text-base shadow-md shadow-blue-500/10 flex-shrink-0`}>
-                  {review.initials}
-                </div>
+                {review.logo ? (
+                  <div className="w-12 h-12 rounded-full border border-slate-100/60 overflow-hidden bg-slate-50 flex items-center justify-center flex-shrink-0 shadow-sm">
+                    <img 
+                      src={review.logo} 
+                      alt={`${review.company} logo`} 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${review.color} flex items-center justify-center font-black text-white text-base shadow-md shadow-blue-500/10 flex-shrink-0`}>
+                    {review.initials}
+                  </div>
+                )}
                 <div className="min-w-0">
                   <p className="font-bold text-slate-900 text-base truncate">{review.name}</p>
                   <p className="text-xs text-slate-500 font-semibold truncate mt-0.5">{review.role}</p>

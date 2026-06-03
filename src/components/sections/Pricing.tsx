@@ -1,97 +1,110 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import SectionHeader from "../SectionHeader";
-import { Check, Sparkles, Zap, Shield } from "lucide-react";
+import { Check, Sparkles, ShieldCheck, Zap, Info } from "lucide-react";
 
 interface Plan {
   id: string;
   name: string;
   badge: string;
-  topBadge: string;
-  price: string;
-  pricePrefix?: string;
-  priceSuffix?: string;
-  savingsBadge: string;
   description: string;
+  basePrice: number;
   features: string[];
-  ctaText: string;
-  isPopular?: boolean;
+  highlighted?: boolean;
 }
 
 const PLANS: Plan[] = [
   {
-    id: "starter",
-    name: "Starter Plan",
-    badge: "Basic Package",
-    topBadge: "3-Month Contract",
-    price: "RM 80",
-    pricePrefix: "Starting at",
-    priceSuffix: "/ Month",
-    savingsBadge: "No Discount",
-    description: "Ideal for single-site setups with essential monitoring requirements.",
+    id: "gate-guard",
+    name: "Gate Guard",
+    badge: "For Gate Guards",
+    description:
+      "Essential attendance, incident, and location logging for gate/static guard points.",
+    basePrice: 30,
     features: [
-      "1 Web Portal User",
-      "1 Gate Guard User",
-      "1 Person In Charge",
-      "20 Checkpoints",
-      "Attendance Reports",
-      "Incident Reporting",
-      "Live GPS Tracking",
-      "SOS Alerts"
+      "Audited Attendance Report",
+      "Audited Incident Report",
+      "Live Location Tracking",
+      "Request for Advance",
+      "Request for Leave",
+      "SOS Panic Button & Alerting",
     ],
-    ctaText: "Get Started Free"
   },
   {
-    id: "growth",
-    name: "Growth Plan",
+    id: "patrolling-guard",
+    name: "Patrolling Guard",
     badge: "Most Popular",
-    topBadge: "6-Month Contract",
-    price: "RM 150",
-    pricePrefix: "Starting at",
-    priceSuffix: "/ Month",
-    savingsBadge: "5% Discount Included",
-    description: "Includes a physical patrol device (with a 24-Month device contract).",
+    description:
+      "Comprehensive active patrolling tracking. Choose between software-only or hardware inclusion.",
+    basePrice: 80,
     features: [
-      "Patrol Device Included",
-      "1 Web Portal User",
-      "1 Gate Guard User",
-      "1 Person In Charge",
-      "20 Checkpoints",
-      "Attendance Reports",
-      "Incident Reporting",
-      "Live GPS Tracking",
-      "SOS Alerts"
+      "Includes all Gate Guard features",
+      "Audited Patrolling Report",
+      "NFC/QR Patrol Checkpoint Scanning",
+      "Geofenced Route Verification",
+      "Optional Rugged Device Supply",
     ],
-    ctaText: "Get Started Free",
-    isPopular: true
+    highlighted: true,
   },
   {
-    id: "enterprise",
-    name: "Enterprise Plan",
-    badge: "Custom Solutions",
-    topBadge: "Best Value",
-    price: "Contact Sales",
-    pricePrefix: "",
-    priceSuffix: "",
-    savingsBadge: "10% Discount Included",
-    description: "Advanced analytics, multiple guards, and 12-Month contract commitment.",
+    id: "in-charge",
+    name: "In Charge (Monitoring)",
+    badge: "For Supervisors",
+    description:
+      "Command and alert reception center for supervisors, operations managers, or control rooms.",
+    basePrice: 30,
     features: [
-      "Multiple Patrol Guards",
-      "Unlimited Checkpoints",
-      "Multi-Site Management",
-      "Advanced Analytics",
-      "Custom Workflows",
-      "API Integrations",
-      "Dedicated Support",
-      "Enterprise Controls",
-      "Priority Assistance"
+      "Receive Live Alerts & Notifications",
+      "All Guard Live GPS Locations",
+      "Instant SOS Alarm Reception",
+      "Real-time Dashboard Monitoring",
     ],
-    ctaText: "Contact Sales"
-  }
+  },
+  {
+    id: "web-portal",
+    name: "Web Portal (Managing)",
+    badge: "For Agencies",
+    description:
+      "Primary agency administration console. Complete staff management, contract billing, and schedules.",
+    basePrice: 30,
+    features: [
+      "Create Guards & In-Charge Profiles",
+      "Create Contracts (Guards & Checkpoints)",
+      "Automated Working & Patrol Schedules",
+      "Receive Automated PDF Reports",
+      "Manage Guard Leaves & Approvals",
+      "Manage Guard Cash Advances",
+    ],
+  },
 ];
 
 export default function Pricing() {
+  const [packageTier, setPackageTier] = useState<"3" | "6" | "12">("3");
+  const [patrolWithDevice, setPatrolWithDevice] = useState<boolean>(false);
+
+  // Discount calculation
+  const getDiscountMultiplier = () => {
+    if (packageTier === "6") return 0.95; // 5% discount
+    if (packageTier === "12") return 0.9; // 10% discount
+    return 1.0;
+  };
+
+  const getMonthlyPrice = (plan: Plan) => {
+    let price = plan.basePrice;
+    if (plan.id === "patrolling-guard") {
+      price = patrolWithDevice ? 150 : 80;
+    }
+    return price * getDiscountMultiplier();
+  };
+
+  const getTotalPriceForTier = (plan: Plan) => {
+    const monthlyPrice = getMonthlyPrice(plan);
+    const months = parseInt(packageTier, 10);
+    return monthlyPrice * months;
+  };
+
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
     const element = document.querySelector("#contact");
@@ -107,130 +120,267 @@ export default function Pricing() {
   };
 
   return (
-    <section id="pricing" className="py-16 md:py-24 bg-gradient-to-b from-white via-secondary/20 to-white relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-accent/5 blur-[100px] rounded-full pointer-events-none" />
+    <section
+      id="pricing"
+      className="py-24 bg-gradient-to-b from-[#f8fafc] via-[#f1f5f9] to-[#f8fafc] relative overflow-hidden border-y border-slate-200/60"
+    >
+      {/* Decorative ambient background visual nodes */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-blue-100/30 blur-[130px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-indigo-100/30 blur-[120px] rounded-full pointer-events-none" />
+
+      {/* Fine Dot grid pattern overlay */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.04] [background-image:radial-gradient(circle,rgba(0,0,0,0.1)_1px,transparent_1px)] [background-size:28px_28px] z-0" />
 
       <div className="container mx-auto px-6 max-w-[1520px] relative z-10">
         {/* Header */}
         <SectionHeader
           eyebrow="Pricing Plans"
-          title={<>Flexible Plans. <span className="text-gradient">No Hidden Costs.</span></>}
-          description="Scale your security operations with transparent, affordable pricing models tailored to agencies of all sizes."
+          title={
+            <>
+              Simple, Transparent{" "}
+              <span className="text-gradient">Pricing Roles</span>
+            </>
+          }
+          description="Build the perfect package for your agency. Choose roles for each team member and select a flexible billing plan with zero setup fees."
           align="center"
+          dark={false}
         />
 
-        {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-          {PLANS.map((plan, planIdx) => (
-            <motion.div
-              key={plan.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: planIdx * 0.15 }}
-              className="relative group flex flex-col h-full"
-            >
-              {/* Glowing Border Effect */}
-              <div className={`absolute -inset-1 bg-gradient-to-r from-primary via-accent to-primary rounded-[2rem] blur transition duration-1000 group-hover:duration-200 animate-pulse ${
-                plan.isPopular ? "opacity-35 group-hover:opacity-60" : "opacity-15 group-hover:opacity-35"
-              }`} />
+        {/* Highlighted 'One System' Badge */}
+        <div className="flex justify-center mb-10 -mt-2">
+          <span className="inline-flex items-center gap-2.5 py-2 px-6 rounded-full bg-blue-50 border border-blue-100 shadow-[0_4px_15px_rgba(37,99,235,0.03)] text-blue-700 text-xs font-black select-none">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
+              <span className="relative inline-block w-2.5 h-2.5 rounded-full bg-blue-600" />
+            </span>
+            One System. Everything Runs Automatically.
+          </span>
+        </div>
 
-              <div className="relative flex-1 bg-gradient-to-b from-white to-[#f8fbff] rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 border border-border shadow-2xl flex flex-col overflow-hidden">
-                {/* Top-Right Badge */}
-                <div className="absolute top-6 right-6 sm:top-8 sm:right-8 z-20">
-                  <span className={`inline-flex items-center px-3 py-1 rounded-full border font-bold text-[10px] sm:text-xs uppercase tracking-wider shadow-sm ${
-                    plan.isPopular 
-                      ? "bg-blue-500 text-white border-blue-400" 
-                      : "bg-blue-50 text-blue-700 border-blue-200/50"
-                  }`}>
-                    {plan.topBadge}
-                  </span>
-                </div>
+        {/* Package Duration Switcher */}
+        <div className="flex flex-col items-center justify-center mb-16">
+          <div className="bg-slate-200/50 border border-slate-200/30 p-1.5 rounded-2xl inline-flex items-center gap-1 shadow-inner relative">
+            {(["3", "6", "12"] as const).map((tier) => {
+              const label =
+                tier === "3"
+                  ? "3 Months Package"
+                  : tier === "6"
+                    ? "6 Months Package"
+                    : "12 Months Package";
+              const discount =
+                tier === "6" ? "5% Off" : tier === "12" ? "10% Off" : null;
 
-                {/* Badge & Short Line */}
-                <div className="flex items-center gap-2 mb-2 md:mb-3">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-primary/10 to-accent/10 text-primary font-semibold text-xs sm:text-sm border border-primary/10">
-                    <Sparkles className="w-3.5 h-3.5" />
-                    {plan.badge}
-                  </div>
-                </div>
-
-                <p className="text-slate-600 text-sm sm:text-base font-semibold mb-5 md:mb-6 pr-24">
-                  {plan.description}
-                </p>
-
-                {/* Price */}
-                <div className="mb-6 md:mb-8">
-                  {plan.pricePrefix && <span className="text-muted-foreground font-medium text-sm sm:text-base">{plan.pricePrefix}</span>}
-                  <div className="flex flex-wrap items-center gap-2 mt-1.5">
-                    <span className="text-4xl sm:text-5xl font-bold font-heading text-foreground">{plan.price}</span>
-                    {plan.priceSuffix && <span className="text-lg sm:text-xl text-muted-foreground">{plan.priceSuffix}</span>}
-                    
-                    {/* Savings highlight next to price */}
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/50 font-semibold text-[10px] sm:text-xs">
-                      {plan.savingsBadge}
-                    </span>
-                  </div>
-                  
-                  {/* Quick Value Props under price */}
-                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5 mt-4 text-[10px] sm:text-[11px] font-semibold text-slate-600">
-                    <div className="flex items-center gap-1 bg-slate-50 px-2 py-0.5 rounded-full border border-slate-200/60">
-                      <Check className="w-3.5 h-3.5 text-emerald-600" strokeWidth={3} />
-                      <span>14-Day Free Trial</span>
-                    </div>
-                    <div className="flex items-center gap-1 bg-slate-50 px-2 py-0.5 rounded-full border border-slate-200/60">
-                      <Check className="w-3.5 h-3.5 text-emerald-600" strokeWidth={3} />
-                      <span>No Setup Fees</span>
-                    </div>
-                    <div className="flex items-center gap-1 bg-slate-50 px-2 py-0.5 rounded-full border border-slate-200/60">
-                      <Check className="w-3.5 h-3.5 text-emerald-600" strokeWidth={3} />
-                      <span>Cancel Anytime</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Divider */}
-                <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-6 md:mb-8" />
-
-                {/* Features */}
-                <div className="space-y-3 sm:space-y-4 mb-8 md:mb-10 flex-1">
-                  {plan.features.map((feature, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.2 + i * 0.05 }}
-                      className="flex items-center gap-3"
-                    >
-                      <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-green-600" />
-                      </div>
-                      <span className="text-foreground font-medium text-sm sm:text-base">{feature}</span>
-                    </motion.div>
-                  ))}
-                </div>
-
-                {/* CTA Button */}
+              return (
                 <button
-                  onClick={scrollToContact}
-                  className={`w-full py-3.5 sm:py-4 rounded-xl font-bold transition-all duration-300 text-sm sm:text-base cursor-pointer ${
-                    plan.isPopular 
-                      ? "bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white shadow-[0_12px_30px_rgba(59,130,246,0.25)] hover:-translate-y-[2px] hover:shadow-[0_15px_35px_rgba(59,130,246,0.4)]" 
-                      : "bg-slate-900 hover:bg-slate-800 text-white shadow-md hover:-translate-y-[2px]"
+                  key={tier}
+                  onClick={() => setPackageTier(tier)}
+                  className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all duration-300 cursor-pointer relative flex items-center gap-2 z-10 ${
+                    packageTier === tier
+                      ? "text-slate-900"
+                      : "text-slate-500 hover:text-slate-800"
                   }`}
                 >
-                  {plan.ctaText}
+                  {packageTier === tier && (
+                    <motion.div
+                      layoutId="activeBillingTier"
+                      className="absolute inset-0 bg-white rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-slate-200/40"
+                      transition={{
+                        type: "spring",
+                        stiffness: 350,
+                        damping: 28,
+                      }}
+                    />
+                  )}
+                  <span className="relative z-20">{label}</span>
+                  {discount && (
+                    <span
+                      className={`relative z-20 text-[9px] px-1.5 py-0.5 rounded font-black ${
+                        packageTier === tier
+                          ? "bg-emerald-500/10 text-emerald-700"
+                          : "bg-emerald-500/10 text-emerald-600"
+                      }`}
+                    >
+                      {discount}
+                    </span>
+                  )}
                 </button>
+              );
+            })}
+          </div>
+          <p className="text-xs text-slate-500 mt-4 font-semibold flex items-center gap-1.5 bg-white px-4 py-2 rounded-full border border-slate-200/60 shadow-sm">
+            <Info className="w-4 h-4 text-blue-500" />1 Year Contract. No hidden
+            hardware replacement fees.
+          </p>
+        </div>
 
-                <p className="text-center text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4">
-                  * Registration Fee: RM 200 Per Year • Trusted by security teams across multiple sites
-                </p>
-              </div>
-            </motion.div>
-          ))}
+        {/* Pricing Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 items-stretch">
+          {PLANS.map((plan, planIdx) => {
+            const monthlyPrice = getMonthlyPrice(plan);
+            const totalPrice = getTotalPriceForTier(plan);
+
+            return (
+              <motion.div
+                key={plan.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: planIdx * 0.08 }}
+                className="relative group flex flex-col h-full"
+              >
+                <div
+                  className={`relative flex-1 bg-white rounded-[2rem] p-7 border flex flex-col justify-between transition-all duration-300 shadow-[0_15px_45px_rgba(0,0,0,0.015)] hover:shadow-[0_25px_65px_rgba(37,99,235,0.08)] hover:-translate-y-1 ${
+                    plan.highlighted
+                      ? "border-blue-500/40 ring-1 ring-blue-500/25"
+                      : "border-slate-200/80 hover:border-blue-500/20"
+                  }`}
+                >
+                  <div>
+                    {/* Role Badge */}
+                    <div className="mb-5">
+                      <span
+                        className={`text-[9px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full border ${
+                          plan.highlighted
+                            ? "bg-blue-50 text-blue-600 border-blue-100"
+                            : "bg-slate-50 text-slate-500 border-slate-100"
+                        }`}
+                      >
+                        {plan.badge}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-lg font-black text-slate-900 mb-2">
+                      {plan.name}
+                    </h3>
+                    <p className="text-[11px] text-slate-500 leading-relaxed mb-6 font-medium">
+                      {plan.description}
+                    </p>
+
+                    {/* Pricing Display Console */}
+                    <div className="bg-slate-50 border border-slate-100 p-4.5 rounded-2xl mb-6 relative overflow-hidden">
+                      <div className="absolute inset-0 opacity-[0.01] [background-image:radial-gradient(circle,rgba(0,0,0,0.15)_1px,transparent_1px)] [background-size:12px_12px]" />
+
+                      {plan.id === "patrolling-guard" && (
+                        <div className="mb-4 relative z-10">
+                          <label className="text-[10px] uppercase font-bold text-slate-500 block mb-1.5 tracking-wider">
+                            Choose Option
+                          </label>
+                          <div className="grid grid-cols-2 gap-1 bg-slate-200/60 border border-slate-200/35 p-1 rounded-xl text-[10px] font-black relative">
+                            <button
+                              type="button"
+                              onClick={() => setPatrolWithDevice(false)}
+                              className={`py-1.5 rounded-lg cursor-pointer relative z-10 transition-all duration-300 ${
+                                !patrolWithDevice
+                                  ? "text-slate-900"
+                                  : "text-slate-500 hover:text-slate-700"
+                              }`}
+                            >
+                              {!patrolWithDevice && (
+                                <motion.div
+                                  layoutId="patrolDeviceActive"
+                                  className="absolute inset-0 bg-white border border-slate-200/50 rounded-lg shadow-sm"
+                                  transition={{
+                                    type: "spring",
+                                    stiffness: 350,
+                                    damping: 25,
+                                  }}
+                                />
+                              )}
+                              <span className="relative z-20">
+                                Without Device
+                              </span>
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => setPatrolWithDevice(true)}
+                              className={`py-1.5 rounded-lg cursor-pointer relative z-10 transition-all duration-300 ${
+                                patrolWithDevice
+                                  ? "text-slate-900"
+                                  : "text-slate-500 hover:text-slate-700"
+                              }`}
+                            >
+                              {patrolWithDevice && (
+                                <motion.div
+                                  layoutId="patrolDeviceActive"
+                                  className="absolute inset-0 bg-white border border-slate-200/50 rounded-lg shadow-sm"
+                                  transition={{
+                                    type: "spring",
+                                    stiffness: 350,
+                                    damping: 25,
+                                  }}
+                                />
+                              )}
+                              <span className="relative z-20">
+                                With Device
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      )}
+
+                      <div className="flex items-baseline gap-1 relative z-10">
+                        <span className="text-slate-500 font-bold text-xs">
+                          RM
+                        </span>
+                        <span className="text-3xl sm:text-4.5xl font-black text-slate-950 tracking-tight leading-none transition-all duration-300">
+                          {monthlyPrice.toLocaleString("en-US", {
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 2,
+                          })}
+                        </span>
+                        <span className="text-xs text-slate-500 font-medium ml-1">
+                          / month
+                        </span>
+                      </div>
+
+                      <div className="mt-2.5 text-[11px] font-bold text-slate-600 relative z-10">
+                        Total: RM{" "}
+                        {totalPrice.toLocaleString("en-US", {
+                          minimumFractionDigits: 0,
+                          maximumFractionDigits: 2,
+                        })}{" "}
+                        for {packageTier} Months
+                      </div>
+                    </div>
+
+                    <div className="h-px bg-slate-100 mb-6" />
+
+                    {/* Features checklist with premium glowing bullet points */}
+                    <ul className="space-y-3.5 mb-8">
+                      {plan.features.map((feature, fIdx) => (
+                        <li key={fIdx} className="flex items-start gap-3">
+                          <div className="w-5 h-5 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
+                            <Check
+                              className="w-2.5 h-2.5 text-blue-600"
+                              strokeWidth={3}
+                            />
+                          </div>
+                          <span className="text-[11px] text-slate-600 font-bold leading-relaxed">
+                            {feature}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Button */}
+                  <div>
+                    <button
+                      onClick={scrollToContact}
+                      className={`w-full py-4 rounded-xl font-black text-xs sm:text-sm cursor-pointer transition-all duration-300 hover:-translate-y-0.5 ${
+                        plan.highlighted
+                          ? "bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-500 hover:to-blue-500 text-white shadow-[0_5px_20px_rgba(59,130,246,0.15)] hover:shadow-[0_8px_30px_rgba(59,130,246,0.3)] border border-blue-500/20"
+                          : "bg-slate-900 hover:bg-slate-800 text-white shadow-sm"
+                      }`}
+                    >
+                      Choose {plan.name}
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

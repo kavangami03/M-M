@@ -4,12 +4,12 @@ import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import SectionHeader from "../SectionHeader";
 import Image from "next/image";
-import { Copyright, Cpu, X, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
-
+import { Copyright, Cpu, FileCheck, X, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
+ 
 const MIN_ZOOM = 1;
 const MAX_ZOOM = 4;
 const ZOOM_STEP = 0.5;
-
+ 
 const CERTIFICATES = [
   {
     icon: Cpu,
@@ -25,21 +25,28 @@ const CERTIFICATES = [
     file: "/copyright-certificate-full.png",
     badge: "Voluntary Notification"
   },
+  {
+    icon: FileCheck,
+    title: "Company Registration",
+    desc: "Official Certificate of Incorporation (Guard Monitor & Manage Sdn Bhd)",
+    file: "/Guard Monitor  Manage Sdn Bhd_Cert of incorporation_12.8.2022 2-1.png",
+    badge: "Official Registration"
+  },
 ];
-
+ 
 export default function Certificates() {
   const [active, setActive] = useState<(typeof CERTIFICATES)[number] | null>(null);
   const [zoom, setZoom] = useState(1);
-
+ 
   const close = () => setActive(null);
   const clampZoom = (z: number) => Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, z));
   const resetZoom = () => setZoom(1);
-
+ 
   // Reset zoom each time a new certificate is opened
   useEffect(() => {
     setZoom(1);
   }, [active]);
-
+ 
   // Lock body scroll + keyboard shortcuts while the lightbox is open
   useEffect(() => {
     if (!active) return;
@@ -56,7 +63,7 @@ export default function Certificates() {
       window.removeEventListener("keydown", onKey);
     };
   }, [active]);
-
+ 
   return (
     <section className="py-20 bg-secondary/30 border-y border-border">
       <div className="container mx-auto px-6 max-w-[1520px]">
@@ -65,8 +72,8 @@ export default function Certificates() {
           title="Certificates"
           align="center"
         />
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
+ 
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {CERTIFICATES.map((cert, i) => {
             return (
               <motion.div

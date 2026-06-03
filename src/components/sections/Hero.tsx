@@ -120,10 +120,11 @@ export default function Hero() {
               className="mb-6 h-1 w-24 sm:w-32 origin-left rounded-full bg-gradient-to-r from-blue-400 via-indigo-500 to-indigo-600"
             />
             
-            <p className="text-base sm:text-lg md:text-xl text-slate-600/95 mb-8 max-w-xl leading-relaxed font-medium">
-              M&M App is a mobile-based guard patrolling & monitoring system that replaces physical patrol devices and manual processes. Every guard activity is recorded in real time and turned into instant, document-ready reports &mdash; making security operations smarter, faster, and more cost-effective.
-            </p>
-            
+            <p className="text-base sm:text-lg  text-slate-600/95 mb-2 max-w-xl leading-relaxed font-medium">
+Guard Monitor & Manage is a Malaysian-developed mobile-based guard monitoring system that replaces physical patrol devices and manual reporting processes.
+</p>  
+            <p className="text-base sm:text-lg  text-slate-600/95 mb-8 max-w-xl leading-relaxed font-medium">
+Every guard activity is recorded in real time and transformed into instant, document-ready reports with timestamp, location, and photo verification—making security operations smarter, faster, and more cost-effective.</p>  
             <div className="flex flex-col sm:flex-row items-center justify-start gap-4 w-full sm:w-auto">
               <button
                 onClick={() => {
@@ -163,82 +164,33 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Column: Premium High-Fidelity Responsive Showcase (Native Razor-Sharp 2D Layered Collage) */}
+          {/* Right Column: Dashboard & Mobile Showcase */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="w-full lg:w-6/12 flex justify-center items-center relative sm:py-12 px-2 z-10 select-none"
           >
-            <div className="relative w-full aspect-[4.3/3] max-w-[560px] lg:max-w-none flex items-center justify-center select-none">
+            <div className="relative w-full max-w-[600px] lg:max-w-none select-none">
               
-              {/* A. Live Telemetry SVG Sync Lines with smooth self-contained flow animation */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-visible opacity-50" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#3b82f6" />
-                    <stop offset="100%" stopColor="#818cf8" />
-                  </linearGradient>
-                  <style>{`
-                    @keyframes svg-telemetry-flow {
-                      to {
-                        stroke-dashoffset: -26;
-                      }
-                    }
-                    .telemetry-flow-path {
-                      stroke-dasharray: 6 8;
-                      stroke-dashoffset: 26;
-                      animation: svg-telemetry-flow 1.8s linear infinite;
-                    }
-                  `}</style>
-                </defs>
-                {/* Proportional sync path from Phone to Laptop */}
-                <path d="M 330,210 C 330,160 260,160 220,130" stroke="url(#lineGrad)" strokeWidth="2.5" fill="none" className="telemetry-flow-path" />
-              </svg>
-
-              {/* B. Laptop Deck (Percentage Width & Absolute Positioned - Scales Perfectly) */}
-              <div className="absolute w-[88%] left-[0%] top-[8%] z-10 shadow-[0_25px_60px_rgba(15,23,42,0.14)]">
-                {/* Outer premium screen bezel with black frame */}
-                <div className="relative w-full aspect-[700/409] rounded-t-2xl border-t-[8px] border-x-[8px] border-b-[4px] md:border-t-[10px] md:border-x-[10px] md:border-b-[6px] border-slate-900 bg-slate-950 overflow-hidden flex flex-col">
-                  
-                  {/* Webcam dot simulation */}
-                  <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-slate-900 rounded-full z-20 border border-slate-800 flex items-center justify-center">
-                    <div className="w-[3px] h-[3px] bg-blue-900/70 rounded-full" />
-                  </div>
-                  
-                  {/* Screen Content Wrapper */}
-                  <div className="relative flex-1 w-full h-full bg-slate-900">
-                    <Image
-                      src="/web-dashboard.png"
-                      alt="M&M Web Dashboard Setup"
-                      fill
-                      unoptimized
-                      className="object-cover pointer-events-none select-none"
-                      priority
-                    />
-                    
-                    {/* Ultra-realistic physical glass reflection */}
-                    <div 
-                      className="absolute inset-0 pointer-events-none z-15"
-                      style={{
-                        background: "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 40%, transparent 60%)"
-                      }}
-                    />
-                  </div>
-                </div>
-                
-                {/* Laptop Base (Sleek Matte-Black Metallic Keyboard Hinge) */}
-                <div className="relative w-[110%] -ml-[5%] h-3.5 md:h-4.5 bg-gradient-to-b from-slate-800 via-slate-900 to-slate-950 rounded-b-2xl shadow-[0_20px_45px_rgba(0,0,0,0.4)] z-10 origin-top [transform:perspective(800px)_rotateX(22deg)] border-t border-slate-700/50">
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 md:w-24 h-1 bg-black/60 rounded-b-md" />
-                </div>
+              {/* Dashboard / Laptop Image — image already includes its own laptop frame */}
+              <div className="relative w-full z-10">
+                <Image
+                  src="/hero-laptop.png"
+                  alt="Guard Monitor & Manage Web Dashboard"
+                  width={1920}
+                  height={1080}
+                  unoptimized
+                  priority
+                  className="w-full h-auto object-contain drop-shadow-[0_25px_50px_rgba(15,23,42,0.15)]"
+                />
               </div>
 
-              {/* C. iPhone Mobile Mockup (Rendered directly with its own pre-rendered bezel, floating bobbing) */}
+              {/* Mobile App Mockup — overlapping from the right side */}
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                whileHover={{ scale: 1.04, y: -12 }}
-                className="absolute w-[32%] right-[0%] bottom-[-5%] z-25 select-none cursor-default"
+                className="absolute w-[28%] right-[-8%] bottom-[-15%] z-20 select-none cursor-default"
               >
                 <Image
                   src="/home-screen.png"
@@ -246,17 +198,16 @@ export default function Hero() {
                   width={1208}
                   height={2328}
                   unoptimized
-                  className="w-full h-auto drop-shadow-[0_20px_40px_rgba(15,23,42,0.20)] pointer-events-none"
+                  className="w-full h-auto drop-shadow-[0_20px_50px_rgba(15,23,42,0.25)] pointer-events-none"
                   priority
                 />
               </motion.div>
 
-              {/* D. FLOATING WIDGET 1: Real-Time Guard Tracking Card (Top-Left, floating bobbing) */}
+              {/* Floating Widget 1: Guard Tracking (Top-Left) */}
               <motion.div
                 animate={{ y: [0, -4, 0] }}
                 transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.5 }}
-                whileHover={{ scale: 1.03, y: -2 }}
-                className="absolute w-[46%] max-w-[210px] top-[-8%] left-[-10%] z-20 hidden sm:flex items-center gap-3 py-2 px-3 sm:py-2.5 sm:px-4 rounded-2xl bg-white border border-slate-200/80 shadow-[0_12px_28px_rgba(15,23,42,0.08)] select-none"
+                className="absolute w-[46%] max-w-[210px] top-[-5%] left-[-5%] z-20 hidden sm:flex items-center gap-3 py-2 px-3 sm:py-2.5 sm:px-4 rounded-2xl bg-white border border-slate-200/80 shadow-[0_12px_28px_rgba(15,23,42,0.08)] select-none"
               >
                 <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 flex-shrink-0">
                   <Activity className="w-4 h-4 animate-pulse" />
@@ -270,12 +221,11 @@ export default function Hero() {
                 </div>
               </motion.div>
 
-              {/* E. FLOATING WIDGET 2: Security Checked Status Badge (Mid-Left, floating bobbing) */}
+              {/* Floating Widget 2: Checkpoint Verified (Mid-Left) */}
               <motion.div
                 animate={{ y: [0, 4, 0] }}
                 transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 1 }}
-                whileHover={{ scale: 1.03, y: 2 }}
-                className="absolute w-[40%] max-w-[170px] top-[45%] left-[-15%] z-20 hidden sm:flex items-center gap-2.5 py-1.5 px-3 rounded-xl bg-white border border-slate-200/80 shadow-[0_8px_18px_rgba(15,23,42,0.06)] select-none"
+                className="absolute w-[40%] max-w-[170px] top-[50%] left-[-10%] z-20 hidden sm:flex items-center gap-2.5 py-1.5 px-3 rounded-xl bg-white border border-slate-200/80 shadow-[0_8px_18px_rgba(15,23,42,0.06)] select-none"
               >
                 <div className="w-6 h-6 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-600 flex-shrink-0">
                   <CheckCircle2 className="w-3.5 h-3.5" />
@@ -286,12 +236,11 @@ export default function Hero() {
                 </div>
               </motion.div>
 
-              {/* F. FLOATING WIDGET 3: SOS Alert Warning Badge (Top-Right, floating bobbing) */}
+              {/* Floating Widget 3: SOS Alert (Top-Right) */}
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ repeat: Infinity, duration: 6.5, ease: "easeInOut", delay: 1.5 }}
-                whileHover={{ scale: 1.03, y: -2 }}
-                className="absolute w-[44%] max-w-[200px] top-[-8%] right-[0%] z-20 hidden sm:flex items-center gap-3 py-2 px-3 sm:py-2.5 sm:px-4 rounded-2xl bg-white border border-red-200/80 shadow-[0_15px_30px_rgba(15,23,42,0.08)] select-none"
+                className="absolute w-[44%] max-w-[200px] top-[-5%] right-[5%] z-30 hidden sm:flex items-center gap-3 py-2 px-3 sm:py-2.5 sm:px-4 rounded-2xl bg-white border border-red-200/80 shadow-[0_15px_30px_rgba(15,23,42,0.08)] select-none"
               >
                 <div className="w-8 h-8 rounded-full bg-red-500/10 flex items-center justify-center text-red-600 animate-pulse flex-shrink-0">
                   <Shield className="w-4.5 h-4.5" />

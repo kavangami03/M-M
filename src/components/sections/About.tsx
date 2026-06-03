@@ -31,21 +31,61 @@ export default function About() {
             className="flex-1 w-full"
           >
             <SectionHeader
-              eyebrow="All-In-One Ecosystem"
-              title={<>One System. <br /> <span className="text-gradient">Everything Runs Automatically.</span></>}
+              eyebrow="The Solution"
+              title={<>Complete Visibility, <br /> <span className="text-gradient">Accountability & Control.</span></>}
               align="left"
             />
-            <p className="text-base sm:text-lg text-muted-foreground mb-4 leading-relaxed mt-[-20px]">
-              M&M App brings together all essential tools into a single, easy-to-use platform. It provides real-time guard monitoring through live GPS location tracking, giving supervisors complete visibility of every guard on duty. The smart QR Code combined with GPS checkpoint system ensures highly accurate patrol verification while being extremely easy to replace whenever needed.
+            
+            <p className="text-base sm:text-lg text-slate-700 font-semibold mb-6 mt-[-15px]">
+              Guard Monitor & Manage provides complete visibility, accountability, and operational control through:
             </p>
-            <p className="text-base sm:text-lg text-muted-foreground mb-6 md:mb-8 leading-relaxed">
-              Management and guards simply download the app and start operating immediately. Go device-free, reduce unnecessary costs, and manage security operations smarter. Manage guards, patrols, attendance, incidents, reports, and live locations in one powerful real-time system.
-            </p>
+
+            {/* Premium feature grid with check icons and micro-animations */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              {[
+                { title: "Real-Time Guard Monitoring", desc: "Track guard movements and status in real-time." },
+                { title: "Verified Patrol Proof", desc: "Patrol scans with precise timestamp, GPS, and photo verification." },
+                { title: "Instant Incident Reporting", desc: "Log and report incidents directly from the field with media." },
+                { title: "Automated Report Generation", desc: "Convert patrol logs into instantly downloadable PDF documents." },
+                { title: "Reduced Operations Cost", desc: "Go device-free and eliminate expensive hardware maintenance." },
+                { title: "Built-In SOS Logging", desc: "Emergency alerts automatically logged with real-time sync." }
+              ].map((item, idx) => (
+                <motion.div 
+                  key={idx}
+                  whileHover={{ x: 4 }}
+                  transition={{ duration: 0.2 }}
+                  className="flex items-start gap-3 p-3 rounded-xl bg-white border border-slate-100 shadow-sm hover:shadow-md transition-all"
+                >
+                  <div className="w-5 h-5 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-600 flex-shrink-0 mt-0.5">
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-800 leading-tight">{item.title}</h4>
+                    <p className="text-xs text-slate-500 mt-1 leading-snug">{item.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Premium result callout box */}
+            <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-blue-50/70 to-indigo-50/50 border border-blue-100/70 mb-8 flex items-start gap-4">
+              <div className="w-10 h-10 rounded-xl bg-blue-500 text-white flex items-center justify-center flex-shrink-0 shadow-[0_4px_12px_rgba(59,130,246,0.2)]">
+                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <p className="text-sm sm:text-base font-medium text-slate-700 leading-relaxed">
+                <strong className="text-slate-900 block mb-1">The Result:</strong>
+                Greater transparency, improved service quality, stronger client confidence, and better protection for security companies during disputes, investigations, and service-related claims.
+              </p>
+            </div>
 
             <div>
               <button
                 onClick={scrollToFeatures}
-                className="w-full sm:w-auto bg-foreground hover:bg-slate-800 text-white px-6 py-3 rounded-xl font-medium shadow-lg transition-all hover:-translate-y-0.5"
+                className="w-full sm:w-auto bg-foreground hover:bg-slate-800 text-white px-7 py-3.5 rounded-xl font-bold shadow-lg transition-all hover:-translate-y-0.5 cursor-pointer"
               >
                 Learn More About Features
               </button>
@@ -84,6 +124,7 @@ export default function About() {
                     width={700}
                     height={409}
                     className="w-full h-auto"
+                    style={{ imageRendering: "-webkit-optimize-contrast" }}
                   />
                 </div>
                 {/* Floating mobile app */}

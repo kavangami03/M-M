@@ -78,6 +78,7 @@ export default function HowItWorks() {
                   width={step.width}
                   height={step.height}
                   className="max-h-full w-auto translate-y-2 rounded-t-lg object-contain shadow-xl ring-1 ring-black/5 transition-transform duration-300 group-hover:-translate-y-0 group-hover:scale-[1.03]"
+                  style={{ imageRendering: "-webkit-optimize-contrast" }}
                 />
               </div>
 
