@@ -66,23 +66,23 @@ export default function FAQ() {
                 <div className="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-lg shadow-blue-500/10">
                   <MessageSquare className="w-5 h-5" />
                 </div>
-                <h3 className="font-extrabold text-lg text-slate-900">Still have questions?</h3>
+                <h3 className="font-extrabold text-xl text-slate-900">Still have questions?</h3>
               </div>
-              <p className="text-slate-500 text-sm leading-relaxed mb-6 font-medium">
+              <p className="text-slate-500 text-base leading-relaxed mb-6 font-medium">
                 Cannot find the answer you are looking for? Get in touch with our operations desk, available 24/7.
               </p>
 
               <div className="space-y-4">
                 <a
                   href="mailto:admin@monitormanage.com.my"
-                  className="flex items-center gap-3 text-sm font-bold text-slate-650 hover:text-blue-600 transition-colors group/link"
+                  className="flex items-center gap-3 text-base font-bold text-slate-650 hover:text-blue-600 transition-colors group/link"
                 >
                   <Mail className="w-4.5 h-4.5 text-blue-500 group-hover/link:scale-110 transition-transform" />
                   admin@monitormanage.com.my
                 </a>
                 <a
                   href="tel:0109872885"
-                  className="flex items-center gap-3 text-sm font-bold text-slate-650 hover:text-emerald-600 transition-colors group/link"
+                  className="flex items-center gap-3 text-base font-bold text-slate-650 hover:text-emerald-600 transition-colors group/link"
                 >
                   <PhoneCall className="w-4.5 h-4.5 text-emerald-500 group-hover/link:scale-110 transition-transform" />
                   010-987 2885

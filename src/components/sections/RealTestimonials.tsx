@@ -41,6 +41,30 @@ const reviews = [
     badge: "Security Admin",
     offset: "lg:translate-y-0",
   },
+  {
+    name: "Mr Ragu",
+    role: "Director",
+    company: "Erawan Security Services Sdn Bhd",
+    logo: "/logo-4.png",
+    initials: "MR",
+    rating: 5,
+    text: "Since switching to M&M, our entire patrol scheduling and incident reporting workflow has become seamless. The dashboard gives us full visibility across all our client sites, and the automated audit trails have saved us countless hours every week.",
+    color: "from-orange-500 to-red-500",
+    badge: "Trusted Partner",
+    offset: "lg:translate-y-0",
+  },
+  {
+    name: "Ms Liza",
+    role: "Operations Director",
+    company: "Fask Security Sdn Bhd",
+    logo: "/logo-5.png",
+    initials: "ML",
+    rating: 5,
+    text: "M&M App gave us the ability to monitor every guard in real-time with GPS precision. Our clients love the professional PDF reports, and we have dramatically reduced response times for on-ground incidents. A truly game-changing platform.",
+    color: "from-cyan-500 to-blue-500",
+    badge: "Verified Client",
+    offset: "lg:translate-y-0",
+  },
 ];
 
 export default function RealTestimonials() {
@@ -57,13 +81,12 @@ export default function RealTestimonials() {
         <SectionHeader
           eyebrow="Proven Success"
           title={<>What Our Clients Say <br /> <span className="text-gradient">Trusted by Leading Security Forces</span></>}
-          description="Read real reviews from security operations directors, property managers, and field officers who rely on M&M App every day."
           dark={false}
           align="center"
         />
  
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-16 lg:gap-10">
-          {reviews.map((review, idx) => (
+          {reviews.slice(0, 3).map((review, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, y: 40 }}
@@ -102,15 +125,78 @@ export default function RealTestimonials() {
               {/* Reviewer details block */}
               <div className="border-t border-slate-100 pt-6 mt-auto flex items-center gap-4 relative z-10">
                 {review.logo ? (
-                  <div className="w-12 h-12 rounded-full border border-slate-100/60 overflow-hidden bg-slate-50 flex items-center justify-center flex-shrink-0 shadow-sm">
+                  <div className="w-14 h-14 rounded-xl border border-slate-100/60 overflow-hidden bg-white flex items-center justify-center flex-shrink-0 shadow-sm p-1.5">
                     <img 
                       src={review.logo} 
                       alt={`${review.company} logo`} 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 ) : (
-                  <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${review.color} flex items-center justify-center font-black text-white text-base shadow-md shadow-blue-500/10 flex-shrink-0`}>
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${review.color} flex items-center justify-center font-black text-white text-base shadow-md shadow-blue-500/10 flex-shrink-0`}>
+                    {review.initials}
+                  </div>
+                )}
+                <div className="min-w-0">
+                  <p className="font-bold text-slate-900 text-base truncate">{review.name}</p>
+                  <p className="text-xs text-slate-500 font-semibold truncate mt-0.5">{review.role}</p>
+                  <p className="text-[10px] text-blue-600 font-bold uppercase tracking-widest mt-1">{review.company}</p>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Second row: 2 centered cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8 lg:mt-10 lg:gap-10">
+          {reviews.slice(3).map((review, idx) => (
+            <motion.div
+              key={idx + 3}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: idx * 0.15, ease: [0.21, 0.47, 0.32, 0.98] }}
+              whileHover={{ y: -4 }}
+              className={`relative p-8 sm:p-9 rounded-3xl bg-white border border-slate-100 shadow-[0_8px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_24px_60px_rgba(59,130,246,0.06)] transition-all duration-500 flex flex-col justify-between group overflow-hidden`}
+            >
+              {/* Premium Top Border Accent on Hover */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+ 
+              <div>
+                {/* Header elements (Star ratings & verified tag pill) */}
+                <div className="flex items-center justify-between mb-8">
+                  <div className="flex gap-1.2">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                    ))}
+                  </div>
+                  <span className="inline-flex items-center gap-1 py-1 px-3.5 rounded-full bg-blue-50/80 border border-blue-100/60 text-blue-700 font-bold text-[10px] tracking-wider uppercase">
+                    <ShieldCheck className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
+                    {review.badge}
+                  </span>
+                </div>
+ 
+                {/* Decorative Giant Quote Watermark in Background */}
+                <Quote className="absolute right-6 top-16 w-20 h-20 text-slate-100/70 pointer-events-none group-hover:text-blue-50/60 transition-colors duration-500" />
+ 
+                {/* Review Text */}
+                <p className="text-slate-650 leading-relaxed font-medium text-base sm:text-[17px] mb-8 relative z-10 italic">
+                  &ldquo;{review.text}&rdquo;
+                </p>
+              </div>
+ 
+              {/* Reviewer details block */}
+              <div className="border-t border-slate-100 pt-6 mt-auto flex items-center gap-4 relative z-10">
+                {review.logo ? (
+                  <div className="w-14 h-14 rounded-xl border border-slate-100/60 overflow-hidden bg-white flex items-center justify-center flex-shrink-0 shadow-sm p-1.5">
+                    <img 
+                      src={review.logo} 
+                      alt={`${review.company} logo`} 
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                ) : (
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${review.color} flex items-center justify-center font-black text-white text-base shadow-md shadow-blue-500/10 flex-shrink-0`}>
                     {review.initials}
                   </div>
                 )}

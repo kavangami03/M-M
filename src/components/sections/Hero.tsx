@@ -24,8 +24,10 @@ const wordVariants = {
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen pt-28 sm:pt-36 lg:pt-40 pb-16 md:pb-24 overflow-hidden flex items-center bg-gradient-to-br from-[#f8fafc] via-[#f1f5f9] to-[#e4e8ff]">
-      
+    <section
+      id="home"
+      className="relative min-h-screen 2xl:h-screen pt-28 sm:pt-36 lg:pt-40 pb-16 lg:pb-0 overflow-hidden flex items-center bg-gradient-to-br from-[#f8fafc] via-[#f1f5f9] to-[#e4e8ff]"
+    >
       {/* 1. Sleek High-Definition Sharp Security Operations Background Image in Widescreen Landscape */}
       <div className="absolute inset-0 pointer-events-none select-none opacity-40 z-0">
         <Image
@@ -42,7 +44,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc]/90 via-transparent to-[#e4e8ff] z-0" />
       {/* Horizontal fade: ensures left-hand text is perfectly readable while background stays visible */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#f8fafc]/95 via-[#f8fafc]/40 to-transparent z-0" />
-      
+
       {/* 3. Glowing Ambient Mesh Light behind the mockups */}
       <div className="absolute right-[-10%] top-[20%] w-[450px] md:w-[700px] h-[450px] md:h-[600px] bg-blue-300/10 blur-[130px] rounded-full pointer-events-none z-0" />
       <div className="absolute right-[20%] bottom-[10%] w-[350px] md:w-[600px] h-[350px] md:h-[500px] bg-indigo-300/10 blur-[120px] rounded-full pointer-events-none z-0" />
@@ -51,14 +53,13 @@ export default function Hero() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle,rgba(0,0,0,0.15)_1px,transparent_1px)] [background-size:24px_24px] z-0" />
 
       <div className="container mx-auto px-10 sm:px-20 2xl:px-6 max-w-[1520px] relative z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-8">
-          
+        <div className="flex flex-col lg:flex-row items-stretch justify-between gap-16 lg:gap-8">
           {/* Left Column: Text & CTAs (Intact exact original styling) */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full lg:w-6/12 flex flex-col items-start text-left"
+            className="w-full lg:w-6/12 flex flex-col items-start text-left self-center"
           >
             <motion.span
               initial={{ opacity: 0, y: -10, scale: 0.9 }}
@@ -68,7 +69,11 @@ export default function Hero() {
             >
               <motion.span
                 animate={{ scale: [1, 1.4, 1], opacity: [1, 0.4, 1] }}
-                transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 2,
+                  ease: "easeInOut",
+                }}
                 className="inline-block w-2 h-2 rounded-full bg-blue-500"
               />
               Next-Gen Security Operations
@@ -109,7 +114,9 @@ export default function Hero() {
                   </motion.span>
                 ))}
               </motion.span>
-              <span className="sr-only">Monitor Every Guard. Manage Every Site.</span>
+              <span className="sr-only">
+                Monitor Every Guard. Manage Every Site.
+              </span>
             </h1>
 
             {/* Animated accent underline */}
@@ -119,12 +126,18 @@ export default function Hero() {
               transition={{ duration: 0.9, delay: 1, ease: "easeOut" }}
               className="mb-6 h-1 w-24 sm:w-32 origin-left rounded-full bg-gradient-to-r from-blue-400 via-indigo-500 to-indigo-600"
             />
-            
+
             <p className="text-base sm:text-lg  text-slate-600/95 mb-2 max-w-xl leading-relaxed font-medium">
-Guard Monitor & Manage is a Malaysian-developed mobile-based guard monitoring system that replaces physical patrol devices and manual reporting processes.
-</p>  
+              Guard Monitor & Manage is a Malaysian-developed mobile-based guard
+              monitoring system that replaces physical patrol devices and manual
+              reporting processes.
+            </p>
             <p className="text-base sm:text-lg  text-slate-600/95 mb-8 max-w-xl leading-relaxed font-medium">
-Every guard activity is recorded in real time and transformed into instant, document-ready reports with timestamp, location, and photo verification—making security operations smarter, faster, and more cost-effective.</p>  
+              Every guard activity is recorded in real time and transformed into
+              instant, document-ready reports with timestamp, location, and
+              photo verification—making security operations smarter, faster, and
+              more cost-effective.
+            </p>
             <div className="flex flex-col sm:flex-row items-center justify-start gap-4 w-full sm:w-auto">
               <button
                 onClick={() => {
@@ -133,7 +146,10 @@ Every guard activity is recorded in real time and transformed into instant, docu
                     // @ts-ignore
                     if (window.lenis) {
                       // @ts-ignore
-                      window.lenis.scrollTo(element, { offset: -80, duration: 1.2 });
+                      window.lenis.scrollTo(element, {
+                        offset: -80,
+                        duration: 1.2,
+                      });
                     } else {
                       element.scrollIntoView({ behavior: "smooth" });
                     }
@@ -142,7 +158,9 @@ Every guard activity is recorded in real time and transformed into instant, docu
                 className="group w-full sm:w-auto relative overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold shadow-[0_4px_20px_rgba(37,99,235,0.25)] hover:shadow-[0_4px_35px_rgba(37,99,235,0.4)] hover:-translate-y-1 flex items-center justify-center gap-2 text-base sm:text-lg cursor-pointer"
               >
                 <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/15 to-transparent" />
-                <span className="relative flex items-center gap-2">Start Free Trial <ArrowRight className="w-5 h-5" /></span>
+                <span className="relative flex items-center gap-2">
+                  Start Free Trial <ArrowRight className="w-5 h-5" />
+                </span>
               </button>
               {/* <button 
                 onClick={() => {
@@ -164,99 +182,35 @@ Every guard activity is recorded in real time and transformed into instant, docu
             </div>
           </motion.div>
 
-          {/* Right Column: Dashboard & Mobile Showcase */}
+          {/* Right Column: Mobile App Showcase */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="w-full lg:w-6/12 flex justify-center items-center relative sm:py-12 px-2 z-10 select-none"
+            className="w-full lg:w-6/12 flex justify-center items-center relative z-10 select-none"
           >
-            <div className="relative w-full max-w-[600px] lg:max-w-none select-none">
-              
-              {/* Dashboard / Laptop Image — image already includes its own laptop frame */}
-              <div className="relative w-full z-10">
-                <Image
-                  src="/hero-laptop.png"
-                  alt="Guard Monitor & Manage Web Dashboard"
-                  width={1920}
-                  height={1080}
-                  unoptimized
-                  priority
-                  className="w-full h-auto object-contain drop-shadow-[0_25px_50px_rgba(15,23,42,0.15)]"
-                />
+            <div className="relative w-full max-w-[580px] lg:max-w-none flex items-center justify-center">
+              {/* Decorative glowing circle behind the phones */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="w-[70%] aspect-square rounded-full bg-gradient-to-br from-blue-100/50 to-indigo-100/40 blur-3xl" />
               </div>
 
-              {/* Mobile App Mockup — overlapping from the right side */}
-              <motion.div
-                animate={{ y: [0, -8, 0] }}
-                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                className="absolute w-[28%] right-[-8%] bottom-[-15%] z-20 select-none cursor-default"
+              {/* Mobile Screens — Main Hero Image */}
+              <div
+                className="relative z-10 w-[85%] mx-auto"
               >
                 <Image
-                  src="/home-screen.png"
-                  alt="M&M Guard App Home Screen"
-                  width={1208}
-                  height={2328}
+                  src="/horo-banner-mobile.png"
+                  alt="M&M Guard Monitoring Mobile Apps"
+                  width={1200}
+                  height={900}
                   unoptimized
-                  className="w-full h-auto drop-shadow-[0_20px_50px_rgba(15,23,42,0.25)] pointer-events-none"
                   priority
+                  className="w-full h-auto object-contain drop-shadow-[0_30px_70px_rgba(15,23,42,0.18)]"
                 />
-              </motion.div>
-
-              {/* Floating Widget 1: Guard Tracking (Top-Left) */}
-              <motion.div
-                animate={{ y: [0, -4, 0] }}
-                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.5 }}
-                className="absolute w-[46%] max-w-[210px] top-[-5%] left-[-5%] z-20 hidden sm:flex items-center gap-3 py-2 px-3 sm:py-2.5 sm:px-4 rounded-2xl bg-white border border-slate-200/80 shadow-[0_12px_28px_rgba(15,23,42,0.08)] select-none"
-              >
-                <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600 flex-shrink-0">
-                  <Activity className="w-4 h-4 animate-pulse" />
-                </div>
-                <div className="min-w-0">
-                  <h5 className="text-[10px] font-black text-slate-800 leading-tight truncate">Sarah Jenkins</h5>
-                  <p className="text-[9px] text-slate-500 flex items-center gap-1 font-bold mt-0.5 whitespace-nowrap">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse flex-shrink-0" />
-                    Patrolling Site A
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* Floating Widget 2: Checkpoint Verified (Mid-Left) */}
-              <motion.div
-                animate={{ y: [0, 4, 0] }}
-                transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 1 }}
-                className="absolute w-[40%] max-w-[170px] top-[50%] left-[-10%] z-20 hidden sm:flex items-center gap-2.5 py-1.5 px-3 rounded-xl bg-white border border-slate-200/80 shadow-[0_8px_18px_rgba(15,23,42,0.06)] select-none"
-              >
-                <div className="w-6 h-6 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-600 flex-shrink-0">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
-                </div>
-                <div className="min-w-0">
-                  <h5 className="text-[9px] font-black text-slate-800 leading-none truncate">Checkpoint 7</h5>
-                  <span className="text-[8px] text-blue-600 font-extrabold mt-0.5 block whitespace-nowrap">VERIFIED • 10s ago</span>
-                </div>
-              </motion.div>
-
-              {/* Floating Widget 3: SOS Alert (Top-Right) */}
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ repeat: Infinity, duration: 6.5, ease: "easeInOut", delay: 1.5 }}
-                className="absolute w-[44%] max-w-[200px] top-[-5%] right-[5%] z-30 hidden sm:flex items-center gap-3 py-2 px-3 sm:py-2.5 sm:px-4 rounded-2xl bg-white border border-red-200/80 shadow-[0_15px_30px_rgba(15,23,42,0.08)] select-none"
-              >
-                <div className="w-8 h-8 rounded-full bg-red-500/10 flex items-center justify-center text-red-600 animate-pulse flex-shrink-0">
-                  <Shield className="w-4.5 h-4.5" />
-                </div>
-                <div className="min-w-0">
-                  <h5 className="text-[10px] font-black text-slate-800 leading-tight truncate">SOS Alert System</h5>
-                  <p className="text-[9px] text-red-600 font-extrabold flex items-center gap-1 mt-0.5 whitespace-nowrap">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping flex-shrink-0" />
-                    Live Cellular Sync
-                  </p>
-                </div>
-              </motion.div>
-
+              </div>
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>

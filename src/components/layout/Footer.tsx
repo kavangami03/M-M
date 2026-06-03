@@ -37,7 +37,7 @@ export default function Footer() {
                 <Image src="/logo.svg" alt="Monitor & Manage Logo" fill className="object-contain object-left brightness-0 invert" />
               </div>
             </Link>
-            <p className="text-slate-400 mb-6 leading-relaxed text-sm">
+            <p className="text-slate-400 mb-6 leading-relaxed text-base">
               The next-generation security operations platform. Guard monitoring, attendance, and reporting all in one place.
             </p>
             <div className="flex gap-3">
@@ -60,8 +60,8 @@ export default function Footer() {
 
           {/* Quick Links Column */}
           <div>
-            <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
-            <ul className="space-y-4 text-sm">
+            <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-base">Quick Links</h4>
+            <ul className="space-y-4 text-base">
               <li><Link href="/#home" onClick={(e) => handleNavClick(e, "/#home")} className="hover:text-primary transition-colors">Home</Link></li>
               <li><Link href="/#features" onClick={(e) => handleNavClick(e, "/#features")} className="hover:text-primary transition-colors">Features</Link></li>
               <li><Link href="/#dashboard" onClick={(e) => handleNavClick(e, "/#dashboard")} className="hover:text-primary transition-colors">Dashboard</Link></li>
@@ -72,8 +72,8 @@ export default function Footer() {
 
           {/* Legal & Social Column */}
           <div>
-            <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Legal & Social</h4>
-            <ul className="space-y-4 mb-8 text-sm">
+            <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-base">Legal & Social</h4>
+            <ul className="space-y-4 mb-8 text-base">
               <li><Link href="/privacy-policy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
               <li><Link href="/terms-and-conditions" className="hover:text-primary transition-colors">Terms & Conditions</Link></li>
             </ul>
@@ -89,8 +89,8 @@ export default function Footer() {
 
           {/* Contact Info Column */}
           <div>
-            <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact Info</h4>
-            <div className="space-y-4 text-slate-400 text-sm leading-relaxed">
+            <h4 className="text-white font-bold mb-6 uppercase tracking-wider text-base">Contact Info</h4>
+            <div className="space-y-4 text-slate-400 text-base leading-relaxed">
               {/* Address */}
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-primary shrink-0 mt-1" />

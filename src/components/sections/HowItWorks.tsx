@@ -84,10 +84,10 @@ export default function HowItWorks() {
 
               {/* Content */}
               <div className="flex flex-1 flex-col p-5 md:p-6">
-                <h3 className="mb-2 text-lg font-bold font-heading text-foreground">
+                <h3 className="mb-2 text-xl font-bold font-heading text-foreground">
                   {step.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
+                <p className="text-base leading-relaxed text-muted-foreground">
                   {step.desc}
                 </p>
               </div>

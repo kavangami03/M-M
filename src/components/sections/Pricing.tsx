@@ -42,42 +42,12 @@ const PLANS: Plan[] = [
     features: [
       "Includes all Gate Guard features",
       "Audited Patrolling Report",
-      "NFC/QR Patrol Checkpoint Scanning",
+      "QR Patrol Checkpoint Scanning",
       "Geofenced Route Verification",
-      "Optional Rugged Device Supply",
     ],
     highlighted: true,
   },
-  {
-    id: "in-charge",
-    name: "In Charge (Monitoring)",
-    badge: "For Supervisors",
-    description:
-      "Command and alert reception center for supervisors, operations managers, or control rooms.",
-    basePrice: 30,
-    features: [
-      "Receive Live Alerts & Notifications",
-      "All Guard Live GPS Locations",
-      "Instant SOS Alarm Reception",
-      "Real-time Dashboard Monitoring",
-    ],
-  },
-  {
-    id: "web-portal",
-    name: "Web Portal (Managing)",
-    badge: "For Agencies",
-    description:
-      "Primary agency administration console. Complete staff management, contract billing, and schedules.",
-    basePrice: 30,
-    features: [
-      "Create Guards & In-Charge Profiles",
-      "Create Contracts (Guards & Checkpoints)",
-      "Automated Working & Patrol Schedules",
-      "Receive Automated PDF Reports",
-      "Manage Guard Leaves & Approvals",
-      "Manage Guard Cash Advances",
-    ],
-  },
+  
 ];
 
 export default function Pricing() {
@@ -137,8 +107,7 @@ export default function Pricing() {
           eyebrow="Pricing Plans"
           title={
             <>
-              Simple, Transparent{" "}
-              <span className="text-gradient">Pricing Roles</span>
+              One System. Everything Runs Automatically.
             </>
           }
           description="Build the perfect package for your agency. Choose roles for each team member and select a flexible billing plan with zero setup fees."
@@ -146,75 +115,32 @@ export default function Pricing() {
           dark={false}
         />
 
-        {/* Highlighted 'One System' Badge */}
-        <div className="flex justify-center mb-10 -mt-2">
-          <span className="inline-flex items-center gap-2.5 py-2 px-6 rounded-full bg-blue-50 border border-blue-100 shadow-[0_4px_15px_rgba(37,99,235,0.03)] text-blue-700 text-xs font-black select-none">
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75" />
-              <span className="relative inline-block w-2.5 h-2.5 rounded-full bg-blue-600" />
-            </span>
-            One System. Everything Runs Automatically.
-          </span>
-        </div>
-
-        {/* Package Duration Switcher */}
+        {/* Package Duration Info */}
         <div className="flex flex-col items-center justify-center mb-16">
-          <div className="bg-slate-200/50 border border-slate-200/30 p-1.5 rounded-2xl inline-flex items-center gap-1 shadow-inner relative">
-            {(["3", "6", "12"] as const).map((tier) => {
-              const label =
-                tier === "3"
-                  ? "3 Months Package"
-                  : tier === "6"
-                    ? "6 Months Package"
-                    : "12 Months Package";
-              const discount =
-                tier === "6" ? "5% Off" : tier === "12" ? "10% Off" : null;
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            {/* 3 Months */}
+            <div className="flex flex-col items-center gap-2 px-6 py-4 bg-white rounded-2xl border border-slate-200/60 shadow-sm">
+              <span className="text-sm sm:text-base font-extrabold text-slate-800">3 Months</span>
+              <span className="text-xs font-bold text-slate-400">Standard</span>
+            </div>
 
-              return (
-                <button
-                  key={tier}
-                  onClick={() => setPackageTier(tier)}
-                  className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold transition-all duration-300 cursor-pointer relative flex items-center gap-2 z-10 ${
-                    packageTier === tier
-                      ? "text-slate-900"
-                      : "text-slate-500 hover:text-slate-800"
-                  }`}
-                >
-                  {packageTier === tier && (
-                    <motion.div
-                      layoutId="activeBillingTier"
-                      className="absolute inset-0 bg-white rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.04)] border border-slate-200/40"
-                      transition={{
-                        type: "spring",
-                        stiffness: 350,
-                        damping: 28,
-                      }}
-                    />
-                  )}
-                  <span className="relative z-20">{label}</span>
-                  {discount && (
-                    <span
-                      className={`relative z-20 text-[9px] px-1.5 py-0.5 rounded font-black ${
-                        packageTier === tier
-                          ? "bg-emerald-500/10 text-emerald-700"
-                          : "bg-emerald-500/10 text-emerald-600"
-                      }`}
-                    >
-                      {discount}
-                    </span>
-                  )}
-                </button>
-              );
-            })}
+            {/* 6 Months */}
+            <div className="flex flex-col items-center gap-2 px-6 py-4 bg-white rounded-2xl border border-slate-200/60 shadow-sm">
+              <span className="text-sm sm:text-base font-extrabold text-slate-800">6 Months</span>
+              <span className="text-xs font-bold text-emerald-600">5% Discount</span>
+            </div>
+
+            {/* 12 Months */}
+            <div className="flex flex-col items-center gap-2 px-6 py-4 bg-white rounded-2xl border border-slate-200/60 shadow-sm">
+              <span className="text-sm sm:text-base font-extrabold text-slate-800">12 Months</span>
+              <span className="text-xs font-bold text-blue-600">10% Discount</span>
+            </div>
           </div>
-          <p className="text-xs text-slate-500 mt-4 font-semibold flex items-center gap-1.5 bg-white px-4 py-2 rounded-full border border-slate-200/60 shadow-sm">
-            <Info className="w-4 h-4 text-blue-500" />1 Year Contract. No hidden
-            hardware replacement fees.
-          </p>
+
         </div>
 
         {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-3xl mx-auto">
           {PLANS.map((plan, planIdx) => {
             const monthlyPrice = getMonthlyPrice(plan);
             const totalPrice = getTotalPriceForTier(plan);
@@ -239,7 +165,7 @@ export default function Pricing() {
                     {/* Role Badge */}
                     <div className="mb-5">
                       <span
-                        className={`text-[9px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full border ${
+                        className={`text-xs font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full border ${
                           plan.highlighted
                             ? "bg-blue-50 text-blue-600 border-blue-100"
                             : "bg-slate-50 text-slate-500 border-slate-100"
@@ -249,13 +175,9 @@ export default function Pricing() {
                       </span>
                     </div>
 
-                    {/* Title */}
-                    <h3 className="text-lg font-black text-slate-900 mb-2">
+                    <h3 className="text-xl font-black text-slate-900 mb-6">
                       {plan.name}
                     </h3>
-                    <p className="text-[11px] text-slate-500 leading-relaxed mb-6 font-medium">
-                      {plan.description}
-                    </p>
 
                     {/* Pricing Display Console */}
                     <div className="bg-slate-50 border border-slate-100 p-4.5 rounded-2xl mb-6 relative overflow-hidden">
@@ -263,10 +185,10 @@ export default function Pricing() {
 
                       {plan.id === "patrolling-guard" && (
                         <div className="mb-4 relative z-10">
-                          <label className="text-[10px] uppercase font-bold text-slate-500 block mb-1.5 tracking-wider">
+                          <label className="text-xs uppercase font-bold text-slate-500 block mb-1.5 tracking-wider">
                             Choose Option
                           </label>
-                          <div className="grid grid-cols-2 gap-1 bg-slate-200/60 border border-slate-200/35 p-1 rounded-xl text-[10px] font-black relative">
+                          <div className="grid grid-cols-2 gap-1 bg-slate-200/60 border border-slate-200/35 p-1 rounded-xl text-xs font-black relative">
                             <button
                               type="button"
                               onClick={() => setPatrolWithDevice(false)}
@@ -320,8 +242,8 @@ export default function Pricing() {
                       )}
 
                       <div className="flex items-baseline gap-1 relative z-10">
-                        <span className="text-slate-500 font-bold text-xs">
-                          RM
+                        <span className="text-slate-500 font-bold text-sm">
+                          Only RM
                         </span>
                         <span className="text-3xl sm:text-4.5xl font-black text-slate-950 tracking-tight leading-none transition-all duration-300">
                           {monthlyPrice.toLocaleString("en-US", {
@@ -329,18 +251,9 @@ export default function Pricing() {
                             maximumFractionDigits: 2,
                           })}
                         </span>
-                        <span className="text-xs text-slate-500 font-medium ml-1">
+                        <span className="text-sm text-slate-500 font-medium ml-1">
                           / month
                         </span>
-                      </div>
-
-                      <div className="mt-2.5 text-[11px] font-bold text-slate-600 relative z-10">
-                        Total: RM{" "}
-                        {totalPrice.toLocaleString("en-US", {
-                          minimumFractionDigits: 0,
-                          maximumFractionDigits: 2,
-                        })}{" "}
-                        for {packageTier} Months
                       </div>
                     </div>
 
@@ -356,7 +269,7 @@ export default function Pricing() {
                               strokeWidth={3}
                             />
                           </div>
-                          <span className="text-[11px] text-slate-600 font-bold leading-relaxed">
+                          <span className="text-sm text-slate-600 font-bold leading-relaxed">
                             {feature}
                           </span>
                         </li>
@@ -368,7 +281,7 @@ export default function Pricing() {
                   <div>
                     <button
                       onClick={scrollToContact}
-                      className={`w-full py-4 rounded-xl font-black text-xs sm:text-sm cursor-pointer transition-all duration-300 hover:-translate-y-0.5 ${
+                      className={`w-full py-4 rounded-xl font-black text-sm sm:text-base cursor-pointer transition-all duration-300 hover:-translate-y-0.5 ${
                         plan.highlighted
                           ? "bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-500 hover:to-blue-500 text-white shadow-[0_5px_20px_rgba(59,130,246,0.15)] hover:shadow-[0_8px_30px_rgba(59,130,246,0.3)] border border-blue-500/20"
                           : "bg-slate-900 hover:bg-slate-800 text-white shadow-sm"

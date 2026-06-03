@@ -62,8 +62,8 @@ export default function About() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-slate-800 leading-tight">{item.title}</h4>
-                    <p className="text-xs text-slate-500 mt-1 leading-snug">{item.desc}</p>
+                    <h4 className="text-base font-bold text-slate-800 leading-tight">{item.title}</h4>
+                    <p className="text-sm text-slate-500 mt-1 leading-snug">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}

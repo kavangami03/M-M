@@ -126,7 +126,7 @@ export default function Contact() {
    };
 
     const getInputClasses = (field: keyof FormErrors) => {
-       const base = "w-full bg-slate-50/50 border rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none transition-all placeholder:text-slate-400/70";
+        const base = "w-full bg-slate-50/50 border rounded-lg pl-10 pr-4 py-2.5 text-base focus:outline-none transition-all placeholder:text-slate-400/70";
        if (touched[field] && errors[field]) {
           return `${base} border-red-300 focus:ring-2 focus:ring-red-200 bg-red-50/20`;
        }
@@ -193,7 +193,7 @@ export default function Contact() {
             >
                <div className="bg-white rounded-2xl md:rounded-3xl p-4 sm:p-5 md:p-6 shadow-2xl border border-border relative overflow-hidden">
                   <div className="absolute top-0 left-0 right-0 h-1.5 md:h-2 bg-gradient-to-r from-primary to-accent" />
-                  <h3 className="text-lg sm:text-xl font-bold font-heading mb-4 md:mb-5 text-foreground text-center">Request a Demo</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold font-heading mb-4 md:mb-5 text-foreground text-center">Request a Demo</h3>
 
                   <form className="space-y-4 sm:space-y-5" onSubmit={handleSubmit} noValidate>
                      
@@ -201,12 +201,12 @@ export default function Contact() {
                      <div className="space-y-3 sm:space-y-4">
                         <div className="flex items-center gap-2 pb-1.5 border-b border-slate-100">
                            <Building2 className="w-4 h-4 text-primary" />
-                           <h4 className="text-xxs sm:text-xs font-bold uppercase tracking-wider text-slate-500 font-heading">Company Information</h4>
+                           <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-500 font-heading">Company Information</h4>
                         </div>
                         
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                            <div className="space-y-1">
-                              <label className="text-xs font-semibold text-slate-600">
+                              <label className="text-sm font-semibold text-slate-600">
                                  Company Name <span className="text-red-500">*</span>
                               </label>
                               <div className="relative group">
@@ -230,7 +230,7 @@ export default function Contact() {
                            </div>
                            
                            <div className="space-y-1">
-                              <label className="text-xs font-semibold text-slate-600">
+                              <label className="text-sm font-semibold text-slate-600">
                                  Company Registration Number <span className="text-red-500">*</span>
                               </label>
                               <div className="relative group">
@@ -283,12 +283,12 @@ export default function Contact() {
                      <div className="space-y-3 sm:space-y-4">
                         <div className="flex items-center gap-2 pb-1.5 border-b border-slate-100">
                            <User className="w-4 h-4 text-primary" />
-                           <h4 className="text-xxs sm:text-xs font-bold uppercase tracking-wider text-slate-500 font-heading">Authorized Person</h4>
+                           <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-500 font-heading">Authorized Person</h4>
                         </div>
                         
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                            <div className="space-y-1">
-                              <label className="text-xs font-semibold text-slate-600">
+                              <label className="text-sm font-semibold text-slate-600">
                                  Person In Charge <span className="text-red-500">*</span>
                               </label>
                               <div className="relative group">
@@ -312,7 +312,7 @@ export default function Contact() {
                            </div>
                            
                            <div className="space-y-1">
-                               <label className="text-xs font-semibold text-slate-600">
+                               <label className="text-sm font-semibold text-slate-600">
                                   Phone Number <span className="text-red-500">*</span>
                                </label>
                                <div className="relative group">
@@ -336,7 +336,7 @@ export default function Contact() {
                            </div>
 
                            <div className="space-y-1">
-                              <label className="text-xs font-semibold text-slate-600">
+                              <label className="text-sm font-semibold text-slate-600">
                                  Email Address <span className="text-red-500">*</span>
                               </label>
                               <div className="relative group">
@@ -365,7 +365,7 @@ export default function Contact() {
                      <div className="space-y-3 sm:space-y-4">
                         <div className="flex items-center gap-2 pb-1.5 border-b border-slate-100">
                            <UploadCloud className="w-4 h-4 text-primary" />
-                           <h4 className="text-xxs sm:text-xs font-bold uppercase tracking-wider text-slate-500 font-heading">Verification & Profile</h4>
+                           <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-500 font-heading">Verification & Profile</h4>
                         </div>
 
                         <div className="space-y-1">
@@ -434,7 +434,7 @@ export default function Contact() {
 
                      <button
                         type="submit"
-                        className="group w-full bg-primary hover:bg-accent text-white py-2.5 sm:py-3 rounded-lg sm:rounded-xl font-semibold shadow-lg shadow-primary/15 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2 mt-3 sm:mt-4 text-sm cursor-pointer"
+                        className="group w-full bg-primary hover:bg-accent text-white py-3 sm:py-3.5 rounded-lg sm:rounded-xl font-semibold shadow-lg shadow-primary/15 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2 mt-3 sm:mt-4 text-base cursor-pointer"
                      >
                         Submit Application <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                      </button>
