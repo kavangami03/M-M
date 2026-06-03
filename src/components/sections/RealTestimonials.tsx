@@ -7,7 +7,7 @@ import { Star, Quote, ShieldCheck } from "lucide-react";
 const reviews = [
   {
     name: "Mr John",
-    role: "Director of Security Operations",
+    role: "Operations Manager",
     company: "Shelter Security Sdn Bhd",
     logo: "/logo-1.jpg",
     initials: "MJ",
@@ -19,7 +19,7 @@ const reviews = [
   },
   {
     name: "Mr Sundra",
-    role: "Senior Property Manager",
+    role: "Senior Manager",
     company: "Prima Platinum Sdn Bhd",
     logo: "/logo-2.png",
     initials: "MS",
@@ -36,7 +36,7 @@ const reviews = [
     logo: "/logo-3.png",
     initials: "MM",
     rating: 5,
-    text: "The real-time tracking, offline sync, and instant SOS cellular alerts give our command center complete operational control. This is the most reliable, comprehensive patrol app we have ever deployed.",
+    text: "The real-time tracking and instant SOS cellular alerts give our command center complete operational control. This is the most reliable, comprehensive patrol app we have ever deployed.",
     color: "from-violet-500 to-purple-500",
     badge: "Security Admin",
     offset: "lg:translate-y-0",
