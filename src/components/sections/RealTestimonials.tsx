@@ -43,7 +43,7 @@ const reviews = [
   },
   {
     name: "Mr Ragu",
-    role: "Director",
+    role: "Manager",
     company: "Erawan Security Services Sdn Bhd",
     logo: "/logo-4.png",
     initials: "MR",
@@ -104,10 +104,10 @@ export default function RealTestimonials() {
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex gap-1.2">
                     {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                      <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <span className="inline-flex items-center gap-1 py-1 px-3.5 rounded-full bg-blue-50/80 border border-blue-100/60 text-blue-700 font-bold text-[10px] tracking-wider uppercase">
+                  <span className="inline-flex items-center gap-1 py-1 px-3.5 rounded-full bg-blue-50/80 border border-blue-100/60 text-blue-700 font-bold text-[11px] tracking-wider uppercase">
                     <ShieldCheck className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
                     {review.badge}
                   </span>
@@ -117,7 +117,7 @@ export default function RealTestimonials() {
                 <Quote className="absolute right-6 top-16 w-20 h-20 text-slate-100/70 pointer-events-none group-hover:text-blue-50/60 transition-colors duration-500" />
  
                 {/* Review Text */}
-                <p className="text-slate-650 leading-relaxed font-medium text-base sm:text-[17px] mb-8 relative z-10 italic">
+                <p className="text-slate-650 leading-relaxed font-medium text-lg sm:text-[19px] mb-8 relative z-10 italic">
                   &ldquo;{review.text}&rdquo;
                 </p>
               </div>
@@ -138,9 +138,9 @@ export default function RealTestimonials() {
                   </div>
                 )}
                 <div className="min-w-0">
-                  <p className="font-bold text-slate-900 text-base truncate">{review.name}</p>
-                  <p className="text-xs text-slate-500 font-semibold truncate mt-0.5">{review.role}</p>
-                  <p className="text-[10px] text-blue-600 font-bold uppercase tracking-widest mt-1">{review.company}</p>
+                  <p className="font-bold text-slate-900 text-lg truncate">{review.name}</p>
+                  <p className="text-sm text-slate-500 font-semibold truncate mt-0.5">{review.role}</p>
+                  <p className="text-[11px] text-blue-600 font-bold uppercase tracking-widest mt-1">{review.company}</p>
                 </div>
               </div>
             </motion.div>
@@ -167,10 +167,10 @@ export default function RealTestimonials() {
                 <div className="flex items-center justify-between mb-8">
                   <div className="flex gap-1.2">
                     {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
+                      <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <span className="inline-flex items-center gap-1 py-1 px-3.5 rounded-full bg-blue-50/80 border border-blue-100/60 text-blue-700 font-bold text-[10px] tracking-wider uppercase">
+                  <span className="inline-flex items-center gap-1 py-1 px-3.5 rounded-full bg-blue-50/80 border border-blue-100/60 text-blue-700 font-bold text-[11px] tracking-wider uppercase">
                     <ShieldCheck className="w-3.5 h-3.5 text-blue-600 flex-shrink-0" />
                     {review.badge}
                   </span>
@@ -180,7 +180,7 @@ export default function RealTestimonials() {
                 <Quote className="absolute right-6 top-16 w-20 h-20 text-slate-100/70 pointer-events-none group-hover:text-blue-50/60 transition-colors duration-500" />
  
                 {/* Review Text */}
-                <p className="text-slate-650 leading-relaxed font-medium text-base sm:text-[17px] mb-8 relative z-10 italic">
+                <p className="text-slate-650 leading-relaxed font-medium text-lg sm:text-[19px] mb-8 relative z-10 italic">
                   &ldquo;{review.text}&rdquo;
                 </p>
               </div>
@@ -201,9 +201,9 @@ export default function RealTestimonials() {
                   </div>
                 )}
                 <div className="min-w-0">
-                  <p className="font-bold text-slate-900 text-base truncate">{review.name}</p>
-                  <p className="text-xs text-slate-500 font-semibold truncate mt-0.5">{review.role}</p>
-                  <p className="text-[10px] text-blue-600 font-bold uppercase tracking-widest mt-1">{review.company}</p>
+                  <p className="font-bold text-slate-900 text-lg truncate">{review.name}</p>
+                  <p className="text-sm text-slate-500 font-semibold truncate mt-0.5">{review.role}</p>
+                  <p className="text-[11px] text-blue-600 font-bold uppercase tracking-widest mt-1">{review.company}</p>
                 </div>
               </div>
             </motion.div>

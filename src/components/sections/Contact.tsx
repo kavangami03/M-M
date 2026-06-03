@@ -369,7 +369,7 @@ export default function Contact() {
                         </div>
 
                         <div className="space-y-1">
-                           <label className="text-xs font-semibold text-slate-600">
+                           <label className="text-[16px] font-semibold text-slate-600">
                               Upload Logo & Company Profile <span className="text-red-500">*</span>
                            </label>
                            <input
@@ -419,8 +419,8 @@ export default function Contact() {
                                     <div className="w-7 h-7 rounded-full bg-primary/10 flex items-center justify-center mb-1 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
                                        <UploadCloud className="w-3.5 h-3.5 text-primary" />
                                     </div>
-                                    <p className="font-semibold text-foreground mb-0.5 text-xs">Click to upload logo / profile</p>
-                                    <p className="text-[10px] text-muted-foreground">Support PDF, PNG, JPG (Max 5MB)</p>
+                                    <p className="font-semibold text-foreground mb-0.5 text-sm">Click to upload logo / profile</p>
+                                    <p className="text-sm text-muted-foreground">Support PDF, PNG, JPG (Max 5MB)</p>
                                  </>
                               )}
                            </div>
