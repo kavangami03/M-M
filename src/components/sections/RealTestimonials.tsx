@@ -5,6 +5,7 @@ import SectionHeader from "../SectionHeader";
 import { Star, Quote, ShieldCheck } from "lucide-react";
 
 const reviews = [
+  // --- New Reviews ---
   {
     name: "Mr Fauzi",
     role: "Property Manager",
@@ -49,6 +50,63 @@ const reviews = [
     color: "from-orange-500 to-red-500",
     badge: "Trusted Partner",
   },
+  
+  // --- Original Reviews ---
+  {
+    name: "Mr John",
+    role: "Operations Manager",
+    company: "Shelter Security Sdn Bhd",
+    logo: "/logo-1.jpg",
+    initials: "MJ",
+    rating: 5,
+    text: "M&M App has completely transformed our patrol audits. We slashed manual reporting times down to absolute zero. Our clients are wowed by the automated, professional GPS-verified PDF reports they receive instantly.",
+    color: "from-blue-500 to-indigo-500",
+    badge: "Enterprise Partner",
+  },
+  {
+    name: "Mr Sundra",
+    role: "Senior Manager",
+    company: "Prima Platinum Sdn Bhd",
+    logo: "/logo-2.png",
+    initials: "MS",
+    rating: 5,
+    text: "Getting rid of expensive physical patrol sticks was the best decision we made. Every checkpoint scan is geofence-validated on the guard's phone, giving our management team absolute transparency and zero hardware maintenance costs.",
+    color: "from-emerald-500 to-teal-500",
+    badge: "Verified Client",
+  },
+  {
+    name: "Ms Meera",
+    role: "Manager",
+    company: "Gemini Force Sdn Bhd",
+    logo: "/logo-3.png",
+    initials: "MM",
+    rating: 5,
+    text: "The real-time tracking and instant SOS cellular alerts give our command center complete operational control. This is the most reliable, comprehensive patrol app we have ever deployed.",
+    color: "from-violet-500 to-purple-500",
+    badge: "Security Admin",
+  },
+  {
+    name: "Mr Ragu",
+    role: "Manager",
+    company: "Erawan Security Services Sdn Bhd",
+    logo: "/logo-4.png",
+    initials: "MR",
+    rating: 5,
+    text: "Since switching to M&M, our entire patrol scheduling and incident reporting workflow has become seamless. The dashboard gives us full visibility across all our client sites, and the automated audit trails have saved us countless hours every week.",
+    color: "from-orange-500 to-red-500",
+    badge: "Trusted Partner",
+  },
+  {
+    name: "Ms Liza",
+    role: "Operations Director",
+    company: "Fask Security Sdn Bhd",
+    logo: "/logo-5.png",
+    initials: "ML",
+    rating: 5,
+    text: "M&M App gave us the ability to monitor every guard in real-time with GPS precision. Our clients love the professional PDF reports, and we have dramatically reduced response times for on-ground incidents. A truly game-changing platform.",
+    color: "from-cyan-500 to-blue-500",
+    badge: "Verified Client",
+  },
 ];
 
 export default function RealTestimonials() {
@@ -75,7 +133,7 @@ export default function RealTestimonials() {
             100% { transform: translateX(-50%); }
           }
           .animate-infinite-scroll {
-            animation: infinite-scroll 35s linear infinite;
+            animation: infinite-scroll 45s linear infinite;
           }
           .animate-infinite-scroll:hover {
             animation-play-state: paused;
