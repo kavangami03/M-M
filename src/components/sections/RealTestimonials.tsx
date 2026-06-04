@@ -100,13 +100,13 @@ export default function RealTestimonials() {
       
                     <div>
                       {/* Header elements (Star ratings & verified tag pill) */}
-                      <div className="flex items-center justify-between mb-8">
-                        <div className="flex gap-1">
+                      <div className="flex items-center justify-between mb-8 gap-2">
+                        <div className="flex gap-1 flex-shrink-0">
                           {[...Array(review.rating)].map((_, i) => (
                             <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-amber-400 text-amber-400" />
                           ))}
                         </div>
-                        <span className="inline-flex items-center gap-1 py-1 px-3 rounded-full bg-blue-50/80 border border-blue-100/60 text-blue-700 font-bold text-[10px] sm:text-[11px] tracking-wider uppercase">
+                        <span className="inline-flex items-center gap-1 py-1 px-3 rounded-full bg-blue-50/80 border border-blue-100/60 text-blue-700 font-bold text-[10px] sm:text-[11px] tracking-wider uppercase whitespace-nowrap">
                           <ShieldCheck className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-blue-600 flex-shrink-0" />
                           {review.badge}
                         </span>
