@@ -77,7 +77,7 @@ export default function RealTestimonials() {
       {/* Premium Tech Grid Accent */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.03] [background-image:radial-gradient(circle,rgba(0,0,0,0.15)_1px,transparent_1px)] [background-size:24px_24px]" />
  
-      <div className="container mx-auto px-10 sm:px-20 2xl:px-6 max-w-[1520px] relative z-10 pb-12">
+      <div className="container mx-auto px-10 sm:px-20 2xl:px-6 max-w-[1520px] relative z-10">
         <SectionHeader
           eyebrow="Proven Success"
           title={<>What Our Clients Say <br /> <span className="text-gradient">Trusted by Leading Security Forces</span></>}

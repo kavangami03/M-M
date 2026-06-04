@@ -9,6 +9,7 @@ interface SectionHeaderProps {
   description?: ReactNode;
   align?: "center" | "left" | "split";
   dark?: boolean;
+  className?: string;
 }
 
 export default function SectionHeader({
@@ -17,6 +18,7 @@ export default function SectionHeader({
   description,
   align = "center",
   dark = false,
+  className = "",
 }: SectionHeaderProps) {
   // Motion container and item animation variants
   const containerVariants = {
@@ -108,7 +110,7 @@ export default function SectionHeader({
       viewport={{ once: true, margin: "-50px" }}
       className={`w-full mb-10 flex flex-col ${
         isCenter ? "items-center text-center mx-auto max-w-4xl" : "items-start text-left"
-      }`}
+      } ${className}`}
     >
       {/* Eyebrow Badge */}
       <motion.div

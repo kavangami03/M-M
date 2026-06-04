@@ -53,7 +53,7 @@ export default function DashboardShowcase() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] md:w-[800px] h-[600px] md:h-[800px] bg-primary/20 blur-[150px] rounded-full pointer-events-none" />
       
       <div className="container mx-auto px-10 sm:px-20 2xl:px-6 max-w-[1520px] relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+        <div className="flex flex-col xl:flex-row items-center gap-10 lg:gap-16">
           <div className="flex-1 w-full max-w-2xl">
             <SectionHeader
               eyebrow="Command Center"

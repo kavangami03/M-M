@@ -21,7 +21,7 @@ export default function About() {
   return (
     <section id="about" className="py-16 md:py-24 bg-secondary/30 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 max-w-[1520px]">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+        <div className="flex flex-col xl:flex-row items-center gap-10 lg:gap-16">
 
           <motion.div
             initial={{ opacity: 0, x: -50 }}

@@ -13,7 +13,7 @@ export default function Testimonials() {
       <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-indigo-500/10 blur-[130px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto px-4 sm:px-6 max-w-[1520px] relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+        <div className="flex flex-col xl:flex-row items-center gap-10 lg:gap-16">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
