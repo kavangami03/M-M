@@ -26,7 +26,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen 2xl:h-screen pt-28 sm:pt-36 lg:pt-40 pb-16 lg:pb-0 overflow-hidden flex items-center bg-gradient-to-br from-[#f8fafc] via-[#f1f5f9] to-[#e4e8ff]"
+      className="relative min-h-screen pt-28 sm:pt-36 lg:pt-40 pb-20 lg:pb-12 overflow-hidden flex items-center bg-gradient-to-br from-[#f8fafc] via-[#f1f5f9] to-[#e4e8ff]"
     >
       {/* 1. Sleek High-Definition Sharp Security Operations Background Image in Widescreen Landscape */}
       <div className="absolute inset-0 pointer-events-none select-none opacity-40 z-0">
@@ -79,7 +79,7 @@ export default function Hero() {
               Next-Gen Security Operations
             </motion.span>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7.5xl font-bold font-heading leading-[1.1] mb-6 tracking-tight capitalize">
+            <h1 className="text-4xl md:text-5xl font-bold font-heading leading-[1.1] mb-6 tracking-tight capitalize">
               <motion.span
                 aria-hidden
                 variants={lineVariants}
@@ -129,7 +129,7 @@ export default function Hero() {
 
             <p className="text-base sm:text-lg  text-slate-600/95 mb-2 max-w-xl leading-relaxed font-medium">
               Guard Monitor & Manage is a Malaysian-Developed Mobile-based Guard
-              Patrolling / Monitoring System that replaces physical patrol
+              Patrolling and Monitoring System that replaces physical patrol
               devices and manual reporting processes.
             </p>
             <p className="text-base sm:text-lg  text-slate-600/95 mb-8 max-w-xl leading-relaxed font-medium">
