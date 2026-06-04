@@ -232,6 +232,12 @@ export default function Pricing() {
               transition={{ duration: 0.5 }}
               className="mt-8 xl:mt-10 w-full xl:mx-0"
             >
+              <h4 className="text-sm font-black mb-4 uppercase tracking-widest flex items-center justify-center xl:justify-start gap-2">
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Package Plan
+              </h4>
               <div className="relative bg-white rounded-2xl border border-slate-200/70 shadow-[0_4px_24px_rgba(0,0,0,0.04)] overflow-hidden">
                 <div className="grid grid-cols-3 divide-x divide-slate-100">
                   {/* ── Quarterly ── */}
