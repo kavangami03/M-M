@@ -26,7 +26,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen pt-28 sm:pt-36 lg:pt-40 pb-20 lg:pb-12 overflow-hidden flex items-center bg-gradient-to-br from-[#f8fafc] via-[#f1f5f9] to-[#e4e8ff]"
+      className="relative min-h-screen lg:min-h-[800px] overflow-hidden flex flex-col bg-gradient-to-br from-[#f8fafc] via-[#f1f5f9] to-[#e4e8ff]"
     >
       {/* 1. Sleek High-Definition Sharp Security Operations Background Image in Widescreen Landscape */}
       <div className="absolute inset-0 pointer-events-none select-none opacity-40 z-0">
@@ -52,14 +52,14 @@ export default function Hero() {
       {/* 4. Fine Dot Grid Network for Tech Texture */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:radial-gradient(circle,rgba(0,0,0,0.15)_1px,transparent_1px)] [background-size:24px_24px] z-0" />
 
-      <div className="container mx-auto px-10 sm:px-20 2xl:px-6 max-w-[1520px] relative z-10">
-        <div className="flex flex-col lg:flex-row items-stretch justify-between gap-16 lg:gap-8">
-          {/* Left Column: Text & CTAs (Intact exact original styling) */}
+      <div className="container mx-auto px-10 sm:px-20 2xl:px-6 max-w-[1520px] relative z-10 w-full flex-1 flex flex-col">
+        <div className="flex flex-col lg:flex-row items-stretch justify-between gap-16 lg:gap-8 flex-1">
+          {/* Left Column: Text & CTAs */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full lg:w-6/12 flex flex-col items-start text-left self-center"
+            className="w-full lg:w-6/12 flex flex-col items-start text-left justify-center pt-32 lg:pt-36 pb-12 lg:pb-24"
           >
             <motion.span
               initial={{ opacity: 0, y: -10, scale: 0.9 }}
@@ -79,7 +79,7 @@ export default function Hero() {
               Next-Gen Security Operations
             </motion.span>
 
-            <h1 className="text-4xl md:text-5xl font-bold font-heading leading-[1.1] mb-6 tracking-tight capitalize">
+            <h1 className="text-4xl md:text-5xl 2xl:text-6xl font-bold font-heading leading-[1.1] mb-6 tracking-tight capitalize">
               <motion.span
                 aria-hidden
                 variants={lineVariants}
@@ -187,26 +187,23 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-            className="w-full lg:w-6/12 flex justify-center items-center relative z-10 select-none"
+            className="w-full lg:w-6/12 relative z-10 select-none h-[50vh] lg:h-auto"
           >
-            <div className="relative w-full max-w-[580px] lg:max-w-none flex items-center justify-center">
-              {/* Decorative glowing circle behind the phones */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-[70%] aspect-square rounded-full bg-gradient-to-br from-blue-100/50 to-indigo-100/40 blur-3xl" />
-              </div>
+            {/* Decorative glowing circle behind the phones */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="w-[70%] lg:w-[80%] aspect-square rounded-full bg-gradient-to-br from-blue-100/50 to-indigo-100/40 blur-3xl" />
+            </div>
 
-              {/* Mobile Screens — Main Hero Image */}
-              <div className="relative z-10 w-[85%] mx-auto">
-                <Image
-                  src="/horo-banner-mobile.png"
-                  alt="M&M Guard Monitoring Mobile Apps"
-                  width={1200}
-                  height={900}
-                  unoptimized
-                  priority
-                  className="w-full h-auto object-contain drop-shadow-[0_30px_70px_rgba(15,23,42,0.18)]"
-                />
-              </div>
+            {/* Mobile Screens — Main Hero Image */}
+            <div className="absolute inset-0 w-full h-full flex items-center justify-center">
+              <Image
+                src="/horo-banner-mobile.png"
+                alt="M&M Guard Monitoring Mobile Apps"
+                fill
+                unoptimized
+                priority
+                className="object-cover object-top drop-shadow-[0_20px_50px_rgba(15,23,42,0.15)]"
+              />
             </div>
           </motion.div>
         </div>
