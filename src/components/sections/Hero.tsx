@@ -128,9 +128,9 @@ export default function Hero() {
             />
 
             <p className="text-base sm:text-lg  text-slate-600/95 mb-2 max-w-xl leading-relaxed font-medium">
-              Guard Monitor & Manage is a Malaysian-developed mobile-based guard
-              monitoring system that replaces physical patrol devices and manual
-              reporting processes.
+              Guard Monitor & Manage is a Malaysian-Developed Mobile-based Guard
+              Patrolling / Monitoring System that replaces physical patrol
+              devices and manual reporting processes. (add the word Patrolling )
             </p>
             <p className="text-base sm:text-lg  text-slate-600/95 mb-8 max-w-xl leading-relaxed font-medium">
               Every guard activity is recorded in real time and transformed into
@@ -196,9 +196,7 @@ export default function Hero() {
               </div>
 
               {/* Mobile Screens — Main Hero Image */}
-              <div
-                className="relative z-10 w-[85%] mx-auto"
-              >
+              <div className="relative z-10 w-[85%] mx-auto">
                 <Image
                   src="/horo-banner-mobile.png"
                   alt="M&M Guard Monitoring Mobile Apps"

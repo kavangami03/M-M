@@ -159,14 +159,14 @@ const FEATURES: Feature[] = [
     icon: Smartphone,
     badge: CheckCircle2,
     title: "No Expensive Devices",
-    desc: "Turn any smartphone into a powerful security operations device.",
+    desc: "Save costs by eliminating expensive patrol devices",
     accent: "emerald",
   },
   {
     icon: Wrench,
     badge: Settings,
-    title: "Zero Maintenance",
-    desc: "Zero Maintenance. Maximum Reliability.",
+    title: "Zero Maintenance Costs",
+    desc: "No devices to service, repair, or replace.",
     accent: "indigo",
   },
   {
@@ -186,8 +186,8 @@ const FEATURES: Feature[] = [
   {
     icon: ScanFace,
     badge: UserCheck,
-    title: "Attendance System",
-    desc: "Automatically track attendance and instantly alert managers to missed or late check-ins.",
+    title: "Smart Attendance Tracking",
+    desc: "Monitor attendance automatically with instant alerts for late or missed check-ins.",
     accent: "violet",
   },
   {

@@ -104,7 +104,7 @@ export default function Header() {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className={`group relative text-sm font-medium transition-colors ${
+                className={`group relative text-base font-medium transition-colors ${
                   isActive ? "text-primary" : "text-muted-foreground hover:text-primary"
                 }`}
               >
@@ -124,7 +124,7 @@ export default function Header() {
           <Link
             href="/#contact"
             onClick={(e) => handleNavClick(e, "/#contact")}
-            className={`group relative text-sm font-medium transition-colors mr-2 ${
+            className={`group relative text-base font-medium transition-colors mr-2 ${
               isHome && activeSection === "contact"
                 ? "text-primary"
                 : "text-muted-foreground hover:text-primary"

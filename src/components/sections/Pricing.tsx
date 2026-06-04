@@ -120,20 +120,20 @@ export default function Pricing() {
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             {/* 3 Months */}
             <div className="flex flex-col items-center gap-2 px-6 py-4 bg-white rounded-2xl border border-slate-200/60 shadow-sm">
-              <span className="text-sm sm:text-base font-extrabold text-slate-800">3 Months</span>
-              <span className="text-xs font-bold text-slate-400">Standard</span>
+              <span className="text-base sm:text-lg font-extrabold text-slate-800">3 Months</span>
+              <span className="text-sm font-bold text-slate-400">Standard</span>
             </div>
 
             {/* 6 Months */}
             <div className="flex flex-col items-center gap-2 px-6 py-4 bg-white rounded-2xl border border-slate-200/60 shadow-sm">
-              <span className="text-sm sm:text-base font-extrabold text-slate-800">6 Months</span>
-              <span className="text-xs font-bold text-emerald-600">5% Discount</span>
+              <span className="text-base sm:text-lg font-extrabold text-slate-800">6 Months</span>
+              <span className="text-sm font-bold text-emerald-600">5% Discount</span>
             </div>
 
             {/* 12 Months */}
             <div className="flex flex-col items-center gap-2 px-6 py-4 bg-white rounded-2xl border border-slate-200/60 shadow-sm">
-              <span className="text-sm sm:text-base font-extrabold text-slate-800">12 Months</span>
-              <span className="text-xs font-bold text-blue-600">10% Discount</span>
+              <span className="text-base sm:text-lg font-extrabold text-slate-800">12 Months</span>
+              <span className="text-sm font-bold text-blue-600">10% Discount</span>
             </div>
           </div>
 
