@@ -3,7 +3,21 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import SectionHeader from "../SectionHeader";
-import { Check, Sparkles, ShieldCheck, Zap, Info } from "lucide-react";
+import {
+  Check,
+  Sparkles,
+  ShieldCheck,
+  Zap,
+  Info,
+  Settings,
+  GraduationCap,
+  Headset,
+  Calendar,
+  CalendarDays,
+  Crown,
+  Gift,
+  PhoneCall,
+} from "lucide-react";
 import Image from "next/image";
 
 interface Plan {
@@ -102,9 +116,9 @@ export default function Pricing() {
       <div className="pointer-events-none absolute inset-0 opacity-[0.04] [background-image:radial-gradient(circle,rgba(0,0,0,0.1)_1px,transparent_1px)] [background-size:28px_28px] z-0" />
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        <div className="flex flex-col xl:flex-row gap-16 xl:gap-20 items-center xl:items-start">
+        <div className="flex flex-col xl:flex-row gap-10 md:gap-16 xl:gap-20 items-center xl:items-stretch">
           {/* ── Left Column: Header & Billing Toggle ── */}
-          <div className="w-full xl:w-5/12 pt-8">
+          <div className="w-full xl:w-5/12 pt-8 flex flex-col">
             {/* Custom Header specifically for Pricing Page */}
             <motion.div
               initial="hidden"
@@ -134,7 +148,7 @@ export default function Pricing() {
               </motion.div>
 
               {/* Heading */}
-              <motion.h2 
+              <motion.h2
                 variants={{
                   hidden: { opacity: 0, y: 15 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -153,22 +167,6 @@ export default function Pricing() {
                 className="text-base sm:text-lg leading-relaxed font-medium text-slate-600/90 max-w-2xl"
               >
                 <span className="flex flex-col xl:items-start items-center justify-center gap-4 mt-2">
-                  <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 text-blue-700 text-sm font-bold shadow-sm">
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2.5}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    Zero Setup Fees
-                  </span>
                   <span className="block text-center xl:text-left text-slate-600 text-lg max-w-md">
                     Build the perfect package for your agency with flexible
                     billing and a customizable team.
@@ -183,10 +181,62 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="mt-10 xl:mt-12 bg-white rounded-2xl p-6 border border-emerald-100 shadow-[0_4px_20px_rgba(16,185,129,0.05)] relative overflow-hidden mx-auto xl:mx-0"
+              className="bg-white rounded-2xl p-6 border border-emerald-100 shadow-[0_4px_20px_rgba(16,185,129,0.05)] relative overflow-hidden mx-auto xl:mx-0 flex-1 flex flex-col"
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 blur-[50px] rounded-full pointer-events-none" />
-              <h4 className="text-xs font-black text-emerald-600 mb-5 uppercase tracking-widest relative z-10 flex items-center gap-2">
+              <h4 className="text-xl font-black text-emerald-600 mb-5 uppercase tracking-widest relative z-10 flex items-center gap-2">
+                <Gift className="w-6 h-6" strokeWidth={2.5} />
+                Always Included For Free
+              </h4>
+              <div className="grid grid-cols-1 gap-y-4 gap-x-6 relative z-10">
+                {[
+                  "No Setup Fees",
+                  "Free Training for Guards & Admins",
+                  "Free Consultation & Onboarding",
+                  "No Hidden Charges",
+                  "Free System Updates & Support",
+                ].map((perk, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="mt-0.5 w-5 h-5 rounded-full border-2 border-emerald-400 flex items-center justify-center flex-shrink-0">
+                      <Check className="w-3 h-3 text-emerald-600" strokeWidth={4} />
+                    </div>
+                    <span className="text-[15px] font-bold text-slate-800 leading-snug">
+                      {perk}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Trust Badge filling empty space */}
+              <div className="mt-auto pt-10 relative z-10">
+                <div className="bg-gradient-to-br from-emerald-50 to-teal-50/30 rounded-[1.25rem] p-5 border border-emerald-100/60 shadow-[0_2px_10px_rgba(16,185,129,0.03)] flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm border border-emerald-100">
+                    <ShieldCheck className="w-6 h-6 text-emerald-500" strokeWidth={2} />
+                  </div>
+                  <div>
+                    <h5 className="text-[15px] font-black text-slate-800 mb-0.5 tracking-wide">Our 100% Guarantee</h5>
+                    <p className="text-[13px] font-medium text-slate-600 leading-relaxed">
+                      We're committed to providing the best platform. No hidden fees, just reliable software that works.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* ── Right Column: Pricing Cards Grid ── */}
+          <div className="w-full xl:w-7/12 relative">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-blue-500/[0.04] to-indigo-500/[0.04] blur-[100px] rounded-full pointer-events-none select-none z-0" />
+
+            {/* Billing Plans — Compact Light Banner */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mb-8 w-full relative z-10"
+            >
+              <h4 className="text-sm font-black mb-4 uppercase tracking-widest flex items-center justify-center xl:justify-start gap-2">
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -197,44 +247,8 @@ export default function Pricing() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2.5}
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                   />
-                </svg>
-                Always Included For Free
-              </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 relative z-10">
-                {[
-                  "Free for Set up",
-                  "Free training for guards & admin staff",
-                  "Free consultation",
-                  "Free from hidden cost",
-                ].map((perk, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5 border border-emerald-200 shadow-sm">
-                      <Check
-                        className="w-3 h-3 text-emerald-600"
-                        strokeWidth={3}
-                      />
-                    </div>
-                    <span className="text-sm font-bold text-slate-700 leading-tight">
-                      {perk}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Billing Plans — Compact Light Banner */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="mt-8 xl:mt-10 w-full xl:mx-0"
-            >
-              <h4 className="text-sm font-black mb-4 uppercase tracking-widest flex items-center justify-center xl:justify-start gap-2">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
                 Package Plan
               </h4>
@@ -242,50 +256,45 @@ export default function Pricing() {
                 <div className="grid grid-cols-3 divide-x divide-slate-100">
                   {/* ── Quarterly ── */}
                   <div className="flex flex-col items-center justify-center gap-1.5 py-5 px-2">
-                    <span className="text-xs sm:text-sm font-extrabold text-slate-800">
+                    <Calendar className="w-6 h-6 text-slate-400 mb-1" />
+                    <span className="text-xs lg:text-sm xl:text-lg font-extrabold text-slate-800">
                       Quarterly
                     </span>
-                    <span className="text-[12px] sm:text-[14px] font-bold text-slate-800 uppercase tracking-widest">
+                    <span className="text-[12px] lg:text-[14px] xl:text-[16px] font-bold text-slate-800 uppercase tracking-widest">
                       3 Months
                     </span>
                   </div>
 
                   {/* ── Half-Yearly ── */}
                   <div className="flex flex-col items-center justify-center gap-1.5 py-5 px-2 bg-emerald-50/40">
-                    <span className="text-xs sm:text-sm font-extrabold text-slate-800">
+                    <CalendarDays className="w-6 h-6 text-emerald-500 mb-1" />
+                    <span className="text-xs lg:text-sm xl:text-lg font-extrabold text-slate-800">
                       Half-Yearly
                     </span>
-                    <span className="text-[10px] sm:text-[11px] font-bold text-emerald-600/70 uppercase tracking-widest">
+                    <span className="text-[10px] lg:text-[12px] xl:text-[16px] font-bold text-emerald-600 uppercase tracking-widest">
                       6 Months
                     </span>
-                    <span className="text-sm sm:text-base font-black bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent leading-none">
+                    <span className="text-sm sm:text-base xl:text-[18px] font-black bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent leading-none">
                       SAVE 5%
                     </span>
                   </div>
 
                   {/* ── Annual ── */}
                   <div className="flex flex-col items-center justify-center gap-1.5 py-5 px-2 bg-blue-50/40">
-                    <span className="text-xs sm:text-sm font-extrabold text-slate-800">
+                    <Crown className="w-6 h-6 text-blue-500 mb-1" />
+                    <span className="text-xs lg:text-sm xl:text-lg font-extrabold text-slate-800">
                       Annual
                     </span>
-                    <span className="text-[10px] sm:text-[11px] font-bold text-blue-600/70 uppercase tracking-widest">
+                    <span className="text-[10px] lg:text-[12px] xl:text-[16px] font-bold text-blue-600/70 uppercase tracking-widest">
                       12 Months
                     </span>
-                    <span className="text-sm sm:text-base font-black bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent leading-none">
+                    <span className="text-sm sm:text-base xl:text-[18px] font-black bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent leading-none">
                       SAVE 10%
-                    </span>
-                    <span className="text-[8px] font-bold text-blue-500 uppercase tracking-widest mt-0.5">
-                      Best Value
                     </span>
                   </div>
                 </div>
               </div>
             </motion.div>
-          </div>
-
-          {/* ── Right Column: Pricing Cards Grid ── */}
-          <div className="w-full xl:w-7/12 relative">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-blue-500/[0.04] to-indigo-500/[0.04] blur-[100px] rounded-full pointer-events-none select-none z-0" />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 items-stretch w-full relative z-10">
               {PLANS.map((plan, planIdx) => {
@@ -445,29 +454,74 @@ export default function Pricing() {
               })}
             </div>
 
-            {/* Custom Plan CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.15 }}
-              className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 py-5 px-6 rounded-2xl border border-slate-200/60 bg-slate-50/50"
-            >
-              <p className="text-slate-600 text-sm font-medium text-center sm:text-left">
-                Need Pricing details?{" "}
-                <span className="font-black text-slate-800">
-                  Contact us today.
-                </span>
-              </p>
-              <button
-                onClick={scrollToContact}
-                className="shrink-0 px-6 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-500 hover:to-blue-500 text-white text-sm font-black rounded-lg cursor-pointer transition-all duration-300 hover:-translate-y-0.5 shadow-md border border-blue-500/20"
-              >
-                Contact Us
-              </button>
-            </motion.div>
           </div>
         </div>
+
+        {/* Custom Plan CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.15 }}
+          className="mt-8 flex flex-col md:flex-row items-center justify-between gap-6 py-5 px-8 rounded-[1.25rem] border border-slate-200/80 bg-[#ffffff] w-full relative z-10"
+        >
+          {/* Left Side */}
+          <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left w-full md:w-auto shrink-0">
+            <div className="w-14 h-14 rounded-full bg-[#e8f0fe] text-blue-600 flex items-center justify-center flex-shrink-0">
+              <Headset className="w-7 h-7" strokeWidth={2} />
+            </div>
+            <div>
+              <h4 className="text-lg font-bold text-slate-900 mb-0.5">Need help choosing the right plan?</h4>
+              <p className="text-[15px] font-medium text-slate-600">Our team is ready to help you find the perfect fit.</p>
+            </div>
+          </div>
+          
+          {/* Middle Features - Fills Empty Space on Large Screens */}
+          <div className="hidden xl:flex items-center gap-8 px-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-100">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-sm font-bold text-slate-900 leading-tight">Secure</span>
+                <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Data Privacy</span>
+              </div>
+            </div>
+            
+            <div className="w-px h-8 bg-slate-200/60"></div>
+
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100">
+                <Zap className="w-5 h-5" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-sm font-bold text-slate-900 leading-tight">Fast</span>
+                <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Quick Setup</span>
+              </div>
+            </div>
+
+            <div className="w-px h-8 bg-slate-200/60"></div>
+
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center border border-purple-100">
+                <Sparkles className="w-5 h-5" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-sm font-bold text-slate-900 leading-tight">Reliable</span>
+                <span className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">24/7 Support</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side Button */}
+          <button
+            onClick={scrollToContact}
+            className="shrink-0 flex items-center justify-center gap-2.5 px-8 py-3.5 rounded-full border-2 border-slate-300 hover:border-blue-600 text-blue-800 font-bold bg-white hover:bg-blue-50 transition-all duration-300 shadow-sm w-full md:w-auto"
+          >
+            <PhoneCall className="w-[18px] h-[18px]" strokeWidth={2.5} />
+            Contact Us Today
+          </button>
+        </motion.div>
       </div>
     </section>
   );
