@@ -136,6 +136,15 @@ export default function Footer() {
                   Pricing
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/#certificates"
+                  onClick={(e) => handleNavClick(e, "/#certificates")}
+                  className="hover:text-primary transition-colors"
+                >
+                  Certificates
+                </Link>
+              </li>
             </ul>
           </div>
 

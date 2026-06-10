@@ -65,7 +65,7 @@ export default function Certificates() {
   }, [active]);
  
   return (
-    <section className="py-20 bg-secondary/30 border-y border-border">
+    <section id="certificates" className="py-20 bg-secondary/30 border-y border-border">
       <div className="container mx-auto px-6 max-w-[1520px]">
         <SectionHeader
           eyebrow="Recognized & Certified"

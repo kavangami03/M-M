@@ -22,7 +22,7 @@ export default function TawkTracker() {
     const s1 = document.createElement("script");
     const s0 = document.getElementsByTagName("script")[0];
     s1.async = true;
-    s1.src = "https://embed.tawk.to/6a1e7ae50a89cf1c34823d2b/1jq3h052s";
+    s1.src = "https://embed.tawk.to/639952c1b0d6371309d44f92/1gk7emhrt";
     s1.charset = "UTF-8";
     s1.setAttribute("crossorigin", "*");
     

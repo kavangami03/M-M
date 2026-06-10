@@ -26,6 +26,7 @@ export default function Contact() {
    const [errors, setErrors] = useState<FormErrors>({});
    const [touched, setTouched] = useState<Record<string, boolean>>({});
    const [submitted, setSubmitted] = useState(false);
+   const [isSubmitting, setIsSubmitting] = useState(false);
 
    const [file, setFile] = useState<File | null>(null);
    const [preview, setPreview] = useState<string | null>(null);
@@ -64,6 +65,8 @@ export default function Contact() {
 
       if (!file) {
          newErrors.logo = "Company logo/profile is required";
+      } else if (file.size > 10 * 1024 * 1024) {
+         newErrors.logo = "File size must be less than 10MB";
       }
       
       return newErrors;
@@ -75,7 +78,7 @@ export default function Contact() {
       setErrors(validationErrors);
    };
 
-   const handleSubmit = (e: FormEvent) => {
+   const handleSubmit = async (e: FormEvent) => {
       e.preventDefault();
       const allTouched: Record<string, boolean> = {
          companyName: true,
@@ -92,8 +95,34 @@ export default function Contact() {
       setErrors(validationErrors);
       
       if (Object.keys(validationErrors).length === 0) {
-         setSubmitted(true);
-         // Form is valid — submit logic would go here
+         setIsSubmitting(true);
+         try {
+            const formData = new FormData();
+            formData.append("companyName", companyName);
+            formData.append("companyNumber", companyNumber);
+            formData.append("companyAddress", companyAddress);
+            formData.append("personInCharge", personInCharge);
+            formData.append("email", email);
+            formData.append("phone", phone);
+            if (file) formData.append("file", file);
+
+            const response = await fetch("/api/contact", {
+               method: "POST",
+               body: formData,
+            });
+
+            if (response.ok) {
+               setSubmitted(true);
+            } else {
+               const data = await response.json();
+               alert("Failed to submit: " + (data.error || "Unknown error"));
+            }
+         } catch (error) {
+            console.error("Error submitting form:", error);
+            alert("An error occurred while submitting the form.");
+         } finally {
+            setIsSubmitting(false);
+         }
       }
    };
 
@@ -108,11 +137,15 @@ export default function Contact() {
             setPreview(null);
          }
          setTouched((prev) => ({ ...prev, logo: true }));
-         setErrors((prev) => {
-            const next = { ...prev };
-            delete next.logo;
-            return next;
-         });
+         if (selectedFile.size > 10 * 1024 * 1024) {
+            setErrors((prev) => ({ ...prev, logo: "File size must be less than 10MB" }));
+         } else {
+            setErrors((prev) => {
+               const next = { ...prev };
+               delete next.logo;
+               return next;
+            });
+         }
       }
    };
 
@@ -420,7 +453,7 @@ export default function Contact() {
                                        <UploadCloud className="w-3.5 h-3.5 text-primary" />
                                     </div>
                                     <p className="font-semibold text-foreground mb-0.5 text-sm">Click to upload logo / profile</p>
-                                    <p className="text-sm text-muted-foreground">Support PDF, PNG, JPG (Max 5MB)</p>
+                                    <p className="text-sm text-muted-foreground">Support PDF, PNG, JPG (Max 10MB)</p>
                                  </>
                               )}
                            </div>
@@ -434,9 +467,11 @@ export default function Contact() {
 
                      <button
                         type="submit"
-                        className="group w-full bg-primary hover:bg-accent text-white py-3 sm:py-3.5 rounded-lg sm:rounded-xl font-semibold shadow-lg shadow-primary/15 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-2 mt-3 sm:mt-4 text-base cursor-pointer"
+                        disabled={isSubmitting}
+                        className={`group w-full bg-primary hover:bg-accent text-white py-3 sm:py-3.5 rounded-lg sm:rounded-xl font-semibold shadow-lg shadow-primary/15 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 flex items-center justify-center gap-2 mt-3 sm:mt-4 text-base ${isSubmitting ? "opacity-70 cursor-not-allowed" : "hover:-translate-y-0.5 cursor-pointer"}`}
                      >
-                        Submit Application <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                        {isSubmitting ? "Submitting..." : "Submit Application"} 
+                        {!isSubmitting && <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />}
                      </button>
                   </form>
                </div>

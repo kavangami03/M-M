@@ -15,7 +15,7 @@ const NAV_LINKS = [
   // { name: "Dashboard", href: "/#dashboard" },
   { name: "Mobile App", href: "/#mobile-app" },
   { name: "Pricing", href: "/#pricing" },
-
+  { name: "Certificates", href: "/#certificates" },
 ];
 
 export default function Header() {
