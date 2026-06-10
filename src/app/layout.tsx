@@ -14,7 +14,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Security Guard Monitoring Software | Monitor & Manage",
+    default: "Security Guard Patrolling Software | Monitor & Manage",
     template: "%s | M&M Security"
   },
   description: "Real-time security guard monitoring software with patrol tracking, attendance management, SOS alerts and incident reporting.",
